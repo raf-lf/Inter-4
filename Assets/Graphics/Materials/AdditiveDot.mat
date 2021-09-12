@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: AdditiveDot
   m_Shader: {fileID: 4800000, guid: 0406db5a14f94604a8c57ccfbc9f3b46, type: 3}
-  m_ShaderKeywords: _COLOROVERLAY_ON
+  m_ShaderKeywords: _COLOROVERLAY_ON _FLIPBOOKBLENDING_ON
   m_LightmapFlags: 6
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 1
@@ -99,7 +99,7 @@ Material:
     - _DstBlend: 1
     - _EmissionEnabled: 0
     - _EnvironmentReflections: 1
-    - _FlipbookBlending: 0
+    - _FlipbookBlending: 1
     - _FlipbookMode: 0
     - _GlossMapScale: 0
     - _Glossiness: 0

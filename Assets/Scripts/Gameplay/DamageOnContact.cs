@@ -6,10 +6,17 @@ public class DamageOnContact : MonoBehaviour
 {
     public int damage;
 
+    public List<faction> factionsAffected = new List<faction>();
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponentInChildren<CreatureAtributes>())
-            collision.gameObject.GetComponentInChildren<CreatureAtributes>().Damage(damage);
+        {
+            CreatureAtributes creature = collision.gameObject.GetComponentInChildren<CreatureAtributes>();
+            
+            if(factionsAffected.Contains(creature.creatureFaction))
+                creature.Damage(damage);
+        }
 
     }
 

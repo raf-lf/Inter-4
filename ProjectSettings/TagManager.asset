@@ -38,6 +38,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1829783019
+    locked: 0
+  - name: Environment
+    uniqueID: 226405677
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: VFX
+    uniqueID: 1210627391
+    locked: 0
+  - name: UI
+    uniqueID: 1725063057
     locked: 0
