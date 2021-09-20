@@ -4,15 +4,95 @@ using UnityEngine;
 
 public class CreatureBehavior : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("Atributes")]
+    public bool behaviorOn = true;
+    public float busyTime;
+
+    [Header("Target Detection")]
+    public float detectionRange;
+    public List<Faction> factionsDetected = new List<Faction>();
+    private Collider2D[] colliders = new Collider2D[0];
+    public CreatureAtributes currentTarget;
+    [SerializeField]
+    private List<CreatureAtributes> possibleTargets = new List<CreatureAtributes>();
+    private int targetCheckFrames;
+    private int targetCheckInterval = 30;
+
+    private void Start()
     {
+        GetComponent<CircleCollider2D>().radius = detectionRange;
+        
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Is colliding object a creature?
+        if (collision.gameObject.GetComponent<CreatureAtributes>())
+        {
+            CreatureAtributes creatureInRange = collision.gameObject.GetComponent<CreatureAtributes>();
+            
+            //Is not on the list AND is creature of detectable faction?
+            if (possibleTargets.Contains(creatureInRange) == false && factionsDetected.Contains(creatureInRange.creatureFaction))
+                possibleTargets.Add(creatureInRange);
+
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.GetComponent<CreatureAtributes>())
+        {
+            CreatureAtributes creatureOutOfRange = collision.gameObject.GetComponent<CreatureAtributes>();
+            if (possibleTargets.Contains(creatureOutOfRange))
+            {
+                possibleTargets.Remove(creatureOutOfRange);
+
+            }
+        }
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void SelectTarget()
     {
-        
+        if (possibleTargets.Contains(currentTarget) == false) currentTarget = null;
+
+        if (possibleTargets.Count > 0)
+        { 
+            if (targetCheckFrames > 0)
+            targetCheckFrames--;
+
+            else
+            {
+                targetCheckFrames = targetCheckInterval;
+                
+                CreatureAtributes finalTarget = null;
+                float minDistance = Mathf.Infinity;
+                
+                foreach (CreatureAtributes creature in possibleTargets)
+                {
+                    float currentDistance = Vector2.Distance(creature.transform.position, transform.position);
+                    
+                    if (currentDistance < minDistance)
+                    {
+                        minDistance = currentDistance;
+                        finalTarget = creature;
+
+                    }
+
+                }
+
+                if (!finalTarget.dead)
+                    currentTarget = finalTarget;
+                //Debug.Log("Target changed to " + currentTarget);
+
+            }
+        }
+
+
     }
+
+    protected virtual void Update()
+    {
+        SelectTarget();
+    }
+
 }

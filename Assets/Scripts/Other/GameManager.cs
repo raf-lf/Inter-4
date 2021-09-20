@@ -13,4 +13,12 @@ public static class GameManager
 
     public static int antigen;
     public static int antigenDelievered;
+
+    public static int[] itemConsumable = new int[5];
+
+    //"Singletons"
+    public static PlayerAtributes scriptPlayer;
+    public static Inventory scriptInventory;
+    public static CanvasGameplay scriptCanvas;
+    public static CameraControl scriptCamera;
 }

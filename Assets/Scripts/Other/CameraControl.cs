@@ -6,7 +6,20 @@ public class CameraControl : MonoBehaviour
 {
     public Transform target;
     public Vector3 offset;
+    private Vector3 offsetModifier;
     public float cameraSpeed;
+
+    private void OnEnable()
+    {
+        GameManager.scriptCamera = this;    
+    }
+
+    public void ChangeCameraOffset(Vector3 newOffset)
+        =>
+        offsetModifier = newOffset;
+    public void ResetCameraOffset()
+        =>
+        offsetModifier = Vector3.zero;
 
     private void Start()
     {
@@ -15,6 +28,6 @@ public class CameraControl : MonoBehaviour
 
     private void Update()
     {
-        if (target != null) transform.position = Vector3.Lerp(transform.position, target.position + offset, cameraSpeed);
+        if (target != null) transform.position = Vector3.Lerp(transform.position, target.position + offset + offsetModifier, cameraSpeed);
     }
 }

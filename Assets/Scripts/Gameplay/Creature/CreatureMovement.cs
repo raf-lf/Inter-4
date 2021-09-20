@@ -24,7 +24,7 @@ public class CreatureMovement : MonoBehaviour
 
     public void UpdateMoveSpeed()
     {
-        currentMoveSpeed = GetComponent<CreatureAtributes>().moveSpeed * GetComponent<CreatureAtributes>().moveSpeedModifier;
+        currentMoveSpeed = GetComponent<CreatureAtributes>().MoveSpeed * GetComponent<CreatureAtributes>().moveSpeedModifier;
     }
 
     public void MoveTowards(Vector2 moveTarget)

@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum faction
+using UnityEngine.Scripting;
+
+public enum Faction
 {
     Player, Virus, Neutral
 }
@@ -19,23 +21,40 @@ public class CreatureAtributes : MonoBehaviour
     public int iFrames;
     private int iFramesCurrent;
 
+
     [Header("Movement")]
-    public float moveSpeed;
-    public float moveSpeedModifier = 1;
+
+    public float _moveSpeedModifier = 1;
+
+    public float moveSpeedModifier
+    {
+        get
+        {
+            return _moveSpeedModifier;
+        }
+        set
+        {
+            _moveSpeedModifier = value;
+            GetComponent<CreatureMovement>().UpdateMoveSpeed();
+        }
+    }
+
+
+    public float MoveSpeed;
 
     [Header("States")]
     public bool dead;
 
     [Header("Factions")]
-    public faction creatureFaction;
+    public Faction creatureFaction;
 
     [Header("Components")]
     public Animator animator;
-    private FeedbackVfx feedbackScript;
+    protected EffectManager feedbackScript;
 
     private void Start()
     {
-        feedbackScript = GetComponentInChildren<FeedbackVfx>();
+        feedbackScript = GetComponentInChildren<EffectManager>();
 
     }
 
@@ -62,8 +81,13 @@ public class CreatureAtributes : MonoBehaviour
             if (GetComponentInChildren<HudCreature>()) GetComponentInChildren<HudCreature>().UpdateValues();
 
             //Play feedback vfx animation 0 (Damage)
-            if (value < 0 && feedbackScript != null)
-                feedbackScript.Play(0);
+            if (feedbackScript != null)
+            {
+                if (value < 0)
+                    feedbackScript.PlayFeedback(0);
+                else if (value > 0)
+                    feedbackScript.PlayFeedback(1);
+            }
 
             if (hp == 0) Death();
         }

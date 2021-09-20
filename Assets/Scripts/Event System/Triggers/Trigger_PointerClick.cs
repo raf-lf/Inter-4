@@ -4,16 +4,24 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine;
 
-public class Trigger_PointerClick : TriggerBase, IPointerClickHandler
+public class Trigger_PointerClick : TriggerBase//, IPointerClickHandler
 {
     public ParticleSystem particleVfx;
 
+    private void OnMouseDown()
+    {
+        TriggerEvent();
+
+    }
+
+    /*
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("aaaaaaaaaa");
         TriggerEvent();
 
     }
+    */
 
     public void Feedback()
     {

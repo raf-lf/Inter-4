@@ -5,18 +5,10 @@ using UnityEngine.EventSystems;
 
 public class Trigger_UiButton : TriggerBase
 {
-    public GameObject uiToClose;
-
     public override void TriggerEvent()
     {
+        Debug.Log("Event Triggered through " + this);
         base.TriggerEvent();
-
-        if(uiToClose != null)
-        {
-            Debug.LogError("UiToClose not setup!");
-
-        }
     }
-
 
 }

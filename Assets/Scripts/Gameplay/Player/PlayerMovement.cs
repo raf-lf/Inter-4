@@ -10,9 +10,11 @@ public class PlayerMovement : CreatureMovement
 
     private void PlayerMove()
     {
-        mouseTarget = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
+      
+            mouseTarget = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
 
-        MoveTowards(mouseTarget);
+            MoveTowards(mouseTarget);
+
     }
 
     private void Update()
