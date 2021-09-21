@@ -18,6 +18,7 @@ public class EffectManager : MonoBehaviour
     }
     public void PlayFeedback(int type)
     {
+        if (!feedbackVfx[type].gameObject.activeInHierarchy) feedbackVfx[type].gameObject.SetActive(true);
         feedbackVfx[type].Stop();
         feedbackVfx[type].Play();
 
@@ -27,6 +28,8 @@ public class EffectManager : MonoBehaviour
 
     public void VfxBuff(int buffId, bool on)
     {
+        if (!buffVfx[buffId].gameObject.activeInHierarchy) buffVfx[buffId].gameObject.SetActive(true);
+
         ParticleSystem[] particles = buffVfx[buffId].GetComponentsInChildren<ParticleSystem>();
         
         if (on)
