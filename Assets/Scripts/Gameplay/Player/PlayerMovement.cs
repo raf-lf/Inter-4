@@ -8,7 +8,7 @@ public class PlayerMovement : CreatureMovement
     private Vector3 mouseTarget;
 
 
-    private void PlayerMove()
+    private void MouseMove()
     {
       
             mouseTarget = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
@@ -17,17 +17,30 @@ public class PlayerMovement : CreatureMovement
 
     }
 
-    private void Update()
+    public void JoystickMove(Vector2 joystickDirection)
     {
+        if (!haltMovement && GameManager.PlayerControl)
+        {
+            direction = joystickDirection;
+            Move();
+        }
+        else
+            StopMove();
+    }
+
+    private void Update()
+    {/*
         if (GameManager.PlayerControl)
         {
             if (!haltMovement)
             {
-                if (Input.GetMouseButton(0)) PlayerMove();
+
+                if (Input.GetMouseButton(0)) MouseMove();
                 else StopMove();
             }
             else StopMove();
         }
+        */
         
     }
 }

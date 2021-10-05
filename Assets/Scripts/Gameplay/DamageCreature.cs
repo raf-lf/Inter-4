@@ -4,38 +4,63 @@ using UnityEngine;
 
 public class DamageCreature : MonoBehaviour
 {
+    //Determinges what trigger type is used for effect; Trigger or Collision.
     public enum DamageTrigger { OnArea, OnImpact}
     public DamageTrigger damageTrigger;
 
     public int damage;
+    private int modifiedDamage;
 
     public List<Faction> factionsAffected = new List<Faction>();
 
-    private void OnTriggerStay2D(Collider2D collision)
+    protected virtual void OnTriggerStay2D(Collider2D collision)
     {
         if (damageTrigger == DamageTrigger.OnArea)
             DamageTriggered(collision.gameObject);
 
     }
 
-    private void OnCollisionStay2D (Collision2D collision)
+    protected virtual void OnCollisionStay2D (Collision2D collision)
     {
         if (damageTrigger == DamageTrigger.OnImpact)
             DamageTriggered(collision.gameObject);
 
     }
 
+    public void ApplyDamageModifiers()
+    {
+        modifiedDamage = damage;
+
+        if (GetComponentInParent<CreatureAtributes>())
+        {
+            modifiedDamage = (int)(modifiedDamage * GetComponentInParent<CreatureAtributes>().damageModifier);
+        }
+    }
+
     public void DamageTriggered(GameObject obj)
     {
+        //Is colliding object a creature?
         if (obj.GetComponentInChildren<CreatureAtributes>())
         {
             CreatureAtributes creature = obj.GetComponentInChildren<CreatureAtributes>();
 
+            //Is colliding creature's faction affectable?
             if (factionsAffected.Contains(creature.creatureFaction))
-                creature.Damage(damage);
+            {
+                //First, modify damage based on attacker's current damage modifier
+                ApplyDamageModifiers();
+
+                creature.Damage(modifiedDamage);
+                DamageInflicted();
+            }
         }
 
     }
 
+    //This is here for projectiles!
+    protected virtual void DamageInflicted()
+    {
+
+    }
 
 }

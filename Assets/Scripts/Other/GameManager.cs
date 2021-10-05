@@ -4,11 +4,17 @@ using UnityEngine;
 
 public static class GameManager
 {
+    //Stage
+    public static int currentPlayer;
+
+    //Stage
+    public static int currentGameStage;
+
     //Flags
     public static bool PlayerControl = true;
 
     //Resources
-    public static int scienceCollected;
+    public static int science;
     public static int scienceTotal;
 
     public static int antigen;
@@ -21,4 +27,5 @@ public static class GameManager
     public static Inventory scriptInventory;
     public static CanvasGameplay scriptCanvas;
     public static CameraControl scriptCamera;
+    public static HudMain scriptHud;
 }

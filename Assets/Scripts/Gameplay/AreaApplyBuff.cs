@@ -7,19 +7,19 @@ public class AreaApplyBuff : MonoBehaviour
     public BuffBase buff;
     public bool RemoveOnExit;
     public List<Faction> factionsAffected = new List<Faction>();
+    public int frameApplyIntervals = 15;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        AreaEffect(collision.gameObject, true);
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if(RemoveOnExit)
-            AreaEffect(collision.gameObject, false);
+        //It the remaining value from a division of total frames passed in the game by the interval is zero, tries to apply the effect
+        if (Time.frameCount % frameApplyIntervals == 0)
+        {
+            AreaEffect(collision.gameObject);
+        }
 
     }
 
-    public void AreaEffect(GameObject obj, bool on)
+    public void AreaEffect(GameObject obj)
     {
         if (obj.GetComponentInChildren<CreatureAtributes>())
         {
@@ -31,16 +31,7 @@ public class AreaApplyBuff : MonoBehaviour
 
                 if (scriptBuff != null)
                 {
-                    if (on)
-                    {
                         scriptBuff.BuffApply(buff);
-
-                    }
-                    else
-                    {
-                        scriptBuff.BuffRemove(buff);
-
-                    }
                 }
                 else
                     Debug.LogError("Creature has no buff manager!");

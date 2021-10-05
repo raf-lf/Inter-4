@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public abstract class BuffBase : MonoBehaviour
 {
     [Header("Duration")]
-    public bool doesNotDecay;
+    public bool hideDuration;
+    public bool infiniteDuration;
     public float duration;
     private float durationMax;
     protected bool active;
@@ -50,13 +51,14 @@ public abstract class BuffBase : MonoBehaviour
 
     private void BuffDecay()
     {
-        if (!doesNotDecay)
+        if (!infiniteDuration)
         {
             if (duration > 0)
             {
                 duration = Mathf.Clamp(duration -= Time.deltaTime, 0, durationMax);
 
-                durationFill.fillAmount = duration / durationMax;
+                if (!hideDuration)
+                    durationFill.fillAmount = duration / durationMax;
 
                 if (duration == 0)
                     RemoveBuff();

@@ -6,7 +6,7 @@ using UnityEngine.Scripting;
 
 public enum Faction
 {
-    Player, Virus, Neutral
+    Player, Virus, Neutral, Corpse
 }
 
 public class CreatureAtributes : MonoBehaviour
@@ -20,7 +20,6 @@ public class CreatureAtributes : MonoBehaviour
 
     public int iFrames;
     private int iFramesCurrent;
-
 
     [Header("Movement")]
 
@@ -51,6 +50,9 @@ public class CreatureAtributes : MonoBehaviour
     [Header("Components")]
     public Animator animator;
     protected EffectManager feedbackScript;
+    public int antigenValue;
+    public GameObject player1DeadVirus;
+
 
     private void Start()
     {
@@ -98,6 +100,17 @@ public class CreatureAtributes : MonoBehaviour
         dead = true;
         Invoke(nameof(DisableSelf), 5);
         GetComponent<Animator>().Play("death");
+
+        if (GameManager.currentPlayer == 0)
+        {
+            if(player1DeadVirus != null)
+            {
+                GameObject deadVirus = Instantiate(player1DeadVirus,transform.position, Quaternion.identity);
+                deadVirus.transform.parent = null;
+                deadVirus.GetComponentInChildren<VirusCorpse>().antigen = antigenValue;
+            }
+        }
+
     }
 
     private void DisableSelf()

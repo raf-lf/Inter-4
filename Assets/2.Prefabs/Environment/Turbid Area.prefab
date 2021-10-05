@@ -9658,6 +9658,7 @@ MonoBehaviour:
   buff: {fileID: 4430845579145036259, guid: 67cdd701b044c564cbf11a37e08bb204, type: 3}
   RemoveOnExit: 1
   factionsAffected: 00000000
+  frameApplyIntervals: 5
 --- !u!58 &7521347091107290618
 CircleCollider2D:
   m_ObjectHideFlags: 0

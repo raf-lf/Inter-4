@@ -18,10 +18,19 @@ public class CreatureBehavior : MonoBehaviour
     private int targetCheckFrames;
     private int targetCheckInterval = 30;
 
+    [Header("Attack")]
+    public float attackCooldown = 1;
+
+    [Header("Components")]
+    protected CreatureAtributes atributes;
+    protected CreatureMovement movement;
+
     private void Start()
     {
         GetComponent<CircleCollider2D>().radius = detectionRange;
-        
+        atributes = GetComponentInParent<CreatureAtributes>();
+        movement = GetComponentInParent<CreatureMovement>();
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -90,9 +99,36 @@ public class CreatureBehavior : MonoBehaviour
 
     }
 
+    public void RestartCollider()
+    {
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<Collider2D>().enabled = true;
+
+    }
+
+    public virtual void Attack()
+    {
+        busyTime += attackCooldown;
+        GetComponentInParent<Animator>().Play("attack");
+
+    }
+
+    private void BusyDecay()
+    {
+        busyTime = Mathf.Clamp(busyTime- Time.deltaTime, 0, Mathf.Infinity);
+    }
+
+    protected virtual void Act()
+    {
+
+    }
+
     protected virtual void Update()
     {
         SelectTarget();
+        BusyDecay();
+
+        if (!atributes.dead && busyTime == 0) Act();
     }
 
 }

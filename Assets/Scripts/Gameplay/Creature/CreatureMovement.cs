@@ -7,7 +7,7 @@ public class CreatureMovement : MonoBehaviour
     [Header("Movement")]
     [SerializeField]
     private float currentMoveSpeed;
-    private Vector2 direction;
+    public Vector2 direction;
     
     [Header("Components")]
     private Rigidbody2D rb;
@@ -29,18 +29,27 @@ public class CreatureMovement : MonoBehaviour
 
     public void MoveTowards(Vector2 moveTarget)
     {
+        direction = Calculations.GetDirectionToTarget(transform.position, moveTarget);
+        Move();
+
+    }
+
+    public void Move()
+    {
         moving = true;
         if (anim != null) anim.SetBool("moving", moving);
 
-        direction = Calculations.GetDirectionToTarget(transform.position, moveTarget);
         rb.velocity = (currentMoveSpeed) * direction;
 
         if (rb.velocity.x > 0) spriteBody.transform.rotation = Quaternion.Euler(new Vector3(spriteBody.transform.rotation.x, 0, spriteBody.transform.rotation.z));
         else if (rb.velocity.x < 0) spriteBody.transform.rotation = Quaternion.Euler(new Vector3(spriteBody.transform.rotation.x, 180, spriteBody.transform.rotation.z));
+
     }
+
     public void StopMove()
     {
         moving = false;
         if (anim != null) anim.SetBool("moving", moving);
     }
+
 }
