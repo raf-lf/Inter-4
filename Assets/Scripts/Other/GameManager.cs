@@ -15,10 +15,13 @@ public static class GameManager
 
     //Resources
     public static int science;
-    public static int scienceTotal;
+    public static int scienceStored;
 
     public static int antigen;
-    public static int antigenDelievered;
+    public static int antigenStored;
+
+    public static int[] component = new int[4];
+    public static int[] componentStored = new int[4];
 
     public static int[] itemConsumable = new int[5];
 
