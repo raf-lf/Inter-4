@@ -49,11 +49,11 @@ public class PrefabAreaGeneration : MonoBehaviour
     }
 
 
-    private void DefineAreaSpawn(int slotSize)
+    private void DefineAreaSpawn(int slotType)
     {
-        PrefabAreaSlot[] slotsFound = slotsContainers[slotSize].GetComponentsInChildren<PrefabAreaSlot>();
+        PrefabAreaSlot[] slotsFound = slotsContainers[slotType].GetComponentsInChildren<PrefabAreaSlot>();
 
-        switch (slotSize)
+        switch (slotType)
         {
             case 1:
                 break;

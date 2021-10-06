@@ -9,10 +9,11 @@ public class HudCreature : MonoBehaviour
     public GameObject hpBar;
     public Image hpBarFill;
     public float uiDuration;
+    protected CreatureAtributes creature;
 
-    public void UpdateValues()
+    public virtual void UpdateValues()
     {
-        CreatureAtributes creature = GetComponentInParent<CreatureAtributes>();
+        creature = GetComponentInParent<CreatureAtributes>();
         hpBarFill.fillAmount = (float)creature.hp / (float)creature.hpMax;
         ShowBar();
     }
