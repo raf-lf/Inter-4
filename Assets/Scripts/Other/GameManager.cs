@@ -8,7 +8,9 @@ public static class GameManager
     public static int currentPlayer;
 
     //Stage
-    public static int currentGameStage;
+    public static int currentGameStage = 2;
+    public static int dataCollected;
+    public static int[] dataNeededPerStage = {0,1,2,3,0};
 
     //Flags
     public static bool PlayerControl = true;

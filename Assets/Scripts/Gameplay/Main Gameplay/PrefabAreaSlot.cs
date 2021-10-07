@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class PrefabAreaSlot : MonoBehaviour
 {
-    public GameObject areaToSpawn = null;
+    public GameObject areaToSpawn;
+    public GameObject anomaly;
 
     private void OnEnable()
     {
-        PrefabAreaGeneration.PrefabAreasSpawn += SpawnPrefabArea;
+        PrefabAreaGeneration.PrefabGenerate += SpawnPrefabArea;
     }
 
     private void OnDisable()
     {
-        PrefabAreaGeneration.PrefabAreasSpawn -= SpawnPrefabArea;
+        PrefabAreaGeneration.PrefabGenerate -= SpawnPrefabArea;
 
     }
 
     public void SpawnPrefabArea()
     {
-        Instantiate(areaToSpawn, transform);
+        if (areaToSpawn != null) 
+            Instantiate(areaToSpawn, transform);
+        else
+            Instantiate(anomaly, transform);
     }
 }
