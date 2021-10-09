@@ -10071,7 +10071,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 1
+  moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -20186,8 +20186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6e24f40fd1964740950647701c016aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
-  hpMax: 100
+  hp: 250
+  hpMax: 250
   damageModifier: 1
   damageReceivedModifier: 1
   iFrames: 20
@@ -20213,7 +20213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentWeapon: 0
-  weaponRotationLerp: 1
+  weaponRotationLerp: 0.1
   weaponRestRotationLerp: 0.01
   weaponAxis: {fileID: 2396126742208248912}
   weapon:
@@ -20448,7 +20448,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 1
+  moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0

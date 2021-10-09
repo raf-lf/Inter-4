@@ -62,7 +62,7 @@ public class CreatureAtributes : MonoBehaviour
 
     public void Damage(int damage)
     {
-        if (iFramesCurrent <= 0)
+        if (iFramesCurrent <= 0 && !dead)
         {
             iFramesCurrent = iFrames;
 

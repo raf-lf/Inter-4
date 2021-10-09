@@ -23,7 +23,6 @@ public class IA_Toxic : CreatureBehavior
         }
 
     }
-
     public void SpawnToxin()
     {
         if (Time.time > toxinIntervalTime)

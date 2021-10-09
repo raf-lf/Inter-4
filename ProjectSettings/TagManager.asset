@@ -44,6 +44,9 @@ TagManager:
   - name: Environment
     uniqueID: 226405677
     locked: 0
+  - name: Walls
+    uniqueID: 604186417
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

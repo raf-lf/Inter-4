@@ -2040,7 +2040,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   overlayAnimator: {fileID: 4160586767598102316}
   fpsBox: {fileID: 5888273448676187931}
-  stageBox: {fileID: 0}
   fpsInterval: 15
 --- !u!223 &3265679632699735494
 Canvas:
@@ -5694,7 +5693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8da9bf76d202eb4db8e978980fe7287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpRecover: 0.33
+  hpRecover: 0.5
   epRecover: 0.5
   buffDamage: {fileID: 3202326024762221768, guid: 773e39547a18a444cb8efe1adf0ffef7, type: 3}
   buffDefense: {fileID: 3202326024762221768, guid: 0c42c3cc768f94344bfffeb4c421c681, type: 3}
