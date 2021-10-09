@@ -14842,6 +14842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMoveSpeed: 0
+  direction: {x: 0, y: 0}
   moving: 0
   spriteBody: {fileID: 7071334867099684658}
 --- !u!58 &5783315577784420502
@@ -14879,7 +14880,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!95 &7204348297831539280
 Animator:

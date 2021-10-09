@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2904068178463656804}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 180974534727423693}
   m_RootOrder: 0
@@ -71,8 +71,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: f09a49b8d4e214e4a91f6de9098e6b24, type: 3}
-  m_Color: {r: 0.33962262, g: 0.33962262, b: 0.33962262, a: 1}
+  m_Sprite: {fileID: 21300000, guid: c592b2e4f880bce4a8dbed8ce9106136, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -92,8 +92,9 @@ GameObject:
   m_Component:
   - component: {fileID: 180974534727423693}
   - component: {fileID: 540901924738048831}
+  - component: {fileID: 3172761612831471818}
   m_Layer: 0
-  m_Name: Particle Dense
+  m_Name: Wall Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,3 +131,44 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &3172761612831471818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6334782298098369937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f11101599ff38694595a2b9e283d7946, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteVariants:
+  - {fileID: 21300000, guid: 8591c46b1b1a9ed40b45e91ef4652340, type: 3}
+  - {fileID: 21300000, guid: b63d75c1eb9fd4049bfbaa477ca15c71, type: 3}
+  - {fileID: 21300000, guid: af6a790d8bdc6844785a27b9dcd3a42d, type: 3}
+  - {fileID: 21300000, guid: 7bd2a9ab6f0ef2046a8bc182b989382c, type: 3}
+  - {fileID: 21300000, guid: 1f278aa1088861843b784b6e1c546684, type: 3}
+  - {fileID: 21300000, guid: c592b2e4f880bce4a8dbed8ce9106136, type: 3}
+  - {fileID: 21300000, guid: e20a572bd6dfccb4ca224da09c64c81e, type: 3}
+  - {fileID: 21300000, guid: 7bafdf8dd199e00479df4806c502bc7e, type: 3}
+  - {fileID: 21300000, guid: f8a3dd85d2433f04dbfe2adaa49e0f41, type: 3}
+  - {fileID: 21300000, guid: dd9745bfaffb57344927c0133b1dc725, type: 3}
+  - {fileID: 21300000, guid: a18cb769def5e394aadbefb1919db899, type: 3}
+  - {fileID: 21300000, guid: 1e525955e052e2f428e81fbdb72b53f7, type: 3}
+  - {fileID: 21300000, guid: b1b3db840d406c448aa25d9c1ed0847b, type: 3}
+  - {fileID: 21300000, guid: 162c48ba704249f44953073178c21e52, type: 3}
+  - {fileID: 21300000, guid: c6a98193c1606584fb45be6c34bb1bb4, type: 3}
+  - {fileID: 21300000, guid: a97095750efbec84395edf8de26aec74, type: 3}
+  - {fileID: 21300000, guid: eba22eb8d650cc846a7ee450315cf343, type: 3}
+  - {fileID: 21300000, guid: b588a1af7d73ced469c80f89620d0577, type: 3}
+  - {fileID: 21300000, guid: 1f89fd0c19abe964eb84495ba90a02a2, type: 3}
+  - {fileID: 21300000, guid: 6f2cc63f3a80a4346b3c78b7f266724d, type: 3}
+  - {fileID: 21300000, guid: 91653c0c89df7a748b9e3e0568c7e4ee, type: 3}
+  - {fileID: 21300000, guid: 9f8043f1d398dcf448714289bda8a56d, type: 3}
+  - {fileID: 21300000, guid: 402afcf8d7e7684428ec2236ac7e52d0, type: 3}
+  - {fileID: 21300000, guid: d863564a307761544befe71ff932bacd, type: 3}
+  - {fileID: 21300000, guid: ad724a29ff820e04bbd0fac1a708c589, type: 3}
+  angleVariance: {x: 0, y: 360}
+  sizeVariance: {x: 0.8, y: 1.2}
+  positionVariance: {x: -0.1, y: 0.1}

@@ -13,14 +13,20 @@ public class RandomObjectSpawner : MonoBehaviour
     private float[] objectDrawWeight;
 
 
-    private void Start()
+    protected virtual void Start()
+    {
+        Activate();
+
+    }
+
+    public virtual void Activate()
     {
         objectDrawWeight = new float[objectWeight.Length];
 
         for (int i = timesToRun; i > 0; i--)
             Spawn(Draw());
 
-        Destroy(gameObject);
+        Destroy(gameObject, 5);
 
     }
 
@@ -65,7 +71,7 @@ public class RandomObjectSpawner : MonoBehaviour
             if (objectTable[i] != null)
             {
                 GameObject spawnedObject = Instantiate(objectTable[objectId]);
-                spawnedObject.transform.position = transform.position;
+                spawnedObject.transform.position = transform.position + new Vector3(Random.Range(-.5f,.5f), Random.Range(-.5f, .5f),0);
             }
         }
 
