@@ -54,8 +54,8 @@ MonoBehaviour:
   hideDuration: 1
   infiniteDuration: 0
   duration: 0.5
-  buffId: 3
-  buffVfxId: 3
+  buffId: 20
+  buffVfx: {fileID: 569082485313096292, guid: cd24dbe47b4551242bdf647be79a7083, type: 3}
   durationFill: {fileID: 6165871261067654974}
   damage: 0
   damageReceived: 0

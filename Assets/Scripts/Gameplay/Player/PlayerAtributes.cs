@@ -8,11 +8,19 @@ public class PlayerAtributes : CreatureAtributes
     public int energy;
     public int energyMax;
 
+    public delegate void DeathDelegate();
+    public static DeathDelegate PlayerDeath;
+
     private void Awake()
     {
         GameManager.scriptPlayer = this;
     }
+    protected override void Start()
+    {
+        base.Start();
+        GameManager.PlayerControl = true;
 
+    }
     public void EnergyChange(int value)
     {
         if (value != 0)
@@ -26,4 +34,15 @@ public class PlayerAtributes : CreatureAtributes
             if (hp == 0) Death();
         }
     }
+
+    public override void Death()
+    {
+        dead = true;
+        GameManager.PlayerControl = false;
+        animator.Play("death");
+
+        PlayerDeath();
+    }
+
+
 }

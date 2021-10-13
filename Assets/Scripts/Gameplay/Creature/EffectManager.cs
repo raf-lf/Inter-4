@@ -10,12 +10,15 @@ public class EffectManager : MonoBehaviour
     private Animator anim;
 
     [Header("Buff VFX")]
-    public GameObject[] buffVfx = new GameObject[0];
+    public Transform buffParent;
+    public Dictionary<int, GameObject> buffVfxDictionary = new Dictionary<int, GameObject>();
+    //public GameObject[] buffVfx = new GameObject[0];
 
     private void Start()
     {
         anim = GetComponentInParent<CreatureAtributes>().animator;
     }
+
     public void PlayFeedback(int type)
     {
         if (!feedbackVfx[type].gameObject.activeInHierarchy) feedbackVfx[type].gameObject.SetActive(true);
@@ -26,12 +29,40 @@ public class EffectManager : MonoBehaviour
 
     }
 
-    public void VfxBuff(int buffId, bool on)
+    public void AddBuff(int buffId, GameObject buffVfxObj)
     {
-        if (!buffVfx[buffId].gameObject.activeInHierarchy) buffVfx[buffId].gameObject.SetActive(true);
+        if (buffVfxDictionary.ContainsKey(buffId))
+        {
+            //buffVfxDictionary[buffId].SetActive(true);
 
-        ParticleSystem[] particles = buffVfx[buffId].GetComponentsInChildren<ParticleSystem>();
-        
+            ToggleBuffParticles(buffId, true);
+
+
+        }
+        else
+        {
+            GameObject newBuff = null;
+            newBuff = Instantiate(buffVfxObj, buffParent);
+
+            buffVfxDictionary.Add(buffId, newBuff);
+        }
+
+    }
+
+    public void RemoveBuff(int buffId)
+    {
+        if (buffVfxDictionary.ContainsKey(buffId))
+        {
+            //buffVfxDictionary[buffId].SetActive(false);
+            ToggleBuffParticles(buffId, false);
+        }
+
+    }
+
+    private void ToggleBuffParticles(int buffId, bool on)
+    {
+        ParticleSystem[] particles = buffVfxDictionary[buffId].GetComponentsInChildren<ParticleSystem>();
+
         if (on)
         {
             foreach (ParticleSystem particle in particles)
@@ -41,7 +72,6 @@ public class EffectManager : MonoBehaviour
 
             }
 
-            buffVfx[buffId].GetComponent<ParticleSystem>().Play();
         }
         else
         {

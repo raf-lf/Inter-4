@@ -15,7 +15,8 @@ public abstract class BuffBase : MonoBehaviour
 
     [Header("Components")]
     public int buffId;
-    public int buffVfxId;
+   // public int buffVfxId;
+    public GameObject buffVfx;
     public Image durationFill;
     private EffectManager scriptVfx;
 
@@ -36,7 +37,7 @@ public abstract class BuffBase : MonoBehaviour
     {
         active = true;
         duration = durationMax;
-        scriptVfx.VfxBuff(buffVfxId, true);
+        scriptVfx.AddBuff(buffId, buffVfx);
         gameObject.SetActive(true);
 
     }
@@ -44,7 +45,7 @@ public abstract class BuffBase : MonoBehaviour
     public virtual void RemoveBuff()
     {
         active = false;
-        scriptVfx.VfxBuff(buffVfxId, false);
+        scriptVfx.RemoveBuff(buffId);
         gameObject.SetActive(false);
 
     }

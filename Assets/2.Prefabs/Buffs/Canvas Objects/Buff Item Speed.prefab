@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2422158018099752402}
   - component: {fileID: 8471149865502737575}
   m_Layer: 0
-  m_Name: Buff Item Damage
+  m_Name: Buff Item Speed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,14 +51,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d2d73fad455ea4bbf27fd7ffbcb8de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doesNotDecay: 0
-  duration: 10
-  buffId: 0
-  buffVfxId: 0
+  hideDuration: 0
+  infiniteDuration: 0
+  duration: 30
+  buffId: 2
+  buffVfx: {fileID: 4767674516168110363, guid: 5dfa2bb8dc772fd4aabcfd23e9359389, type: 3}
   durationFill: {fileID: 6165871261067654974}
-  damage: 0.5
+  damage: 0
   damageReceived: 0
-  moveSpeed: 0
+  moveSpeed: 0.5
 --- !u!222 &2422158018099752402
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -155,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.48584908, b: 0.48584908, a: 1}
+  m_Color: {r: 0.48627448, g: 1, b: 0.5229792, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

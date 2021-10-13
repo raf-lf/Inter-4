@@ -54,9 +54,10 @@ public class CreatureAtributes : MonoBehaviour
     public GameObject player1DeadVirus;
 
 
-    private void Start()
+    protected virtual void Start()
     {
         feedbackScript = GetComponentInChildren<EffectManager>();
+        if (animator == null) animator = GetComponent<Animator>();
 
     }
 
@@ -95,11 +96,11 @@ public class CreatureAtributes : MonoBehaviour
         }
     }
 
-    public void Death()
+    public virtual void Death()
     {
         dead = true;
         Invoke(nameof(DisableSelf), 5);
-        GetComponent<Animator>().Play("death");
+        animator.Play("death");
 
         if (GameManager.currentPlayer == 0)
         {

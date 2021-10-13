@@ -18,6 +18,12 @@ public class PlayerActions_Player1 : PlayerActions
     //public int inactivatorDamage = 5;
 
 
+    protected override void PlayerDead()
+    {
+        weaponAxis.SetActive(false);
+        base.PlayerDead();
+
+    }
 
     protected override void Attack()
     {

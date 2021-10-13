@@ -51,10 +51,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d2d73fad455ea4bbf27fd7ffbcb8de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doesNotDecay: 0
+  hideDuration: 0
+  infiniteDuration: 0
   duration: 20
   buffId: 1
-  buffVfxId: 1
+  buffVfx: {fileID: 1574661059463997304, guid: 2b1c86ee066fc2846af8593b73bd2475, type: 3}
   durationFill: {fileID: 6165871261067654974}
   damage: 0
   damageReceived: -0.5

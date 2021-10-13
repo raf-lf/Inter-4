@@ -5,12 +5,18 @@ using UnityEngine;
 
 public class BuffManager : MonoBehaviour
 {
+    [HideInInspector]
+    public List<int> ignoredBuffs = new List<int>();
+
     public virtual void BuffApply(BuffBase buff)
     {
-        if (GetExistingBuff(buff.buffId))
-            GetExistingBuff(buff.buffId).ApplyBuff();
-        else
-            Instantiate(buff, gameObject.transform);
+        if (!ignoredBuffs.Contains(buff.buffId))
+        {
+            if (GetExistingBuff(buff.buffId))
+                GetExistingBuff(buff.buffId).ApplyBuff();
+            else
+                Instantiate(buff, gameObject.transform);
+        }
 
     }
     public virtual void BuffRemove(BuffBase buff)

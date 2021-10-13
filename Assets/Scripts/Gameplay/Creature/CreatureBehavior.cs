@@ -25,7 +25,7 @@ public class CreatureBehavior : MonoBehaviour
     protected CreatureAtributes atributes;
     protected CreatureMovement movement;
 
-    private void Start()
+    protected virtual void Start()
     {
         GetComponent<CircleCollider2D>().radius = detectionRange;
         atributes = GetComponentInParent<CreatureAtributes>();
@@ -40,7 +40,7 @@ public class CreatureBehavior : MonoBehaviour
             CreatureAtributes creatureInRange = collision.gameObject.GetComponent<CreatureAtributes>();
             
             //Is not on the list AND is creature of detectable faction?
-            if (possibleTargets.Contains(creatureInRange) == false && factionsDetected.Contains(creatureInRange.creatureFaction))
+            if (possibleTargets.Contains(creatureInRange) == false && factionsDetected.Contains(creatureInRange.creatureFaction) && !creatureInRange.dead)
                 possibleTargets.Add(creatureInRange);
 
         }

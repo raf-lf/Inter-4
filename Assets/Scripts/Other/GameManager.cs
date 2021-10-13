@@ -33,4 +33,5 @@ public static class GameManager
     public static CanvasGameplay scriptCanvas;
     public static CameraControl scriptCamera;
     public static HudMain scriptHud;
+    public static ArenaManager scriptArena;
 }
