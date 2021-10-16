@@ -4975,6 +4975,7 @@ GameObject:
   - component: {fileID: 4249872821784534768}
   - component: {fileID: 882631550126067854}
   - component: {fileID: 3240392396619159465}
+  - component: {fileID: 3890154130910008536}
   - component: {fileID: 3344352319320499178}
   - component: {fileID: 7700517296464786921}
   - component: {fileID: 3691834887958406653}
@@ -5039,6 +5040,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   antigen: 0
   vfxCollect: {fileID: 1548114435577118574}
+--- !u!114 &3890154130910008536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2705730345146004973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d03e4132151329488791e7e0147d1e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!58 &3344352319320499178
 CircleCollider2D:
   m_ObjectHideFlags: 0

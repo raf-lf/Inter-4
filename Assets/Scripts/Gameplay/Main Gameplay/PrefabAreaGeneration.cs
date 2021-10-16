@@ -119,7 +119,7 @@ public class PrefabAreaGeneration : MonoBehaviour
         }
 
         //If there's remaining data to be collected, spawn a single boss area in a random slot of medium size. This can override a slot that already has a defined area!
-        if (GameManager.dataCollected < GameManager.dataNeededPerStage[GameManager.currentGameStage])
+        if (GameManager.dataStored < GameManager.dataNeededPerStage[GameManager.currentGameStage])
         {
 
             List<PrefabAreaSlot> slotsFound = new List<PrefabAreaSlot>();

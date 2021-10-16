@@ -4987,7 +4987,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.75
+      scalar: 1
       minScalar: 1.75
       maxCurve:
         serializedVersion: 2
@@ -9624,7 +9624,7 @@ GameObject:
   m_Layer: 0
   m_Name: Turbid Area
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

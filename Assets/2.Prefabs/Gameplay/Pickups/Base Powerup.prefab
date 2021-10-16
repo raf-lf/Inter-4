@@ -92,6 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5617553147165402177}
   - component: {fileID: 5004462576225547492}
+  - component: {fileID: -8001788744165258216}
   - component: {fileID: 2823972480600843096}
   - component: {fileID: -5004111914736744632}
   - component: {fileID: 8166536095680087367}
@@ -133,6 +134,18 @@ MonoBehaviour:
   pickupVfx: {fileID: 0}
   buffType: 0
   ammount: 1
+--- !u!114 &-8001788744165258216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9071182725403424952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d03e4132151329488791e7e0147d1e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!58 &2823972480600843096
 CircleCollider2D:
   m_ObjectHideFlags: 0

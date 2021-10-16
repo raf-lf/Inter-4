@@ -71,7 +71,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 226405677
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: -1
   m_RenderMode: 0
   m_SortMode: 0
@@ -4886,7 +4886,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 226405677
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0
@@ -9631,7 +9631,7 @@ GameObject:
   - component: {fileID: 7985826243221791961}
   - component: {fileID: 2445454979565647838}
   - component: {fileID: 6204045638587820810}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Virus Toxic Fog
   m_TagString: Untagged
   m_Icon: {fileID: 0}

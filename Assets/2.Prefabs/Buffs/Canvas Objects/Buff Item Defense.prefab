@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideDuration: 0
   infiniteDuration: 0
-  duration: 20
+  duration: 45
   buffId: 1
   buffVfx: {fileID: 1574661059463997304, guid: 2b1c86ee066fc2846af8593b73bd2475, type: 3}
   durationFill: {fileID: 6165871261067654974}

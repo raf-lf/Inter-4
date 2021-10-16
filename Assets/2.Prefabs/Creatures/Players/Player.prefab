@@ -20188,11 +20188,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 250
   hpMax: 250
-  damageModifier: 1
-  damageReceivedModifier: 1
+  baseDmgMod: 1
+  boostDmgMod: 0
+  baseDmgRvdMod: 1
+  boostDmgRvdMod: 0
+  baseSpdMod: 1
+  boostSpdMod: 0
+  moveSpeed: 7
   iFrames: 20
-  _moveSpeedModifier: 1
-  MoveSpeed: 7
+  difficultyBoostable: 0
   dead: 0
   creatureFaction: 0
   animator: {fileID: 7577753685853851779}
@@ -20213,7 +20217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentWeapon: 0
-  weaponRotationLerp: 0.1
+  weaponRotationLerp: 0.5
   weaponRestRotationLerp: 0.01
   weaponAxis: {fileID: 2396126742208248912}
   weapon:

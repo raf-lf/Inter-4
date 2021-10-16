@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6348b2498db95e4e90704fd6f10275d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ignoredBuffs: 
 --- !u!222 &162328088394424250
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -98,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6348b2498db95e4e90704fd6f10275d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ignoredBuffs: 
 --- !u!114 &5810062503989379302
 MonoBehaviour:
   m_ObjectHideFlags: 0
