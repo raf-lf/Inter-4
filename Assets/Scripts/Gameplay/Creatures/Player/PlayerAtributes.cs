@@ -21,11 +21,26 @@ public class PlayerAtributes : CreatureAtributes
         GameManager.PlayerControl = true;
 
     }
+    public bool SpendEnergy(int value)
+    {
+        if (value <= energy)
+        {
+            EnergyChange(-value);
+            return true;
+        }
+        else
+            return false;
+
+    }
+
     public void EnergyChange(int value)
     {
         if (value != 0)
         {
             energy = Mathf.Clamp(energy + value, 0, energyMax);
+
+            if (hud != null)
+                hud.UpdateValues();
 
             //Play feedback vfx animation 0 (Damage)
             if (value > 0 && feedbackScript != null)

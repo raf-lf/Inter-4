@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ArenaManager : MonoBehaviour
 {
-    public float timeBeforeReload = 3;
+    public float timeBeforeReload;
 
     [Header("Stats")]
     public static int[] componentsInInventory = new int[4];

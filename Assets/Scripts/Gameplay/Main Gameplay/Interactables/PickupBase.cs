@@ -27,7 +27,7 @@ public class PickupBase : MonoBehaviour
             GameObject vfx = Instantiate(pickupVfx);
             vfx.transform.position = transform.position;
         }
-        Destroy(gameObject);
+        GetComponent<Animator>().SetTrigger("pick");
 
     }
 }

@@ -17,7 +17,8 @@ public class PlaySfx : MonoBehaviour
 
     public void PlayInspectorSfx()
     {
-        GameManager.scriptAudio.PlaySfx(clips[Random.Range(0,clips.Length)], volume, pitchVariance);
+        if (clips != null)
+            GameManager.scriptAudio.PlaySfx(clips[Random.Range(0,clips.Length)], volume, pitchVariance);
 
     }
 

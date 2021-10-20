@@ -11,12 +11,17 @@ public class PlayerActions_Player1 : PlayerActions
     public float weaponRotationLerp = .03f;
     public float weaponRestRotationLerp = .3f;
     public GameObject weaponAxis;
+    public CreatureBehavior behavior;
     public GameObject[] weapon = new GameObject[2];
     public Animator[] weaponAnim = new Animator[2];
 
     //[Header ("Inactivator")]
     //public int inactivatorDamage = 5;
 
+    private void Start()
+    {
+        behavior = GetComponentInChildren<CreatureBehavior>();
+    }
 
     protected override void PlayerDead()
     {
@@ -85,19 +90,19 @@ public class PlayerActions_Player1 : PlayerActions
         }
 
         //Reset targeting depending on weapon
-        GetComponentInChildren<CreatureBehavior>().currentTarget = null;
-        GetComponentInChildren<CreatureBehavior>().RestartCollider();
-        GetComponentInChildren<CreatureBehavior>().factionsDetected.Clear();
+        behavior.currentTarget = null;
+        behavior.RestartCollider();
+        behavior.factionsDetected.Clear();
 
         switch (currentWeapon)
         {
             //Inactivator
             case 0:
-                GetComponentInChildren<CreatureBehavior>().factionsDetected.Add(Faction.Virus);
+                behavior.factionsDetected.Add(Faction.Virus);
                 break;
             //Sweeper
             case 1:
-                GetComponentInChildren<CreatureBehavior>().factionsDetected.Add(Faction.Corpse);
+                behavior.factionsDetected.Add(Faction.Corpse);
                 break;
 
         }
@@ -105,7 +110,7 @@ public class PlayerActions_Player1 : PlayerActions
     }
     private void AutoAttack()
     {
-        if (GetComponentInChildren<CreatureBehavior>().currentTarget != null)
+        if (behavior.currentTarget != null)
         {
             AutoRotateWeapon();
             ToggleAttackEffect(true);

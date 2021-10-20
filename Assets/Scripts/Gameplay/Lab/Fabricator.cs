@@ -6,52 +6,144 @@ using TMPro;
 
 public class Fabricator : MonoBehaviour
 {
+    [Header("Buttons")]
+    public Button antigenButton;
     public Button[] componentButton = new Button[5];
-    public TextMeshProUGUI[] componentQty = new TextMeshProUGUI[4];
 
-    public GameObject targetMixBar;
-    private Image[] targetMixComponentBar = new Image[6];
-    public GameObject currentMixBar;
-    private Image[] currentMixComponentBar = new Image[6];
+    [Header("Counters")]
+    public TextMeshProUGUI antigenReserveQty;
+    public TextMeshProUGUI[] componentReserveQty = new TextMeshProUGUI[4];
+    public TextMeshProUGUI antigenNeededQty;
+    public TextMeshProUGUI[] componentAddedQty = new TextMeshProUGUI[6];
 
-    public int[] mixTarget = new int[6];
-    public int[] mixCurrent = new int[6];
+    [Header("Bars")]
+    public Image antigenBarFill;
+    public RectTransform targetMixTotal;
+    public RectTransform addedMixTotal;
+    public Image[] targetMixComponentBar = new Image[6];
+    public Image[] currentMixComponentBar = new Image[6];
+
+    [Header("Resources")]
+    public int[] antigenTarget = {100, 500, 1500, 3000, 3000};
+    public int currentAntigenTarget;
+    public int antigenAdded;
+    public int antigenReserve;
+    public int[] componentTarget = new int[6];
+    public int[] componentAdded = new int[6];
+    public int[] componentReserve = new int[6];
+
+    [Header("Vaccine Efficiency")]
+    public float wrongComponentPennalty;
 
     private void Start()
     {
-        targetMixComponentBar = targetMixBar.GetComponentsInChildren<Image>();
-        currentMixComponentBar = currentMixBar.GetComponentsInChildren<Image>();
+        UpdateValues();
+        BeginBatch();
+    }
+
+    public void BeginBatch()
+    {
+        currentAntigenTarget = antigenTarget[GameManager.currentGameStage];
+
+        antigenReserve = LabManager.antigenStored;
+
+        antigenAdded = 0;
+        for (int i = 0; i < componentAdded.Length; i++)
+        {
+            componentAdded[i] = 0;
+        }
+
+        for (int i = 0; i <=3; i++)
+        {
+            componentReserve[i] = LabManager.componentStored[i];
+        }
+
+        UpdateValues();
+
+    }
+
+    public void EndBatch()
+    {
+
+    }
+
+    public void AddAntigen(int value)
+    {
+        antigenReserve -= value;
+        antigenAdded += value;
         UpdateValues();
     }
 
     public void UseComponent(int componentId)
     {
-        GameManager.componentStored[componentId]--;
+        if (componentId <=3) 
+            componentReserve[componentId]--;
+        
+        componentAdded[componentId]++;
+
         UpdateValues();
     }
 
-    private void UpdateValues()
+    public void CalculateBarSizes()
     {
-        //Updates components qty on buttons
-        for (int i = 0; i < componentQty.Length; i++)
+        float barSize = 600;
+        float targetMixSum = 0;
+
+        for (int i = 0; i < componentTarget.Length; i++)
         {
-
-            if (i != 4)
-            {
-                componentQty[i].text = GameManager.componentStored[i].ToString();
-
-                if (GameManager.componentStored[i] > 0)
-                    componentButton[i].interactable = true;
-                else
-                    componentButton[i].interactable = false;
-            }
+            targetMixSum += componentTarget[i];
         }
 
-        for (int i = 0; i < targetMixComponentBar.Length;i++)
+        float sizeFactor = barSize / targetMixSum;
+
+        for (int i = 0; i < componentTarget.Length; i++)
         {
-            targetMixComponentBar[i].GetComponentInChildren<TextMeshProUGUI>().text = mixTarget[i].ToString();
-            currentMixComponentBar[i].GetComponentInChildren<TextMeshProUGUI>().text = mixCurrent[i].ToString();
+            targetMixComponentBar[i].rectTransform.sizeDelta = new Vector2(targetMixComponentBar[i].rectTransform.sizeDelta.x * sizeFactor, targetMixComponentBar[i].rectTransform.sizeDelta.y);
         }
+
+
+    }
+    public void UpdateValues()
+    {
+        int antigenNeeded = Mathf.Clamp(currentAntigenTarget - antigenAdded, 0, currentAntigenTarget);
+
+        if (antigenNeeded == 0)
+            antigenNeededQty.text = "OK";
+        else
+            antigenNeededQty.text = antigenNeeded.ToString();
+
+        antigenReserveQty.text = antigenReserve.ToString();
+
+        if (antigenReserve == 0 || antigenAdded == currentAntigenTarget)
+            antigenButton.interactable = false;
+        else if (antigenReserve > 0)
+            antigenButton.interactable = true;
+        else
+            antigenButton.interactable = false;
+
+        for (int i = 0; i < componentReserveQty.Length; i++)
+        {
+            componentReserveQty[i].text = componentReserve[i].ToString();
+
+            if (componentReserve[i] > 0)
+                componentButton[i].interactable = true;
+            else
+                componentButton[i].interactable = false;
+        }
+        int totalComponentSum = 0;
+
+        for (int i = 0; i < componentAdded.Length; i++)
+        {
+            componentAddedQty[i].text = componentAdded[i].ToString();
+            targetMixComponentBar[i].GetComponentInChildren<TextMeshProUGUI>().text = componentTarget[i].ToString();
+            totalComponentSum += componentAdded[i];
+
+        }
+        componentAdded[5] = totalComponentSum / 5;
+
+        antigenBarFill.fillAmount = (float)(antigenAdded / (float)currentAntigenTarget);
+
+       // CalculateBarSizes();
 
     }
 }

@@ -14,6 +14,7 @@ public class LabManager : MonoBehaviour
     public static bool expeditionData;
 
     [Header("Stats")]
+    public static int vaccineStored;
     public static int scienceStored;
     public static int antigenStored;
     public static int antigenStoredMax = 1000;

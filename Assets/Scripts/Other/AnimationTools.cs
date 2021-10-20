@@ -8,5 +8,9 @@ public class AnimationTools: MonoBehaviour
     {
         GameManager.scriptAudio.PlaySfx(clip, 1, Vector2.one);
     }
+    public void DestroySelf(float delay)
+    {
+        Destroy(gameObject, delay);
+    }
 
 }

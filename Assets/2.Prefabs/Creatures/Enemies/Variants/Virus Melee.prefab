@@ -5367,7 +5367,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 21c19756a6ffe6147b224e0b87521ed9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 346d2aa4fdf2cc44bb5329d700349e5e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5983,7 +5983,7 @@ GameObject:
   - component: {fileID: 2903030870902648167}
   - component: {fileID: 5149258136762719242}
   - component: {fileID: 4922007292631544780}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Melee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6114,6 +6114,10 @@ PrefabInstance:
     - target: {fileID: 942474180180676888, guid: bbc1ac2f14dd48e4fb1325eefa36cec2, type: 3}
       propertyPath: m_Name
       value: Combat Feedback
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959368097490779785, guid: bbc1ac2f14dd48e4fb1325eefa36cec2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7722536929750255727, guid: bbc1ac2f14dd48e4fb1325eefa36cec2, type: 3}
       propertyPath: m_RootOrder

@@ -72,6 +72,7 @@ public class CreatureAtributes : MonoBehaviour
 
     [Header("Components")]
     public Animator animator;
+    protected HudCreature hud;
     protected EffectManager feedbackScript;
     public int antigenValue;
     public GameObject player1DeadVirus;
@@ -97,6 +98,7 @@ public class CreatureAtributes : MonoBehaviour
 
     protected virtual void Start()
     {
+        hud = GetComponentInChildren<HudCreature>();
         feedbackScript = GetComponentInChildren<EffectManager>();
         if (animator == null) animator = GetComponent<Animator>();
 
@@ -128,7 +130,8 @@ public class CreatureAtributes : MonoBehaviour
         {
             hp = Mathf.Clamp(hp + value, 0, hpMax);
 
-            if (GetComponentInChildren<HudCreature>()) GetComponentInChildren<HudCreature>().UpdateValues();
+            if (hud != null) 
+                hud.UpdateValues();
 
             //Play feedback vfx animation 0 (Damage)
             if (feedbackScript != null)
@@ -165,7 +168,7 @@ public class CreatureAtributes : MonoBehaviour
 
     private void SpawnDeadVirus()
     {
-        if (GameManager.currentPlayer == 0)
+        if (GameManager.CurrentPlayerClass == 0)
         {
             if (player1DeadVirus != null)
             {

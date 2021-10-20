@@ -5,12 +5,15 @@ using UnityEngine;
 public static class GameManager
 {
     //Stage
-    public static int currentPlayer;
+    public static int CurrentPlayerClass;
 
     //Stage
-    public static int currentGameStage = 2;
+    public static int currentGameStage = 0;
     public static int dataStored;
     public static int[] dataNeededPerStage = {0,1,2,3,0};
+
+    //Player
+    public static List<GameObject> purchasedUpgrades = new List<GameObject>();
 
     //Flags
     public static bool PlayerControl = true;

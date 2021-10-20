@@ -27,20 +27,22 @@ public class PrefabAreaSlot : MonoBehaviour
         else
             spawnedArea = Instantiate(anomaly, transform);
 
-        //FixObjectsRotation(spawnedArea);
+       // RotatePrefab(spawnedArea);
     }
 
-    private void FixObjectsRotation(GameObject spawnedArea)
+    private void RotatePrefab(GameObject spawnedArea)
     {
         float randomRotation = Random.Range(0f, 360f);
         spawnedArea.transform.rotation = Quaternion.Euler(0, 0, randomRotation);
 
-        MarkForRotationFix[] rotScript = GetComponentsInChildren<MarkForRotationFix>();
+        MarkForRotationFix[] unrotatableObjects = GetComponentsInChildren<MarkForRotationFix>();
 
-        foreach (MarkForRotationFix rS in rotScript)
+        foreach (MarkForRotationFix uO in unrotatableObjects)
         {
-            rS.transform.rotation = Quaternion.Euler(0, 0, rS.transform.rotation.z - randomRotation);
+            uO.transform.rotation = Quaternion.Euler(0, 0, -randomRotation);
         }
+
+
 
     }
 }
