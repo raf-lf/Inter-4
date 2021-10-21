@@ -1065,12 +1065,12 @@ MonoBehaviour:
   boostDmgRvdMod: 0
   baseSpdMod: 1
   boostSpdMod: 0
-  moveSpeed: -2
+  moveSpeed: 2
   iFrames: 20
   difficultyBoostable: 1
   dead: 0
   creatureFaction: 1
-  animator: {fileID: 0}
+  anim: {fileID: 0}
   antigenValue: 10
   player1DeadVirus: {fileID: 2705730345146004973, guid: df2a6a1c96f363e49bb7f7dfdc209b9e, type: 3}
 --- !u!114 &5231589750961742183
@@ -1148,7 +1148,7 @@ Animator:
   m_GameObject: {fileID: 7308243028990130087}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d3b7c84726d4dd74fa02c4ca5e7df6ff, type: 2}
+  m_Controller: {fileID: 9100000, guid: 59f0137b4b753b14a9a018c8cc78d4ce, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -10,7 +10,7 @@ public class Clickable_Lab : Clickable
     public override void Click()
     {
         MenuOpenClose(true);
-        Debug.Log("Open");
+       // Debug.Log("Open");
         base.Click();
     }
 
@@ -30,7 +30,7 @@ public class Clickable_Lab : Clickable
     {
         base.PlayerNearby(on);
         MenuOpenClose(false);
-        Debug.Log("Close");
+      //  Debug.Log("Close");
     }
 
 }

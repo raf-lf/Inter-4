@@ -12,14 +12,18 @@ public class IA_Ranged : CreatureBehavior
     {
         if(currentTarget != null)
         {
+            anim.SetBool("chase", true);
+
             if (Vector2.Distance(transform.position, currentTarget.transform.position) < fleeRange)
-                GetComponentInParent<CreatureMovement>().MoveTowards(currentTarget.transform.position);
+                GetComponentInParent<CreatureMovement>().MoveAway(currentTarget.transform.position);
             else
             {
                 Attack();
             }
         
         }
+        else
+            anim.SetBool("chase", false);
 
     }
 

@@ -71,7 +71,8 @@ public class CreatureAtributes : MonoBehaviour
     public Faction creatureFaction;
 
     [Header("Components")]
-    public Animator animator;
+    [HideInInspector]
+    public Animator anim;
     protected HudCreature hud;
     protected EffectManager feedbackScript;
     public int antigenValue;
@@ -100,7 +101,7 @@ public class CreatureAtributes : MonoBehaviour
     {
         hud = GetComponentInChildren<HudCreature>();
         feedbackScript = GetComponentInChildren<EffectManager>();
-        if (animator == null) animator = GetComponent<Animator>();
+        if (anim == null) anim = GetComponent<Animator>();
 
         if (difficultyBoostable)
         {
@@ -128,29 +129,42 @@ public class CreatureAtributes : MonoBehaviour
     {
         if (value != 0)
         {
-            hp = Mathf.Clamp(hp + value, 0, hpMax);
-
-            if (hud != null) 
-                hud.UpdateValues();
-
-            //Play feedback vfx animation 0 (Damage)
-            if (feedbackScript != null)
+            if (value < 0)
             {
-                if (value < 0)
+                if (hp + value <= 0)
+                {
+                    Death();
+                }
+                else
+                {
+                    if (anim != null)
+                        anim.SetTrigger("damage");
+                }
+
+                if (feedbackScript != null)
                     feedbackScript.PlayFeedback(0);
-                else if (value > 0)
+            }
+            else if (value > 0)
+            {
+                if (feedbackScript != null)
                     feedbackScript.PlayFeedback(1);
             }
 
-            if (hp == 0) Death();
+
+            hp = Mathf.Clamp(hp + value, 0, hpMax);
+
+            if (hud != null)
+                hud.UpdateValues();
+
         }
     }
 
     public virtual void Death()
     {
+        if (anim != null)
+            anim.SetTrigger("death");
         dead = true;
         Invoke(nameof(DisableSelf), 5);
-        animator.Play("death");
 
         if (creatureFaction == Faction.Virus)
             ArenaManager.enemiesDefeated++;

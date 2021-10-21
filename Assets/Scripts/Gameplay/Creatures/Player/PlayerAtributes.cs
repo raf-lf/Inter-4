@@ -54,7 +54,7 @@ public class PlayerAtributes : CreatureAtributes
     {
         dead = true;
         GameManager.PlayerControl = false;
-        animator.Play("death");
+        anim.Play("death");
 
         PlayerDeath();
         OnDeath();

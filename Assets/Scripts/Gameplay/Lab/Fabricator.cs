@@ -33,7 +33,7 @@ public class Fabricator : MonoBehaviour
     public int[] componentReserve = new int[6];
 
     [Header("Vaccine Efficiency")]
-    public float wrongComponentPennalty;
+    public float mistakePennalty;
 
     private void Start()
     {
@@ -64,6 +64,15 @@ public class Fabricator : MonoBehaviour
 
     public void EndBatch()
     {
+        float mistakeTotal = 0;
+
+        for (int i = 0; i < componentAdded.Length; i++)
+        {
+            mistakeTotal += Mathf.Abs(componentAdded[i] - componentTarget[i]);
+
+        }
+
+        mistakeTotal *= mistakePennalty;
 
     }
 

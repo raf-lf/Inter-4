@@ -13,19 +13,23 @@ public class IA_Explosive : CreatureBehavior
 
         if (currentTarget != null)
         {
+            anim.SetBool("chase", true);
+
             if (Vector2.Distance(transform.position, currentTarget.transform.position) > explosionDetectionRange)
                 GetComponentInParent<CreatureMovement>().MoveTowards(currentTarget.transform.position);
             else
                 Explode();
 
         }
+        else
+            anim.SetBool("chase", false);
 
     }
 
     public void Explode()
     {
         busyTime += 1000;
-        GetComponentInParent<Animator>().Play("explode");
+        anim.SetTrigger("attack");
         GetComponentInParent<CreatureAtributes>().dead = true;
         GetComponentInParent<CreatureAtributes>().OnDeath();
         GetComponentInParent<CreatureAtributes>().Invoke("DisableSelf", 5);

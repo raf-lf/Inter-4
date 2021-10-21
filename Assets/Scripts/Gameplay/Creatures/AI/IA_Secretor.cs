@@ -31,6 +31,8 @@ public class IA_Secretor : CreatureBehavior
 
         if (currentTarget != null)
         {
+            anim.SetBool("chase", true);
+
             if (Vector2.Distance(transform.position, currentTarget.transform.position) > secretionRange)
             {
                 scriptMovement.MoveTowards(currentTarget.transform.position);
@@ -41,7 +43,10 @@ public class IA_Secretor : CreatureBehavior
 
         }
         else
+        {
+            anim.SetBool("chase", false);
             Secrete(false);
+        }
 
     }
 
@@ -59,6 +64,8 @@ public class IA_Secretor : CreatureBehavior
         {
             if (!secreting)
             {
+                anim.SetBool("attacking", true);
+
                 secretionEffect.GetComponentInChildren<Collider2D>().enabled = true;
 
                 ParticleSystem[] particles = secretionEffect.GetComponentsInChildren<ParticleSystem>();
@@ -78,6 +85,7 @@ public class IA_Secretor : CreatureBehavior
 
             if (secreting)
             {
+                anim.SetBool("attacking", false);
 
                 secretionEffect.GetComponentInChildren<Collider2D>().enabled = false;
 

@@ -12,6 +12,7 @@ public class PlayerActions_Player1 : PlayerActions
     public float weaponRestRotationLerp = .3f;
     public GameObject weaponAxis;
     public CreatureBehavior behavior;
+    private CreatureMovement movement;
     public GameObject[] weapon = new GameObject[2];
     public Animator[] weaponAnim = new Animator[2];
 
@@ -21,6 +22,8 @@ public class PlayerActions_Player1 : PlayerActions
     private void Start()
     {
         behavior = GetComponentInChildren<CreatureBehavior>();
+        movement = GetComponentInChildren<CreatureMovement>();
+        currentWeapon = 0;
     }
 
     protected override void PlayerDead()
@@ -28,50 +31,42 @@ public class PlayerActions_Player1 : PlayerActions
         weaponAxis.SetActive(false);
         base.PlayerDead();
 
-    }
+    }  
 
-    protected override void Attack()
+    private void AutoRotateWeapon(bool target)
     {
-        base.Attack();
+        float rotationZ;
 
-        ToggleAttackEffect(true);
-        RotateWeapon();
+        float lerpSpeed;
+
+        if (target)
+        {
+            lerpSpeed = weaponRotationLerp;
+            rotationZ = Calculations.GetRotationZToTarget(weaponAxis.transform.position, behavior.currentTarget.transform.position);
+        }
+        else
+        {
+            lerpSpeed = weaponRestRotationLerp;
+            rotationZ = 0;
+        }
+
+        Vector3 targetRotation;
+
+        if (rotationZ > 90 || rotationZ < -90)
+            targetRotation = new Vector3 (0, 180, -rotationZ + 180);
+        else
+            targetRotation =  new Vector3 (0, 0, rotationZ);
+
+        weaponAxis.transform.rotation = Quaternion.Euler(targetRotation);
+
     }
 
-    private void RotateWeapon()
-    {
-        Vector3 mouseTarget = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
-        weaponAxis.transform.rotation = Quaternion.Euler(0, 0, Calculations.GetRotationZToTarget(weaponAxis.transform.position, mouseTarget));
-    }
-
-    private void AutoRotateWeapon()
-    {
-        weaponAxis.transform.rotation = Quaternion.Lerp(weaponAxis.transform.rotation, Quaternion.Euler(0, 0, Calculations.GetRotationZToTarget(weaponAxis.transform.position, GetComponentInChildren<CreatureBehavior>().currentTarget.transform.position)), weaponRotationLerp);
-        //  weapon.transform.rotation = Quaternion.Euler(0, 0, Calculations.GetRotationZToTarget(weapon.transform.position, GetComponentInChildren<CreatureBehavior>().currentTarget.transform.position));
-    }
-
-    private void ResetWeaponRotation()
-    {
-        if (weaponAxis.transform.rotation.z != 0) weaponAxis.transform.rotation = Quaternion.Lerp(weaponAxis.transform.rotation, Quaternion.Euler(0, 0, 0), weaponRestRotationLerp);
-
-    }
 
     private void ToggleAttackEffect(bool on)
     {
         weaponAnim[currentWeapon].SetBool("toggle", on);
-                
-
     }
-    /*
-    private void SwitchAttackEffect(bool on)
-    {
-        GetComponent<PlayerMovement>().haltMovement = on;
-        attackAnimator.SetBool("toggle", on);
 
-        weapon.GetComponentInChildren<DamageOnContact>().damage = (int)(inactivatorDamage * GetComponent<CreatureAtributes>().damageModifier);
-
-    }
-    */
     public void SwitchWeapons()
     {
         if (currentWeapon == 0) currentWeapon = 1;
@@ -108,29 +103,18 @@ public class PlayerActions_Player1 : PlayerActions
         }
 
     }
+    
     private void AutoAttack()
     {
         if (behavior.currentTarget != null)
         {
-            AutoRotateWeapon();
+            AutoRotateWeapon(true);
             ToggleAttackEffect(true);
 
-            /*
-            if (!GetComponent<PlayerMovement>().moving)
-            {
-                AutoRotateWeapon();
-                ToggleAttackEffect(true);
-            }
-            else
-            {
-                ResetWeaponRotation();
-                ToggleAttackEffect(false);
-            }
-            */
         }
         else
         {
-            ResetWeaponRotation();
+            AutoRotateWeapon(false);
             ToggleAttackEffect(false);
         }
     }

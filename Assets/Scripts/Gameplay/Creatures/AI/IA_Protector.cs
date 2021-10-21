@@ -25,19 +25,16 @@ public class IA_Protector : CreatureBehavior
 
         if (currentTarget != null)
         {
+            anim.SetBool("chase", true);
             if (Vector2.Distance(transform.position, currentTarget.transform.position) > protectRange)
                 GetComponentInParent<CreatureMovement>().MoveTowards(currentTarget.transform.position);
             else
-                Protect();
+                Attack();
 
         }
+        else
+            anim.SetBool("chase", false);
 
-    }
-
-    private void Protect()
-    {
-        busyTime += actionCooldown;
-        GetComponentInParent<Animator>().Play("protect");
     }
 
 }

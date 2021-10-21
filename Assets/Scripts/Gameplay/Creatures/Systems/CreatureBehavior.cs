@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Profiling;
+
+//Profiling.BeginSample("NOMEDOTRECHO")
+//Profiling.EndSample();
 
 public class CreatureBehavior : MonoBehaviour
 {
@@ -24,12 +28,14 @@ public class CreatureBehavior : MonoBehaviour
     [Header("Components")]
     protected CreatureAtributes atributes;
     protected CreatureMovement movement;
+    protected Animator anim;
 
     protected virtual void Start()
     {
         GetComponent<CircleCollider2D>().radius = detectionRange;
         atributes = GetComponentInParent<CreatureAtributes>();
         movement = GetComponentInParent<CreatureMovement>();
+        anim = GetComponentInParent<Animator>();
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -109,13 +115,14 @@ public class CreatureBehavior : MonoBehaviour
     public virtual void Attack()
     {
         busyTime += actionCooldown;
-        GetComponentInParent<Animator>().Play("attack");
+        if(anim != null) 
+            anim.SetTrigger("attack");
 
     }
 
     private void BusyDecay()
     {
-        busyTime = Mathf.Clamp(busyTime- Time.deltaTime, 0, Mathf.Infinity);
+        busyTime = Mathf.Clamp(busyTime - Time.deltaTime, 0, Mathf.Infinity);
     }
 
     protected virtual void Act()

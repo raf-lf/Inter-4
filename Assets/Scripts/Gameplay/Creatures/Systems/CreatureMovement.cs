@@ -8,7 +8,8 @@ public class CreatureMovement : MonoBehaviour
     [SerializeField]
     private float currentMoveSpeed;
     public Vector2 direction;
-    
+    public bool lookingLeft;
+
     [Header("Components")]
     private Rigidbody2D rb;
     public bool moving;
@@ -18,7 +19,7 @@ public class CreatureMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponentInParent<CreatureAtributes>().animator;
+        anim = GetComponentInParent<CreatureAtributes>().anim;
         UpdateMoveSpeed();
     }
 
@@ -33,23 +34,53 @@ public class CreatureMovement : MonoBehaviour
         Move();
 
     }
+    public void MoveAway(Vector2 moveTarget)
+    {
+        direction = (Calculations.GetDirectionToTarget(transform.position, moveTarget) * -1);
+        Move();
+
+    }
+
+
 
     public void Move()
     {
-        moving = true;
-        if (anim != null) anim.SetBool("moving", moving);
+
+        if (!moving)
+        {
+            moving = true; 
+            /*
+            if (anim != null)   
+                anim.SetBool("moving", moving);
+            */
+        }
 
         rb.velocity = (currentMoveSpeed) * direction;
 
-        if (rb.velocity.x > 0) spriteBody.transform.rotation = Quaternion.Euler(new Vector3(spriteBody.transform.rotation.x, 0, spriteBody.transform.rotation.z));
-        else if (rb.velocity.x < 0) spriteBody.transform.rotation = Quaternion.Euler(new Vector3(spriteBody.transform.rotation.x, 180, spriteBody.transform.rotation.z));
+        if (rb.velocity.x > 0)
+        {
+            spriteBody.transform.rotation = Quaternion.Euler(new Vector3(spriteBody.transform.rotation.x, 0, spriteBody.transform.rotation.z));
+            lookingLeft = false;
+        }
+        else if (rb.velocity.x < 0)
+        {
+            spriteBody.transform.rotation = Quaternion.Euler(new Vector3(spriteBody.transform.rotation.x, 180, spriteBody.transform.rotation.z));
+            lookingLeft = true;
+        }
 
     }
 
     public void StopMove()
     {
-        moving = false;
-        if (anim != null) anim.SetBool("moving", moving);
+        if(moving)
+        {
+            moving = false;
+
+            /*
+            if (anim != null)
+                anim.SetBool("moving", moving);
+            */
+        }
     }
 
 }
