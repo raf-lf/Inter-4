@@ -29,7 +29,9 @@ public class PlayerMovement : CreatureMovement
     }
 
     private void Update()
-    {/*
+    {
+        anim.SetBool("moving", moving);
+        /*
         if (GameManager.PlayerControl)
         {
             if (!haltMovement)

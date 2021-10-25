@@ -6,7 +6,14 @@ public class IA_Ranged : CreatureBehavior
 {
     [Header("Attack")]
     public GameObject projectile;
+    private ObjectPool attackPool;
     public float fleeRange = 3;
+
+    protected override void Start()
+    {
+        base.Start();
+        attackPool = GameManager.scriptPool.RequestPool(projectile, 30);
+    }
 
     protected override void Act()
     {
@@ -31,7 +38,7 @@ public class IA_Ranged : CreatureBehavior
     {
         base.Attack();
 
-        GameObject attackEffect = Instantiate(projectile);
+        GameObject attackEffect = attackPool.GetFromPool();
         attackEffect.transform.position = transform.position;
         attackEffect.GetComponent<Projectile>().Shoot(transform.position, currentTarget.transform.position);
 

@@ -50,17 +50,21 @@ public class PlayerActions_Player1 : PlayerActions
             rotationZ = 0;
         }
 
+        /*
         Vector3 targetRotation;
-
         if (rotationZ > 90 || rotationZ < -90)
             targetRotation = new Vector3 (0, 180, -rotationZ + 180);
         else
             targetRotation =  new Vector3 (0, 0, rotationZ);
 
         weaponAxis.transform.rotation = Quaternion.Euler(targetRotation);
+        */
 
+
+        //weaponAxis.transform.rotation = Quaternion.Lerp(Quaternion.Euler(0, 0, weaponAxis.transform.rotation.z), Quaternion.Euler(0, 0, rotationZ), lerpSpeed);
+
+        weaponAxis.transform.rotation = Quaternion.Euler(0, 0, rotationZ);
     }
-
 
     private void ToggleAttackEffect(bool on)
     {

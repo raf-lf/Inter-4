@@ -13,13 +13,17 @@ public class CreatureMovement : MonoBehaviour
     [Header("Components")]
     private Rigidbody2D rb;
     public bool moving;
-    private Animator anim;
+    protected Animator anim;
     public GameObject spriteBody;
 
-    private void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponentInParent<CreatureAtributes>().anim;
+        anim = GetComponent<Animator>();
+
+    }
+    private void Start()
+    {
         UpdateMoveSpeed();
     }
 

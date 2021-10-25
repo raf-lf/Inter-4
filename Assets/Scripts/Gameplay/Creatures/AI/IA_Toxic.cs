@@ -10,6 +10,13 @@ public class IA_Toxic : CreatureBehavior
     public GameObject toxinEffect;
     public float toxinInterval;
     private float toxinIntervalTime;
+    public ObjectPool pool;
+
+    protected override void Start()
+    {
+        base.Start();
+        pool = GameManager.scriptPool.RequestPool(toxinEffect, 10);
+    }
 
     protected override void Act()
     {
@@ -34,7 +41,7 @@ public class IA_Toxic : CreatureBehavior
             anim.SetTrigger("attack");
             toxinIntervalTime = Time.time + toxinInterval;
 
-            GameObject effect = Instantiate(toxinEffect);
+            GameObject effect = pool.GetFromPool();
             effect.transform.position = transform.position;
         }
 

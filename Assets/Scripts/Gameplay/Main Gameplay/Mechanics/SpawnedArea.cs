@@ -10,12 +10,16 @@ public class SpawnedArea : DamageCreature
 
     private void Start()
     {
+    }
+    private void OnEnable()
+    {
         autoDestroyTimer = Time.time + maxLifetime;
+
     }
 
     public void Destruction()
     {
-        Destroy(gameObject);
+        GetComponentInParent<ObjectPool>().ReturnToPool(gameObject);
     }
 
     private void Update()

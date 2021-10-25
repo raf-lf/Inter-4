@@ -97,11 +97,16 @@ public class CreatureAtributes : MonoBehaviour
         boostSpdMod = GameManager.scriptArena.currentBoostSpeed;
     }
 
-    protected virtual void Start()
+    protected virtual void Awake()
     {
         hud = GetComponentInChildren<HudCreature>();
         feedbackScript = GetComponentInChildren<EffectManager>();
-        if (anim == null) anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
+
+    }
+
+    protected virtual void Start()
+    {
 
         if (difficultyBoostable)
         {

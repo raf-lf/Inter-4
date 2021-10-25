@@ -11,8 +11,9 @@ public class PlayerAtributes : CreatureAtributes
     public delegate void PlayerDeathDelegate();
     public static PlayerDeathDelegate PlayerDeath;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         GameManager.scriptPlayer = this;
     }
     protected override void Start()

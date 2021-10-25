@@ -24,6 +24,7 @@ public class DebugWindow : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "lab")
         {
             LabManager.antigenStored += 1000;
+            LabManager.scienceStored += 1000;
 
             for (int i = 0; i < LabManager.componentStored.Length; i++)
             {

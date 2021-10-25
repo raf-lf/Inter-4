@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallBreaker : UpgradeBase
+public class WallBreaker : MonoBehaviour
 {
     [Header("Wall Breaker")]
     public int energyCost;
@@ -14,12 +14,6 @@ public class WallBreaker : UpgradeBase
             GameManager.scriptPlayer.EnergyChange(-energyCost);
             collision.gameObject.GetComponentInChildren<BreakableWall>().Break();
         }
-
-    }
-
-    public override void ApplyUpgrade()
-    {
-        base.ApplyUpgrade();
 
     }
 }

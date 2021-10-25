@@ -13,7 +13,7 @@ public static class GameManager
     public static int[] dataNeededPerStage = {0,1,2,3,0};
 
     //Player
-    public static List<GameObject> purchasedUpgrades = new List<GameObject>();
+    public static List<UpgradeBase> upgradesPurchased = new List<UpgradeBase>();
 
     //Flags
     public static bool PlayerControl = true;
@@ -31,5 +31,7 @@ public static class GameManager
     public static ArenaManager scriptArena;
     public static LabManager scriptLab;
     public static AudioManager scriptAudio;
+    public static PoolManager scriptPool;
+
 
 }

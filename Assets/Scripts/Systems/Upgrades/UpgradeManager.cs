@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class UpgradeManager: MonoBehaviour
 {
-    public GameObject[] upgradeObjects = new GameObject[0];
+    public UpgradeList upgradeList;
 
     private void Start()
     {
-        SetupUpgrades();
-    }
+        //        upgradeList.SetupUpgrades(this);
 
-    public void SetupUpgrades()
-    {
-        foreach (GameObject upgrade in GameManager.purchasedUpgrades)
+        foreach (var item in GameManager.upgradesPurchased)
         {
-            Instantiate(upgrade,transform);
+            item.ApplyUpgrade(transform);
         }
-
     }
+
 }

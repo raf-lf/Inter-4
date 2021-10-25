@@ -6,19 +6,16 @@ public class Projectile : DamageCreature
 {
     [Header("Projectile")]
     public float speed;
-    private Vector2 direction;
+    private Vector2 direction;                                                                                                                                                                              
 
     public float maxLifetime = 3;
     private float autoDestroyTimer;
 
-    private void Start()
-    {
-        autoDestroyTimer = Time.time + maxLifetime;
-    }
-
 
     public void Shoot(Vector2 origin, Vector2 target)
     {
+        autoDestroyTimer = Time.time + maxLifetime;
+
         direction = Calculations.GetDirectionToTarget(origin, target);
         transform.rotation = Quaternion.Euler(0,0, Calculations.GetRotationZToTarget(origin, target));
 
@@ -30,17 +27,17 @@ public class Projectile : DamageCreature
     protected override void DamageInflicted()
     {
         base.DamageInflicted();
-        Destruction();
+        Death();
     }
 
-    public void Destruction()
+    public void Death()
     {
-        Destroy(gameObject);
+        GetComponentInParent<ObjectPool>().ReturnToPool(gameObject);
     }
 
     private void Update()
     {
         if (Time.time >= autoDestroyTimer) 
-            Destruction();
+            Death();
     }
 }
