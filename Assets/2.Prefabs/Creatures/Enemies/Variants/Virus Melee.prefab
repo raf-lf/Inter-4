@@ -6083,7 +6083,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviorOn: 1
   busyTime: 0
-  detectionRange: 5
+  detectionRange: 6
   factionsDetected: 00000000
   currentTarget: {fileID: 0}
   possibleTargets: []

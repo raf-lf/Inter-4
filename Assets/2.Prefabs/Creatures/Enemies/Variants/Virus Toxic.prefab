@@ -1087,6 +1087,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentMoveSpeed: 0
   direction: {x: 0, y: 0}
+  lookingLeft: 0
   moving: 0
   spriteBody: {fileID: 7071334867099684658}
 --- !u!114 &-3815026895283206228
@@ -1203,7 +1204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviorOn: 1
   busyTime: 0
-  detectionRange: 10
+  detectionRange: 4
   factionsDetected: 00000000
   currentTarget: {fileID: 0}
   possibleTargets: []
@@ -1211,6 +1212,7 @@ MonoBehaviour:
   fleeRange: 8
   toxinEffect: {fileID: 8813321549332366066, guid: 8d97016b6aa17324f90de4eb77caf3a8, type: 3}
   toxinInterval: 2
+  pool: {fileID: 0}
 --- !u!58 &7222148792570900799
 CircleCollider2D:
   m_ObjectHideFlags: 0

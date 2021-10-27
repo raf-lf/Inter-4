@@ -19999,7 +19999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b97c586c986ccd498ce887c3d14ea2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeList: {fileID: 11400000, guid: 669a2ec7d1b4b1c42955bcb3edefd4b9, type: 2}
+  upgradeList: {fileID: 0}
 --- !u!1 &7116787119710937745
 GameObject:
   m_ObjectHideFlags: 0
@@ -20194,7 +20194,7 @@ EdgeCollider2D:
   m_EdgeRadius: 0.5
   m_Points:
   - {x: 0, y: 0}
-  - {x: 3, y: 0}
+  - {x: 4, y: 0}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0

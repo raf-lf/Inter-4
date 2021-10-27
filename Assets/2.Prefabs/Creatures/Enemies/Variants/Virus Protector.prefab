@@ -15342,6 +15342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentMoveSpeed: 0
   direction: {x: 0, y: 0}
+  lookingLeft: 0
   moving: 0
   spriteBody: {fileID: 7071334867099684658}
 --- !u!114 &5777160857018187245
@@ -15687,7 +15688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviorOn: 1
   busyTime: 0
-  detectionRange: 10
+  detectionRange: 6
   factionsDetected: 01000000
   currentTarget: {fileID: 0}
   possibleTargets: []

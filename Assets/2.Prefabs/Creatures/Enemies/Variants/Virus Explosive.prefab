@@ -15497,7 +15497,7 @@ MonoBehaviour:
   difficultyBoostable: 1
   dead: 0
   creatureFaction: 1
-  animator: {fileID: 0}
+  anim: {fileID: 0}
   antigenValue: 8
   player1DeadVirus: {fileID: 2705730345146004973, guid: df2a6a1c96f363e49bb7f7dfdc209b9e, type: 3}
 --- !u!114 &5231589750961742183
@@ -15514,6 +15514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentMoveSpeed: 0
   direction: {x: 0, y: 0}
+  lookingLeft: 0
   moving: 0
   spriteBody: {fileID: 7071334867099684658}
 --- !u!114 &-6649604179403997926
@@ -20638,7 +20639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviorOn: 1
   busyTime: 0
-  detectionRange: 5
+  detectionRange: 6
   factionsDetected: 00000000
   currentTarget: {fileID: 0}
   possibleTargets: []
