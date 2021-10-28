@@ -5,12 +5,13 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
     public GameObject objectToPool;
-    public List<GameObject> pooledObjects;
+    public Stack<GameObject> pooledObjects;
+    //public List<GameObject> pooledObjects;
     public int poolSize;
 
     public void SetupPool()
     {
-        pooledObjects = new List<GameObject>(poolSize);
+        pooledObjects = new Stack<GameObject>(poolSize);
 
         for (int i = poolSize; i > 0; i--)
         {
@@ -22,7 +23,8 @@ public class ObjectPool : MonoBehaviour
     public void InstantiateObject()
     {
         GameObject obj = Instantiate(objectToPool, transform);
-        pooledObjects.Add(obj);
+        pooledObjects.Push(obj);
+      //  pooledObjects.Add(obj);
         obj.SetActive(false);
     }
 
@@ -30,9 +32,10 @@ public class ObjectPool : MonoBehaviour
     {
         if (pooledObjects.Count > 0)
         {
-            GameObject returnedObject = pooledObjects[0];
+            // GameObject returnedObject = pooledObjects[0];
+            GameObject returnedObject = pooledObjects.Pop();
             returnedObject.SetActive(true);
-            pooledObjects.Remove(returnedObject);
+            //pooledObjects.Remove(returnedObject);
             return returnedObject;
 
 
@@ -49,7 +52,8 @@ public class ObjectPool : MonoBehaviour
 
     public void ReturnToPool(GameObject returningObject)
     {
-        pooledObjects.Add(returningObject);
+        pooledObjects.Push(returningObject);
+        //pooledObjects.Add(returningObject);
         returningObject.SetActive(false);
 
     }
