@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 5617309861989045175}
   - component: {fileID: -4859802418073276457}
   m_Layer: 0
-  m_Name: Arena
+  m_Name: Colosseum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
