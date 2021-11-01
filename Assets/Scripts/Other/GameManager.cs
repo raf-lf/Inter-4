@@ -32,6 +32,7 @@ public static class GameManager
     public static LabManager scriptLab;
     public static AudioManager scriptAudio;
     public static PoolManager scriptPool;
+    public static DialogueSystem scriptDialogue;
 
 
 }

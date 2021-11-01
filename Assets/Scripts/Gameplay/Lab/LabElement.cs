@@ -4,16 +4,25 @@ using UnityEngine;
 
 public class LabElement : MonoBehaviour
 {
-    public void OpenCloseElement(bool open)
+    public bool elementActive;
+    public virtual void StartupElement()
     {
-        GetComponent<Animator>().SetBool("active", open);
+
     }
-    public void OpenOtherElement(Animator elementAnim)
+
+    public virtual void OpenElement()
     {
-        elementAnim.SetBool("active", true);
+        GetComponent<Animator>().SetBool("active", true);
+        StartupElement();
+        elementActive = true;
+
     }
-    public void CloseOtherElement(Animator elementAnim)
+
+    public virtual void CloseElement()
     {
-        elementAnim.SetBool("active", false);
+        GetComponent<Animator>().SetBool("active", false);
+        elementActive = false;
+
     }
+
 }

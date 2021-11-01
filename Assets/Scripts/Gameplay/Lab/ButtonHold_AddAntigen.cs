@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class ButtonHold_AddAntigen : ButtonHold
 {
-    private Fabricator fabricator;
+    private Element_Fabricator fabricator;
     public int consumptionPerFrame;
 
     protected override void Start()
     {
         base.Start();
-        fabricator = GetComponentInParent<Fabricator>();
+        fabricator = GetComponentInParent<Element_Fabricator>();
         
     }
 

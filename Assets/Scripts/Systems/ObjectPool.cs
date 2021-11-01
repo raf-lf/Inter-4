@@ -12,7 +12,6 @@ public class ObjectPool : MonoBehaviour
     public void SetupPool()
     {
         pooledObjects = new Stack<GameObject>(poolSize);
-
         for (int i = poolSize; i > 0; i--)
         {
             InstantiateObject();
