@@ -162,7 +162,10 @@ public class TechtreeUpgrade : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     }
     private void Update()
     {
-        AttemptingPurchase();
+        if (scriptTechtree.elementActive)
+        {
+            AttemptingPurchase();
+        }
     }
 
 }

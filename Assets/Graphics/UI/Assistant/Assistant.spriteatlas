@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Assistant
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 14b8af82580ed56479048534a7fbd17c, type: 3}
+    - {fileID: 2800000, guid: 285d9dc705bd47b4194ce2bb99faa61d, type: 3}
+    - {fileID: 2800000, guid: 391f02b4202ea8b4585012073e4e2e02, type: 3}
+    - {fileID: 2800000, guid: d61a287d29a37bb4e9c412cd27014d0d, type: 3}
+    - {fileID: 2800000, guid: 02559713b4c48db48a8370527d1d486e, type: 3}
+    - {fileID: 2800000, guid: 4ef02ec344ec54148881b8bbc98e6bd1, type: 3}
+    - {fileID: 2800000, guid: 2e0a40f5eda26e942a4eb8b2cc4b1689, type: 3}
+    - {fileID: 2800000, guid: 22d7ca94b3e46ee40a74668fd65dbb3d, type: 3}
+    - {fileID: 2800000, guid: 7cb022b2bb2d11f40bea504d86fe2cfb, type: 3}
+    - {fileID: 2800000, guid: f4048b19635857f4c804621aca0b56cf, type: 3}
+    - {fileID: 2800000, guid: c47581f648a02364aad7e8ba0edbcce1, type: 3}
+    - {fileID: 2800000, guid: 78385c55b90ec7d4ca352844c2d25079, type: 3}
+    - {fileID: 2800000, guid: 92d315d1e59cb0f41bfb524a6ddf0d46, type: 3}
+    - {fileID: 2800000, guid: f03a00ba8dd7b6642b15ca9454b7ebc8, type: 3}
+    - {fileID: 2800000, guid: bf9c1a92d57d6d04ab5c34826d408116, type: 3}
+    - {fileID: 2800000, guid: 6adad159f41e0794f8d15f9d88859703, type: 3}
+    - {fileID: 2800000, guid: c666d31c5cacf7947b93ec134424057d, type: 3}
+    - {fileID: 2800000, guid: d2e5dbb1b47843648a96386fa9ec8640, type: 3}
+    - {fileID: 2800000, guid: abe40c7299a20094482c4bd6c27721a8, type: 3}
+    totalSpriteSurfaceArea: 17018667
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: d2e5dbb1b47843648a96386fa9ec8640, type: 3}
+  - {fileID: 21300000, guid: 92d315d1e59cb0f41bfb524a6ddf0d46, type: 3}
+  - {fileID: 21300000, guid: abe40c7299a20094482c4bd6c27721a8, type: 3}
+  - {fileID: 21300000, guid: 14b8af82580ed56479048534a7fbd17c, type: 3}
+  - {fileID: 21300000, guid: bf9c1a92d57d6d04ab5c34826d408116, type: 3}
+  - {fileID: 21300000, guid: 7cb022b2bb2d11f40bea504d86fe2cfb, type: 3}
+  - {fileID: 21300000, guid: 02559713b4c48db48a8370527d1d486e, type: 3}
+  - {fileID: 21300000, guid: 4ef02ec344ec54148881b8bbc98e6bd1, type: 3}
+  - {fileID: 21300000, guid: 22d7ca94b3e46ee40a74668fd65dbb3d, type: 3}
+  - {fileID: 21300000, guid: 391f02b4202ea8b4585012073e4e2e02, type: 3}
+  - {fileID: 21300000, guid: 78385c55b90ec7d4ca352844c2d25079, type: 3}
+  - {fileID: 21300000, guid: 2e0a40f5eda26e942a4eb8b2cc4b1689, type: 3}
+  - {fileID: 21300000, guid: c47581f648a02364aad7e8ba0edbcce1, type: 3}
+  - {fileID: 21300000, guid: 285d9dc705bd47b4194ce2bb99faa61d, type: 3}
+  - {fileID: 21300000, guid: f4048b19635857f4c804621aca0b56cf, type: 3}
+  - {fileID: 21300000, guid: 6adad159f41e0794f8d15f9d88859703, type: 3}
+  - {fileID: 21300000, guid: f03a00ba8dd7b6642b15ca9454b7ebc8, type: 3}
+  - {fileID: 21300000, guid: c666d31c5cacf7947b93ec134424057d, type: 3}
+  - {fileID: 21300000, guid: d61a287d29a37bb4e9c412cd27014d0d, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - gator_head_serious
+  - gator_head_dismay
+  - gator_torso
+  - gator_armL_1
+  - gator_head_hype
+  - gator_armR_4
+  - gator_armL_5
+  - gator_armR_1
+  - gator_armR_3
+  - gator_armL_3
+  - gator_head_angry
+  - gator_armR_2
+  - gator_armR_6
+  - gator_armL_2
+  - gator_armR_5
+  - gator_head_neutral
+  - gator_head_happy
+  - gator_head_sad
+  - gator_armL_4
+  m_RenderDataMap: {}
+  m_Tag: Assistant
+  m_IsVariant: 0

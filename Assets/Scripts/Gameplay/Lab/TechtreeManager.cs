@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class TechtreeManager : MonoBehaviour
+public class TechtreeManager : LabElement
 {
     public int availableScience;
     public int spendRate;
@@ -14,12 +14,13 @@ public class TechtreeManager : MonoBehaviour
     public TextMeshProUGUI textDesCost;
     public GameObject descriptionPanel;
 
-    private void Start()
+    public override void StartupElement()
     {
+        base.StartupElement();
         UpdateScienceValues();
         UpdateDescriptionPanel();
-    }
 
+    }
     public void UpdateScienceValues()
     {
         availableScience = LabManager.scienceStored;
@@ -47,7 +48,10 @@ public class TechtreeManager : MonoBehaviour
 
     private void Update()
     {
-        textScience.text = availableScience.ToString();
+        if (elementActive)
+        {
+            textScience.text = availableScience.ToString();
+        }
         
     }
 }
