@@ -3,7 +3,10 @@ guid: 82bece9d0824ab04f815510a14110bf4
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - sweeperCollider: {instanceID: 0}
+  - sweepHealingUpgrade: {fileID: 11400000, guid: 3202837aa32e44940b40f700e69aab50, type: 2}
+  - sweepRefreshUpgrade: {fileID: 11400000, guid: 858ba177d950e5144b43d76a6757d344, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

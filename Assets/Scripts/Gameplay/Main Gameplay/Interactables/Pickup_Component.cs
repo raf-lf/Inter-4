@@ -10,9 +10,7 @@ public class Pickup_Component : PickupBase
     public override void Pickup()
     {
         base.Pickup();
-        ArenaManager.componentsInInventory[componentId] += quantity;
-        ArenaManager.componentsCollected++;
-        GameManager.scriptHud.UpdateHud();
+        GameManager.scriptArena.ComponentChange(componentId, quantity);
 
     }
 }

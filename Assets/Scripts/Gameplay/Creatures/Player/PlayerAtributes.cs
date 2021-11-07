@@ -53,12 +53,20 @@ public class PlayerAtributes : CreatureAtributes
 
     public override void Death()
     {
-        dead = true;
-        GameManager.PlayerControl = false;
-        anim.Play("death");
+        if (buffManager.GetComponentInChildren<Buff_AutoRevive>())
+        {
+            buffManager.GetComponentInChildren<Buff_AutoRevive>().AutoRevive();
+        }
+        else
+        {
+            dead = true;
+            GameManager.PlayerControl = false;
+            anim.Play("death");
 
-        PlayerDeath();
-        OnDeath();
+            PlayerDeath();
+            OnDeath();
+        }
+
     }
 
 

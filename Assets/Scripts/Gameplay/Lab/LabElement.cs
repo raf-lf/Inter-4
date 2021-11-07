@@ -22,6 +22,7 @@ public class LabElement : MonoBehaviour
     {
         GetComponent<Animator>().SetBool("active", false);
         elementActive = false;
+        GameManager.scriptDialogue.EndDialogue();
 
     }
 

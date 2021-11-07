@@ -19,6 +19,7 @@ public abstract class BuffBase : MonoBehaviour
     public GameObject buffVfx;
     public Image durationFill;
     private EffectManager scriptVfx;
+    protected BuffManager manager;
 
 
     private void Awake()
@@ -26,6 +27,7 @@ public abstract class BuffBase : MonoBehaviour
         durationMax = duration;
 
         scriptVfx = GetComponentInParent<CreatureAtributes>().gameObject.GetComponentInChildren<EffectManager>();
+        manager = GetComponentInParent<BuffManager>();
     }
 
     private void Start()
@@ -67,7 +69,7 @@ public abstract class BuffBase : MonoBehaviour
         }
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         BuffDecay();
         

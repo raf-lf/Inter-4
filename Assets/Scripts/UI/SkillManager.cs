@@ -7,6 +7,11 @@ public class SkillManager : MonoBehaviour
 {
     public List<GameObject> player1Skills = new List<GameObject>();
 
+    private void Awake()
+    {
+        GameManager.scriptSkill = this;
+    }
+
     private void Start()
     {
         List<GameObject> skillsToAdd = new List<GameObject>();

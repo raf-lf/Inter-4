@@ -25,7 +25,7 @@ public class HudGameplay : MonoBehaviour
 
     public void UpdateHud()
     {
-        antigenCounter.text = ArenaManager.antigenCollected.ToString();
+        antigenCounter.text = ArenaManager.antigenCollected + " / " + ArenaManager.antigenCapacity;
 
         dataSlot.SetActive(ArenaManager.dataCollected);
 

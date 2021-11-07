@@ -10,6 +10,7 @@ public class ArenaManager : MonoBehaviour
     [Header("Stats")]
     public static int[] componentsInInventory = new int[4];
     public static int antigenCollected;
+    public static int antigenCapacity = 250;
     public static int enemiesDefeated;
     public static int componentsCollected;
     public static int consumablesCollected;
@@ -68,6 +69,19 @@ public class ArenaManager : MonoBehaviour
  
     }
 
+    public void AntigenChange(int value)
+    {
+        antigenCollected = Mathf.Clamp(antigenCollected + value, 0, antigenCapacity);
+        GameManager.scriptHud.UpdateHud();
+    }
+
+    public void ComponentChange(int id, int value)
+    {
+        componentsInInventory[id] = Mathf.Clamp(componentsInInventory[id] + value, 0, 100);
+        ArenaManager.componentsCollected++;
+        GameManager.scriptHud.UpdateHud();
+    }
+
     private void StartNewExpedition()
     {
         for (int i = 0; i < componentsInInventory.Length; i++)
@@ -89,6 +103,7 @@ public class ArenaManager : MonoBehaviour
 
     public void EndExpedition(bool playerDied)
     {
+        LabManager.returningFromExpedition = true;
         CalculateScience(playerDied);
         PrepareComponents(playerDied);
         LabManager.expeditionData = dataCollected;
@@ -124,13 +139,33 @@ public class ArenaManager : MonoBehaviour
 
     public void CalculateScience(bool playerDied)
     {
-        float finalScience = enemiesDefeated * sciencePerEnemy + componentsCollected * sciencePerComponent + consumablesCollected * sciencePerConsumable;
-        float finalModifier = 1 + (unusedConsumableBonus * ConvertConsumables()) + (difficultyBonus * timeBoosts) + extraBonus;
+        int scienceEnemies = enemiesDefeated * sciencePerEnemy;
+        ResultScreen.scienceEnemiesDefeated = scienceEnemies;
+
+        int scienceComponents = componentsCollected * sciencePerComponent;
+        ResultScreen.scienceComponentsCollected = scienceComponents;
+
+        int scienceConsumables = consumablesCollected * sciencePerConsumable;
+        ResultScreen.scienceConsumablesCollected = scienceConsumables;
+
+        float scienceBonusUnused = unusedConsumableBonus * ConvertConsumables();
+        ResultScreen.bonusUnusedConsumables = scienceBonusUnused;
+
+        float finalScience = scienceEnemies + scienceComponents + scienceConsumables;
+        float finalModifier = 1 + scienceBonusUnused + (difficultyBonus * timeBoosts) + extraBonus;
 
         finalScience *= finalModifier;
 
         if (playerDied)
+        {
             finalScience *= deathPennalty;
+            ResultScreen.pennaltyDeath = deathPennalty;
+        }
+        else
+            ResultScreen.pennaltyDeath = 0;
+
+
+        ResultScreen.scienceFinal = (int)finalScience;
 
         LabManager.expeditionScience = (int)finalScience;
     }
@@ -145,6 +180,7 @@ public class ArenaManager : MonoBehaviour
             GameManager.itemConsumable[i] = 0;
 
         }
+        ResultScreen.unusedConsumables = consumableQty;
         return consumableQty;
     }
 

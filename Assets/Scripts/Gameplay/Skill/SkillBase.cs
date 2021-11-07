@@ -9,11 +9,12 @@ public class SkillBase : MonoBehaviour
     public int energyCost;
     public TextMeshProUGUI energyCostText;
     public float cooldown;
-    private float cooldownTimer;
+    [HideInInspector]
+    public float cooldownTimer;
     public TextMeshProUGUI cooldownTimerText;
     public Image cooldownTimerFill;
 
-    private void Start()
+    protected virtual void Start()
     {
         energyCostText.text = energyCost.ToString();
 
@@ -29,7 +30,7 @@ public class SkillBase : MonoBehaviour
         CooldownDecay();
     }
 
-    public void SkillUse()
+    public virtual void SkillUse()
     {
         if (GameManager.scriptPlayer.SpendEnergy(energyCost))
         {
@@ -44,9 +45,20 @@ public class SkillBase : MonoBehaviour
         cooldownTimer = cooldown;
     }
 
+    public void CooldownChange(float value)
+    {
+        cooldownTimer = Mathf.Clamp(cooldownTimer + value, 0, cooldown);
+        CooldownUpdate();
+
+    }
     private void CooldownDecay()
     {
         cooldownTimer = Mathf.Clamp(cooldownTimer - Time.deltaTime, 0, cooldown);
+        CooldownUpdate();
+    }
+
+    private void CooldownUpdate()
+    {
         cooldownTimerFill.fillAmount = (cooldownTimer / cooldown);
         cooldownTimerText.text = ((int)(1 + cooldown - (cooldown - cooldownTimer))).ToString();
         if (cooldownTimer == 0)
@@ -54,6 +66,7 @@ public class SkillBase : MonoBehaviour
             cooldownTimerText.text = "";
             GetComponentInChildren<Button>().interactable = true;
         }
+
     }
 
     private void Update()

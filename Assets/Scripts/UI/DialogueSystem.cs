@@ -4,61 +4,68 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
 
+public enum DialogueType { oneShot, comment, cutscene }
 public enum expressions { neutral, happy, hype, serious, sad, dismay, angry }
 
 public class DialogueSystem : MonoBehaviour, IPointerClickHandler
 {
+    public RectTransform assitantPoint;
+    private Animator animDialogue;
+    public Animator animAssistant;
+
     public bool dialogueActive;
     public Dialogue currentDialogue;
     public TextMeshProUGUI textBox;
-    public RectTransform assitantPoint;
-    public Animator animAssistant;
     private int currentStep = 0;
+    public DialogueType currentDialogueType;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (dialogueActive)
-        {
-          
-            if (currentStep+1 == currentDialogue.lines.Length)
-                EndDialogue();
-            else
-                NextStep();
-        }
+        if (dialogueActive && currentDialogueType != DialogueType.oneShot)
+            StepEnd();
+    
     }
 
     private void Awake()
     {
         GameManager.scriptDialogue = this;
+        animDialogue = GetComponent<Animator>();
     }
 
-    private void Start()
-    {
-        //Vector3 assistantPosition = Camera.main.ScreenToWorldPoint(assitantPoint.pivot);
-        //assistantPosition.z = 0;
-        //animAssistant.gameObject.transform.position = assistantPosition;
-    }
 
-    public void SetupDialogue(Dialogue dialogue)
+    public void SetupDialogue(Dialogue dialogue, DialogueType type)
     {
-        currentDialogue = dialogue;
-        StartDialogue();
-    }
+        if (dialogue != currentDialogue)
+        {
+            currentDialogue = dialogue;
+            currentDialogueType = type;
+            dialogueActive = true;
 
-    private void StartDialogue()
-    {
-        dialogueActive = true;
-        gameObject.GetComponent<Animator>().SetBool("active", true);
-        currentStep = 0;
-        Step(currentStep);
+            if (type == DialogueType.oneShot || type == DialogueType.comment)
+            {
+                animDialogue.SetBool("comment", true);
+            }
 
+            else if (type == DialogueType.cutscene)
+            {
+                animDialogue.SetBool("cutscene", true);
+            }
+
+            currentStep = 0;
+            Step(currentStep);
+        }
     }
 
     public void EndDialogue()
     {
-        dialogueActive = false;
-        gameObject.GetComponent<Animator>().SetBool("active", false);
-        animAssistant.SetTrigger("hide");
+        if (dialogueActive)
+        {
+            dialogueActive = false;
+            animDialogue.SetBool("comment", false);
+            animDialogue.SetBool("cutscene", false);
+            animAssistant.SetTrigger("hide");
+            currentDialogue = null;
+        }
 
     }
 
@@ -81,8 +88,25 @@ public class DialogueSystem : MonoBehaviour, IPointerClickHandler
 
     }
 
+    public void StepEnd()
+    {
+        if (currentStep + 1 == currentDialogue.lines.Length)
+            EndDialogue();
+        else
+            NextStep();
+
+    }
+
     private string ReturnExpression(expressions expression)
     {
+        animAssistant.ResetTrigger("neutral");
+        animAssistant.ResetTrigger("happy");
+        animAssistant.ResetTrigger("hype");
+        animAssistant.ResetTrigger("serious");
+        animAssistant.ResetTrigger("sad");
+        animAssistant.ResetTrigger("dismay");
+        animAssistant.ResetTrigger("angry");
+
         switch (expression)
         {
             default:

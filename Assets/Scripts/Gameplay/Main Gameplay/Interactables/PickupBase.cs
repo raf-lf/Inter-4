@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickupBase : MonoBehaviour
 {
-    public List<Faction> pickableFaction = new List<Faction>();
+    //public List<Faction> pickableFaction = new List<Faction>();
     public GameObject pickupVfx;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -12,7 +12,8 @@ public class PickupBase : MonoBehaviour
         if(collision.gameObject.GetComponent<CreatureAtributes>())
         {
             CreatureAtributes pickingCreature = collision.gameObject.GetComponent<CreatureAtributes>();
-            if (pickableFaction.Contains(pickingCreature.creatureFaction))
+            //if (pickableFaction.Contains(pickingCreature.creatureFaction))
+            if (pickingCreature = GameManager.scriptPlayer)
             {
                 Pickup();
             }

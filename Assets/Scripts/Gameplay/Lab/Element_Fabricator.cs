@@ -24,7 +24,6 @@ public class Element_Fabricator : LabElement
     public Image[] currentMixComponentBar = new Image[6];
 
     [Header("Resources")]
-    public int[] antigenTarget = {100, 500, 1500, 3000, 3000};
     public int currentAntigenTarget;
     public int antigenAdded;
     public int antigenReserve;
@@ -34,10 +33,41 @@ public class Element_Fabricator : LabElement
 
     [Header("Vaccine Efficiency")]
     public float mistakePennalty;
+    public Dialogue dialogueHasEnoughVaccine;
+    public Dialogue dialoguegreatVaccine;
+    public Dialogue dialoguegoodVaccine;
+    public Dialogue dialoguebadVaccine;
+    public Image rocketFill;
+    public TextMeshProUGUI rocketFillText;
+
+
 
     public override void StartupElement()
     {
         base.StartupElement();
+
+        GameManager.scriptLab.SetComponentTargets();
+
+        int totalComponents = 0;
+
+        for (int i = 0; i < componentTarget.Length; i++)
+        {
+            if (i <= 3)
+            {
+                componentTarget[i] = LabManager.componentcurrentTarget[i];
+                totalComponents += LabManager.componentcurrentTarget[i];
+            }
+            else if (i == 4)
+            {
+                componentTarget[i] = LabManager.componentdillutant[GameManager.currentGameStage];
+                totalComponents += LabManager.componentdillutant[GameManager.currentGameStage];
+            }
+            else if (i == 5)
+            {
+                componentTarget[i] = totalComponents / 5;
+            }
+
+        }
 
         UpdateValues();
         BeginBatch();
@@ -46,7 +76,8 @@ public class Element_Fabricator : LabElement
     
     public void BeginBatch()
     {
-        currentAntigenTarget = antigenTarget[GameManager.currentGameStage];
+        UpdateRocket();
+        currentAntigenTarget = LabManager.antigenTarget[GameManager.currentGameStage];
 
         antigenReserve = LabManager.antigenStored;
 
@@ -67,18 +98,46 @@ public class Element_Fabricator : LabElement
 
     public void EndBatch()
     {
-        float mistakeTotal = 0;
-
-        for (int i = 0; i < componentAdded.Length; i++)
+        if (LabManager.vaccineInRocket < LabManager.vaccineTarget[GameManager.currentGameStage])
         {
-            mistakeTotal += Mathf.Abs(componentAdded[i] - componentTarget[i]);
+            float mistakeTotal = 0;
+
+            for (int i = 0; i < componentAdded.Length; i++)
+            {
+                mistakeTotal += Mathf.Abs(componentAdded[i] - componentTarget[i]);
+
+            }
+
+            mistakeTotal *= mistakePennalty;
+
+            float finalAmmount = LabManager.antigenTarget[GameManager.currentGameStage] * (1 - mistakeTotal);
+
+            finalAmmount = Mathf.Clamp(finalAmmount, 0, LabManager.vaccineTarget[GameManager.currentGameStage] - LabManager.vaccineInRocket);
+
+            LabManager.vaccineInRocket += (int)finalAmmount;
+            LabManager.antigenStored -= antigenAdded;
+
+            for (int i = 0; i < LabManager.componentStored.Length; i++)
+            {
+                LabManager.componentStored[i] -= componentAdded[i];
+
+            }
+            UpdateRocket();
+
+            BeginBatch();
 
         }
-
-        mistakeTotal *= mistakePennalty;
+        else
+            GameManager.scriptDialogue.SetupDialogue(dialogueHasEnoughVaccine, DialogueType.oneShot);
 
     }
 
+    public void UpdateRocket()
+    {
+        rocketFillText.text = LabManager.vaccineInRocket + "/" + LabManager.vaccineTarget[GameManager.currentGameStage];
+        rocketFill.fillAmount = (float)LabManager.vaccineInRocket / (float)LabManager.vaccineTarget[GameManager.currentGameStage];
+
+    }
     public void AddAntigen(int value)
     {
         antigenReserve -= value;

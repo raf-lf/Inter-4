@@ -150,8 +150,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280098077
-  m_fontColor: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 1}
+    rgba: 4282864330
+  m_fontColor: {r: 0.7921569, g: 0.32156864, b: 0.2784314, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -219,7 +219,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7353664695410305334}
-  - component: {fileID: 3364238328519827255}
+  - component: {fileID: 1291133826451901176}
   - component: {fileID: 2422158018099752402}
   - component: {fileID: 8471149865502737575}
   - component: {fileID: 7166088485852568643}
@@ -253,7 +253,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &3364238328519827255
+--- !u!114 &1291133826451901176
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3663345183704350873}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ebfd99bb48fd444599abdf91b65f2f5, type: 3}
+  m_Script: {fileID: 11500000, guid: 5013836f193b0474ca5df3fd686f671d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   energyCost: 0
@@ -270,7 +270,7 @@ MonoBehaviour:
   cooldown: 5
   cooldownTimerText: {fileID: 2692041897734121652}
   cooldownTimerFill: {fileID: 6165871261067654974}
-  effect: {fileID: 7117153200349197935, guid: e0cae46de686f05479f33db0775213f2, type: 3}
+  enemyDistanceRadius: 10
 --- !u!222 &2422158018099752402
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.20879315, g: 0.8679245, b: 0.81691545, a: 1}
+  m_Color: {r: 0.20518868, g: 0.8207547, b: 0.77312165, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -353,8 +353,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3364238328519827255}
-        m_TargetAssemblyTypeName: SkillBase, Assembly-CSharp
+      - m_Target: {fileID: 1291133826451901176}
+        m_TargetAssemblyTypeName: Skill_Recall, Assembly-CSharp
         m_MethodName: SkillUse
         m_Mode: 1
         m_Arguments:
@@ -639,7 +639,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3c45337eacc03a945a4f532d4c251f27, type: 3}
+  m_Sprite: {fileID: 21300000, guid: adbf78ce4f1c75042bccfad6c9075b7a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

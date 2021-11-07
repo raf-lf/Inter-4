@@ -701,7 +701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8fbd87429161cf4a8aa9d4f766e2efe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allowDuplicateAreas: 1
+  allowDuplicateAreas: 0
   minPrefabSmallSpawn: 0000000005000000040000000300000003000000
   minPrefabMediumSpawn: 0000000001000000020000000300000003000000
   minPrefabLargeSpawn: 0000000000000000010000000200000003000000

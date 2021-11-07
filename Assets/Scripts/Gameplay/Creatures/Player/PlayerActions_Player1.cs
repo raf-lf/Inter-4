@@ -16,6 +16,13 @@ public class PlayerActions_Player1 : PlayerActions
     public GameObject[] weapon = new GameObject[2];
     public Animator[] weaponAnim = new Animator[2];
 
+    [Header("Upgrades")]
+    public UpgradeBase upgradeDamageBuff;
+    public UpgradeBase upgradeSizeBuff;
+    public float upgradedDamageBuff;
+    public GameObject inactivator;
+    public GameObject inactivatorUpgraded;
+
     //[Header ("Inactivator")]
     //public int inactivatorDamage = 5;
 
@@ -23,7 +30,25 @@ public class PlayerActions_Player1 : PlayerActions
     {
         behavior = GetComponentInChildren<CreatureBehavior>();
         movement = GetComponentInChildren<CreatureMovement>();
+        
         currentWeapon = 0;
+
+        if (GameManager.upgradesPurchased.Contains(upgradeSizeBuff))
+        {
+            inactivatorUpgraded.SetActive(true);
+            inactivator.SetActive(false);
+        }
+        else
+        {
+            inactivatorUpgraded.SetActive(false);
+            inactivator.SetActive(true);
+        }
+
+        if (GameManager.upgradesPurchased.Contains(upgradeDamageBuff))
+        {
+            inactivator.GetComponentInChildren<DamageCreature>().damage *=(int)(1 + upgradedDamageBuff);
+            inactivator.GetComponentInChildren<DamageCreature>().damage *= (int)(1 + upgradedDamageBuff);
+        }
     }
 
     protected override void PlayerDead()

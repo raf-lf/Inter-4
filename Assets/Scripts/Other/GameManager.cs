@@ -9,8 +9,6 @@ public static class GameManager
 
     //Stage
     public static int currentGameStage = 0;
-    public static int dataStored;
-    public static int[] dataNeededPerStage = {0,1,2,3,0};
 
     //Player
     public static List<UpgradeBase> upgradesPurchased = new List<UpgradeBase>();
@@ -33,6 +31,7 @@ public static class GameManager
     public static AudioManager scriptAudio;
     public static PoolManager scriptPool;
     public static DialogueSystem scriptDialogue;
+    public static SkillManager scriptSkill;
 
 
 }

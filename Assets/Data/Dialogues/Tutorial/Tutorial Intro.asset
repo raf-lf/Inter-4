@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dc50c01d21f84c46bb269ba06389173, type: 3}
+  m_Name: Tutorial Intro
+  m_EditorClassIdentifier: 
+  lines:
+  - "Consegue me ouvir, chefe? Parece que o miniaturizador funcionou! Que bom que
+    voc\xEA n\xE3o se perdeu no reino qu\xE2ntico, iria dar um trabalho te encontrar
+    por l\xE1!"
+  - "Nosso trabalho est\xE1 apenas come\xE7ando! Temos que fabricar uma vacina para
+    lidar com a pandemia que est\xE1 rolando aqui em cima! "
+  - "J\xE1 que nosso governo n\xE3o ajuda, vamos n\xF3s mesmos, os cientistas, tomar
+    as r\xE9deas da situa\xE7\xE3o!"
+  linesExpression: 010000000300000006000000

@@ -75,6 +75,7 @@ public class CreatureAtributes : MonoBehaviour
     public Animator anim;
     protected HudCreature hud;
     protected EffectManager feedbackScript;
+    protected BuffManager buffManager;
     public int antigenValue;
     public GameObject player1DeadVirus;
 
@@ -99,6 +100,7 @@ public class CreatureAtributes : MonoBehaviour
 
     protected virtual void Awake()
     {
+        buffManager = GetComponentInChildren<BuffManager>();
         hud = GetComponentInChildren<HudCreature>();
         feedbackScript = GetComponentInChildren<EffectManager>();
         anim = GetComponent<Animator>();
@@ -166,21 +168,30 @@ public class CreatureAtributes : MonoBehaviour
 
     public virtual void Death()
     {
-        if (anim != null)
-            anim.SetTrigger("death");
-        dead = true;
-        Invoke(nameof(DisableSelf), 5);
+        if (buffManager.GetComponentInChildren<Buff_AutoRevive>())
+        {
+            buffManager.GetComponentInChildren<Buff_AutoRevive>().AutoRevive();
+        }
+        else
+        {
+            if (anim != null)
+                anim.SetTrigger("death");
+            dead = true;
 
-        if (creatureFaction == Faction.Virus)
-            ArenaManager.enemiesDefeated++;
-/*
-        if (GetComponentInChildren<SpawnOnDeath>())
-            GetComponentInChildren<SpawnOnDeath>().Activate();
-*/
+            Invoke(nameof(DisableSelf), 5);
 
-        OnDeath();
+            if (creatureFaction == Faction.Virus)
+                ArenaManager.enemiesDefeated++;
+            /*
+                    if (GetComponentInChildren<SpawnOnDeath>())
+                        GetComponentInChildren<SpawnOnDeath>().Activate();
+            */
 
-        SpawnDeadVirus();
+            OnDeath();
+
+            SpawnDeadVirus();
+
+        }
 
 
     }
@@ -201,7 +212,10 @@ public class CreatureAtributes : MonoBehaviour
 
     private void DisableSelf()
     {
-        gameObject.SetActive(false);
+        if (GetComponentInParent<ObjectPool>())
+            GetComponentInParent<ObjectPool>().ReturnToPool(gameObject);
+        else
+            gameObject.SetActive(false);
 
     }
 

@@ -33,11 +33,11 @@ public class DebugWindow : MonoBehaviour
         }
         else
         {
-            ArenaManager.antigenCollected += 1000;
+            GameManager.scriptArena.AntigenChange(1000);
 
             for (int i = 0; i < ArenaManager.componentsInInventory.Length; i++)
             {
-                ArenaManager.componentsInInventory[i] += 1000;
+                GameManager.scriptArena.ComponentChange(i, 1000);
             }
 
             for (int i = 0; i < GameManager.itemConsumable.Length; i++)
@@ -53,7 +53,7 @@ public class DebugWindow : MonoBehaviour
     public void ReloadSpecificStage(int stage)
     {
         GameManager.currentGameStage = stage;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+        SceneManager.LoadScene("arena", LoadSceneMode.Single);
 
     }
 }

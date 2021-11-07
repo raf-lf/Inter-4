@@ -7,15 +7,21 @@ using TMPro;
 
 public class TechtreeUpgrade : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
+    public bool baseKit;
+    [HideInInspector] public bool available;
+    [HideInInspector] public bool purchased;
+
     [Header("Upgrade")]
     public UpgradeBase upgradeScriptableObject;
     public int scienceCost;
-    [HideInInspector] public int spentScience;
+    [HideInInspector] 
+    public int spentScience;
+    public string upgradeName;
     [TextAreaAttribute(10, 15)]
     public string description;
-    [HideInInspector] public bool available;
-    [HideInInspector] public bool purchased;
     public TechtreeUpgrade[] prerequisites = new TechtreeUpgrade[0];
+    [HideInInspector]
+    public LineRenderer[] lineConnections;
 
     [Header("Components")]
     [HideInInspector] public Image spentFill;
@@ -24,9 +30,16 @@ public class TechtreeUpgrade : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     public ParticleSystem vfxUnlock;
     public ParticleSystem vfxPurchase;
     private Animator anim;
-    private TechtreeManager scriptTechtree;
-
+    private Element_Techtree scriptTechtree;
     public bool buttonHeld;
+
+    [Header("Connections")]
+    public RectTransform connectionsParent;
+    public GameObject linePrefab;
+    public Color connectionColorLocked;
+    public Color connectionColorAvailable;
+    public Color connectionColorPurchased;
+
 
 
     public void OnPointerDown(PointerEventData eventData)
@@ -34,6 +47,10 @@ public class TechtreeUpgrade : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         buttonHeld = true;
 
         UpdateDescription();
+
+        scriptTechtree.spendRate = scienceCost / 120;
+        if (scriptTechtree.spendRate < 1)
+            scriptTechtree.spendRate = 1;
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -49,7 +66,15 @@ public class TechtreeUpgrade : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        scriptTechtree = GetComponentInParent<TechtreeManager>();
+        scriptTechtree = GetComponentInParent<Element_Techtree>();
+
+        if(baseKit)
+        {
+            purchased = true;
+
+            if (!GameManager.upgradesPurchased.Contains(upgradeScriptableObject))
+                GameManager.upgradesPurchased.Add(upgradeScriptableObject);
+        }
 
         if (GameManager.upgradesPurchased.Contains(upgradeScriptableObject))
             purchased = true;
@@ -58,20 +83,62 @@ public class TechtreeUpgrade : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
     }
 
+    private void SetupConnections()
+    {
+        if(prerequisites != null)
+        { 
+            lineConnections = new LineRenderer[prerequisites.Length];
+
+            for (int i = 0; i < lineConnections.Length; i++)
+            {
+                if(lineConnections[i] == null)
+                {
+                    GameObject lineObject = Instantiate(linePrefab, connectionsParent);
+                    lineConnections[i] = lineObject.GetComponent<LineRenderer>();
+
+                }
+
+                lineConnections[i].SetPosition(0, prerequisites[i].transform.position);
+                lineConnections[i].SetPosition(1, transform.position);
+
+                if(purchased)
+                {
+                    lineConnections[i].startColor = connectionColorPurchased;
+                    lineConnections[i].endColor = connectionColorPurchased;
+
+                }
+                else if(prerequisites[i].purchased)
+                {
+                    lineConnections[i].startColor = connectionColorAvailable;
+                    lineConnections[i].endColor = connectionColorAvailable;
+                }
+                else
+                {
+                    lineConnections[i].startColor = connectionColorLocked;
+                    lineConnections[i].endColor = connectionColorLocked;
+
+                }
+            }
+        }
+
+    }
+
     private void Start()
     {
         spentFill.fillAmount = 0;
-        textName.text = gameObject.name;
+        textName.text = upgradeName;
         textCost.text = scienceCost.ToString();
-        UpdateStatus();
+        //UpdateStatus();
         
     }
 
     public void UpdateDescription()
     {
-        if(available)
+        scriptTechtree.descriptionPanel.SetActive(true);
+
+        if (available)
         {
-            scriptTechtree.textDesName.text = name;
+            scriptTechtree.textDesName.text = upgradeName;
             scriptTechtree.textDesCost.text = scienceCost.ToString();
             scriptTechtree.textDesDescription.text = description;
 
@@ -84,13 +151,13 @@ public class TechtreeUpgrade : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
         }
 
-        scriptTechtree.UpdateDescriptionPanel();
 
 
     }
 
     public void UpdateStatus()
     {
+        SetupConnections();
 
         if (prerequisites != null && !purchased)
         {
@@ -125,7 +192,7 @@ public class TechtreeUpgrade : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
             if (buttonHeld && scriptTechtree.availableScience > 0 && spentScience < scienceCost)
             {
-                scriptTechtree.availableScience -= scriptTechtree.spendRate;
+                scriptTechtree.availableScience = Mathf.Clamp(scriptTechtree.availableScience - scriptTechtree.spendRate, 0, scriptTechtree.availableScience);
                 spentScience = Mathf.Clamp(spentScience + scriptTechtree.spendRate, 0, scienceCost);
                 spentFill.fillAmount = (float)spentScience / (float)scienceCost;
 
