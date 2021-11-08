@@ -37,6 +37,7 @@ public class Element_Fabricator : LabElement
     public Dialogue dialoguegreatVaccine;
     public Dialogue dialoguegoodVaccine;
     public Dialogue dialoguebadVaccine;
+    public Button endBatchButton;
     public Image rocketFill;
     public TextMeshProUGUI rocketFillText;
 
@@ -45,7 +46,6 @@ public class Element_Fabricator : LabElement
     public override void StartupElement()
     {
         base.StartupElement();
-
         GameManager.scriptLab.SetComponentTargets();
 
         int totalComponents = 0;
@@ -76,6 +76,7 @@ public class Element_Fabricator : LabElement
     
     public void BeginBatch()
     {
+        endBatchButton.interactable = false;
         UpdateRocket();
         currentAntigenTarget = LabManager.antigenTarget[GameManager.currentGameStage];
 
@@ -186,7 +187,10 @@ public class Element_Fabricator : LabElement
         antigenReserveQty.text = antigenReserve.ToString();
 
         if (antigenReserve == 0 || antigenAdded == currentAntigenTarget)
+        {
             antigenButton.interactable = false;
+            endBatchButton.interactable = true;
+        }
         else if (antigenReserve > 0)
             antigenButton.interactable = true;
         else

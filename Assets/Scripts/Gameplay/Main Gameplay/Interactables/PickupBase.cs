@@ -13,7 +13,7 @@ public class PickupBase : MonoBehaviour
         {
             CreatureAtributes pickingCreature = collision.gameObject.GetComponent<CreatureAtributes>();
             //if (pickableFaction.Contains(pickingCreature.creatureFaction))
-            if (pickingCreature = GameManager.scriptPlayer)
+            if (pickingCreature == GameManager.scriptPlayer)
             {
                 Pickup();
             }
