@@ -32,6 +32,9 @@ public class Projectile : DamageCreature
 
     public void Death()
     {
+        if (GetComponentInChildren<TrailRenderer>())
+            GetComponentInChildren<TrailRenderer>().Clear();
+
         GetComponentInParent<ObjectPool>().ReturnToPool(gameObject);
     }
 

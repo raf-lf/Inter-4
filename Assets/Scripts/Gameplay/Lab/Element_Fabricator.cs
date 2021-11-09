@@ -12,16 +12,12 @@ public class Element_Fabricator : LabElement
 
     [Header("Counters")]
     public TextMeshProUGUI antigenReserveQty;
-    public TextMeshProUGUI[] componentReserveQty = new TextMeshProUGUI[4];
     public TextMeshProUGUI antigenNeededQty;
-    public TextMeshProUGUI[] componentAddedQty = new TextMeshProUGUI[6];
+    public TextMeshProUGUI[] componentReserveQty = new TextMeshProUGUI[4];
+    public TextMeshProUGUI[] componentNeededQty = new TextMeshProUGUI[6];
 
     [Header("Bars")]
     public Image antigenBarFill;
-    public RectTransform targetMixTotal;
-    public RectTransform addedMixTotal;
-    public Image[] targetMixComponentBar = new Image[6];
-    public Image[] currentMixComponentBar = new Image[6];
 
     [Header("Resources")]
     public int currentAntigenTarget;
@@ -68,8 +64,6 @@ public class Element_Fabricator : LabElement
             }
 
         }
-
-        UpdateValues();
         BeginBatch();
     }
 
@@ -77,12 +71,13 @@ public class Element_Fabricator : LabElement
     public void BeginBatch()
     {
         endBatchButton.interactable = false;
-        UpdateRocket();
+
         currentAntigenTarget = LabManager.antigenTarget[GameManager.currentGameStage];
 
         antigenReserve = LabManager.antigenStored;
 
         antigenAdded = 0;
+
         for (int i = 0; i < componentAdded.Length; i++)
         {
             componentAdded[i] = 0;
@@ -94,6 +89,7 @@ public class Element_Fabricator : LabElement
         }
 
         UpdateValues();
+        UpdateRocket();
 
     }
 
@@ -113,6 +109,7 @@ public class Element_Fabricator : LabElement
 
             float finalAmmount = LabManager.antigenTarget[GameManager.currentGameStage] * (1 - mistakeTotal);
 
+            
             finalAmmount = Mathf.Clamp(finalAmmount, 0, LabManager.vaccineTarget[GameManager.currentGameStage] - LabManager.vaccineInRocket);
 
             LabManager.vaccineInRocket += (int)finalAmmount;
@@ -153,28 +150,12 @@ public class Element_Fabricator : LabElement
         
         componentAdded[componentId]++;
 
+        if (componentId <= 4 && componentAdded[componentId] >= componentTarget[componentId])
+            componentButton[componentId].interactable = false;
+
         UpdateValues();
     }
 
-    public void CalculateBarSizes()
-    {
-        float barSize = 600;
-        float targetMixSum = 0;
-
-        for (int i = 0; i < componentTarget.Length; i++)
-        {
-            targetMixSum += componentTarget[i];
-        }
-
-        float sizeFactor = barSize / targetMixSum;
-
-        for (int i = 0; i < componentTarget.Length; i++)
-        {
-            targetMixComponentBar[i].rectTransform.sizeDelta = new Vector2(targetMixComponentBar[i].rectTransform.sizeDelta.x * sizeFactor, targetMixComponentBar[i].rectTransform.sizeDelta.y);
-        }
-
-
-    }
     public void UpdateValues()
     {
         int antigenNeeded = Mathf.Clamp(currentAntigenTarget - antigenAdded, 0, currentAntigenTarget);
@@ -186,34 +167,64 @@ public class Element_Fabricator : LabElement
 
         antigenReserveQty.text = antigenReserve.ToString();
 
-        if (antigenReserve == 0 || antigenAdded == currentAntigenTarget)
-        {
+        //Can't add antigen if reserve is out or if enough antigen is added
+        if (antigenAdded == currentAntigenTarget || antigenReserve <= 0)
             antigenButton.interactable = false;
-            endBatchButton.interactable = true;
-        }
-        else if (antigenReserve > 0)
-            antigenButton.interactable = true;
         else
-            antigenButton.interactable = false;
+            antigenButton.interactable = true;
 
+        //Batch can be ended only if enough antigen is added
+        if (LabManager.vaccineInRocket == LabManager.vaccineTarget[GameManager.currentGameStage])
+            endBatchButton.interactable = false;
+        else if (antigenAdded == currentAntigenTarget)
+            endBatchButton.interactable = true;
+        else
+            endBatchButton.interactable = false;
+
+        //Update component reserve values
         for (int i = 0; i < componentReserveQty.Length; i++)
         {
             componentReserveQty[i].text = componentReserve[i].ToString();
-
-            if (componentReserve[i] > 0)
-                componentButton[i].interactable = true;
-            else
-                componentButton[i].interactable = false;
         }
+
+        //Update componente buttons. Dillutant is sepparated due to it not having a reserve.
+        for (int i = 0; i < componentButton.Length; i++)
+        {
+            if (i <= 3)
+            {
+                if (componentAdded[i] >= componentTarget[i] || componentReserve[i] <= 0)
+                    componentButton[i].interactable = false;
+
+                else if (componentReserve[i] > 0)
+                    componentButton[i].interactable = true;
+                else
+                    componentButton[i].interactable = false;
+            }
+            else
+            {
+                if (componentAdded[i] >= componentTarget[i])
+                    componentButton[i].interactable = false;
+                else
+                    componentButton[i].interactable = true;
+
+            }
+
+        }
+        //Counts components so that residues can be calculated
         int totalComponentSum = 0;
 
-        for (int i = 0; i < componentAdded.Length; i++)
+        for (int i = 0; i < componentNeededQty.Length; i++)
         {
-            componentAddedQty[i].text = componentAdded[i].ToString();
-            targetMixComponentBar[i].GetComponentInChildren<TextMeshProUGUI>().text = componentTarget[i].ToString();
+            if (componentTarget[i] - componentAdded[i] <= 0)
+                componentNeededQty[i].text = "Ok";
+            else
+                componentNeededQty[i].text = (componentTarget[i] - componentAdded[i]).ToString();
+
             totalComponentSum += componentAdded[i];
 
         }
+
+
         componentAdded[5] = totalComponentSum / 5;
 
         antigenBarFill.fillAmount = (float)(antigenAdded / (float)currentAntigenTarget);

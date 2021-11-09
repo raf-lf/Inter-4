@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2920674906660075314}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.33, y: 0.33, z: 0.33}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5617553147165402177}
   m_RootOrder: 0
@@ -71,8 +71,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 71e4ff9115fcbf347817d606f7040999, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 0d8d1a167a8a9414da978682be9d2760, type: 3}
+  m_Color: {r: 0.9245283, g: 0.42301533, b: 0.78678244, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -131,7 +131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b24e54d1aee08749be71a6f05f1f710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickableFaction: 00000000
   pickupVfx: {fileID: 0}
   componentId: 0
   quantity: 0

@@ -14,8 +14,9 @@ public class SkillManager : MonoBehaviour
 
     private void Start()
     {
-        List<GameObject> skillsToAdd = new List<GameObject>();
+      //  List<GameObject> skillsToAdd = player1Skills;
 
+        /*
         switch (GameManager.CurrentPlayerClass)
         {
             case 0:
@@ -23,10 +24,12 @@ public class SkillManager : MonoBehaviour
                 break;
         }
 
-        foreach (GameObject item in skillsToAdd)
+        foreach (GameObject item in player1Skills)
         {
-            Instantiate(item, transform);
+            GameObject newitem = Instantiate(item, transform);
+            Debug.Log(newitem.name + " added");
 
         }
+        */
     }
 }

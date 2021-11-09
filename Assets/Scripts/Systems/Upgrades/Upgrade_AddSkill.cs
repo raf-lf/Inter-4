@@ -7,10 +7,13 @@ using UnityEngine;
 public class Upgrade_AddSkill : UpgradeBase
 {
     public GameObject skillObject;
+
     public override void ApplyUpgrade(Transform transform)
     {
         base.ApplyUpgrade(transform);
-        GameManager.scriptSkill.player1Skills.Add(skillObject);
+        Instantiate(skillObject, GameManager.scriptSkill.transform);
+
+        //GameManager.scriptSkill.player1Skills.Add(skillObject);
 
     }
 }

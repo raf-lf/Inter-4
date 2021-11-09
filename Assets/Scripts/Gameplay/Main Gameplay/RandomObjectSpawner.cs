@@ -7,6 +7,7 @@ public class RandomObjectSpawner : MonoBehaviour
     public int copies = 1;
     public int timesToRun = 1;
     //public Dictionary<GameObject, float> table = new Dictionary<GameObject, float>();
+    public float spawnDistanceVariation;
 
     public GameObject[] objectTable = new GameObject[0];
     public float[] objectWeight = new float[0];
@@ -71,7 +72,7 @@ public class RandomObjectSpawner : MonoBehaviour
             if (objectTable[i] != null)
             {
                 GameObject spawnedObject = Instantiate(objectTable[objectId], transform);
-                spawnedObject.transform.position += new Vector3(Random.Range(-.5f,.5f), Random.Range(-.5f, .5f),0);
+                spawnedObject.transform.position += new Vector3(Random.Range(-spawnDistanceVariation, spawnDistanceVariation), Random.Range(-spawnDistanceVariation, spawnDistanceVariation),0);
                 spawnedObject.transform.parent = transform.parent;
             }
         }

@@ -45,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   copies: 1
   timesToRun: 1
+  spawnDistanceVariation: 0.5
   objectTable:
   - {fileID: 6168093213634723270, guid: b998318a7d9f5f8478b7bf6f7d228651, type: 3}
   - {fileID: 4188371416342631482, guid: f52e04169b6a5814b88af017cfa98522, type: 3}
