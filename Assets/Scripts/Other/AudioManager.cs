@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static float volumeSfx = .5f;
-    public static float volumeBgm = .25f;
+    public static float volumeSfxModifier = .5f;
+    public static float volumeBgmModifier = .5f;
+    public float volumeSfxFadeModifier = 1;
+    public float volumeBgmFadeModifier = 1;
+    public static float volumeCurrentBgm = 1;
+    public static float volumeCurrentSfx = 1;
     public AudioSource sfxSource;
     public AudioSource bgmSource;
+
+    /*
+    public delegate void volumeDelegate();
+    public static volumeDelegate volumeChangedEvent;
+    */
+
 
 
     public void Awake()
@@ -15,35 +25,90 @@ public class AudioManager : MonoBehaviour
         GameManager.scriptAudio = this;
     }
 
-    public void PlaySfx(AudioClip clip, float volume, Vector2 pitchVariance)
+    public float ReturnBgmVolume()
     {
-        sfxSource.volume = volume * volumeSfx;
-        sfxSource.pitch = Random.Range(pitchVariance.x, pitchVariance.y);
-        sfxSource.PlayOneShot(clip);
+        return volumeCurrentBgm * volumeBgmModifier * volumeBgmFadeModifier;
+    }
+    public float ReturnSfxVolume()
+    {
+        return volumeCurrentSfx * volumeSfxModifier * volumeSfxFadeModifier;
+    }
+
+    public void PlaySfx(AudioClip clip, float volume, Vector2 pitchVariance, AudioSource source)
+    {
+        AudioSource usedSource = sfxSource;
+
+        if (source != null)
+            usedSource = source;
+
+        volumeCurrentSfx = volume;
+
+        usedSource.volume = ReturnSfxVolume();
+        usedSource.pitch = Random.Range(pitchVariance.x, pitchVariance.y);
+        usedSource.PlayOneShot(clip);
 
     }
 
     public void PlayBgm(AudioClip music, float volume)
     {
-        bgmSource.volume = volume * volumeBgm;
+        volumeCurrentBgm = volume;
+        bgmSource.volume = ReturnBgmVolume();
         bgmSource.clip = music;
         bgmSource.Play();
 
     }
 
-    /*public void FadeBgm(float volume, float time)
+    public void FadeBgm(float volume, float volumeChange)
     {
-
+        StopAllCoroutines();
+        StopCoroutine(FadeBgmCoroutine(volume, volumeChange));
+        StartCoroutine(FadeBgmCoroutine(volume, volumeChange));
     }
 
-    IEnumerator Fade (float volume, float time)
+    public IEnumerator FadeBgmCoroutine(float setFadeValue, float gradualChange)
     {
-        for (int i = (int)(time * 60); i > 0 ; i--)
+        while (volumeBgmFadeModifier != setFadeValue)
         {
-            if()
-            yield return new WaitForSeconds(time / 60);
+            if (volumeBgmFadeModifier > setFadeValue)
+                volumeBgmFadeModifier = Mathf.Clamp(volumeBgmFadeModifier - gradualChange, setFadeValue, 1);
+            else if (volumeBgmFadeModifier < setFadeValue)
+                volumeBgmFadeModifier = Mathf.Clamp(volumeBgmFadeModifier + gradualChange, 0, setFadeValue);
+
+            bgmSource.volume = ReturnBgmVolume();
+
+            yield return new WaitForSeconds(.1F);
+
+            if (volumeBgmFadeModifier == setFadeValue)
+                break;
 
         }
+
     }
-    */
+
+    public void FadeSfx(float volume, float volumeChange)
+    {
+        StopCoroutine(FadeSfxCoroutine(volume, volumeChange));
+        StartCoroutine(FadeSfxCoroutine(volume, volumeChange));
+    }
+
+    public IEnumerator FadeSfxCoroutine(float setFadeValue, float gradualChange)
+    {
+        while (volumeSfxFadeModifier != setFadeValue)
+        {
+            if (volumeSfxFadeModifier > setFadeValue)
+                volumeSfxFadeModifier = Mathf.Clamp(volumeSfxFadeModifier - gradualChange, setFadeValue, 1);
+            else if (volumeSfxFadeModifier < setFadeValue)
+                volumeSfxFadeModifier = Mathf.Clamp(volumeSfxFadeModifier + gradualChange, 0, setFadeValue);
+
+            // volumeChangedEvent();
+
+            yield return new WaitForSeconds(.1F);
+
+            if (volumeSfxFadeModifier == setFadeValue)
+                break;
+
+        }
+
+    }
+
 }
