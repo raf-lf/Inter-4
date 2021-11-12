@@ -6,8 +6,14 @@ public class AnimationTools: MonoBehaviour
 {
     public void PlaySfx(AudioClip clip)
     {
-        GameManager.scriptAudio.PlaySfx(clip, 1, Vector2.one);
+        AudioSource source = null;
+
+        if (GetComponentInChildren<AudioSource>() != null)
+            source = GetComponentInChildren<AudioSource>();
+
+        GameManager.scriptAudio.PlaySfx(clip, 1, Vector2.one, source);
     }
+
     public void DestroySelf(float delay)
     {
         Destroy(gameObject, delay);

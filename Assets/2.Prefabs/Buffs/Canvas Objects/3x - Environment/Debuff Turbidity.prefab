@@ -135,7 +135,7 @@ MonoBehaviour:
   durationFill: {fileID: 6718349415900337038}
   damage: 0
   damageReceived: 0
-  moveSpeed: -0.5
+  moveSpeed: -0.4
   fovChange: 5
 --- !u!222 &2422158018099752402
 CanvasRenderer:

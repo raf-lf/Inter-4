@@ -82,6 +82,57 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2093055581967202788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5404417705447601149}
+  - component: {fileID: 1355481629022927480}
+  m_Layer: 0
+  m_Name: Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &5404417705447601149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093055581967202788}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5617553147165402177}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1355481629022927480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093055581967202788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaefd59ca4ee42b4890da4a6a1a7f92c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 0}
+  playOnStart: 1
+  clips:
+  - {fileID: 8300000, guid: b8a4fba430ab27f4fbab0fd0a43c7aff, type: 3}
+  - {fileID: 8300000, guid: 83298076239030048bce628761399c84, type: 3}
+  - {fileID: 8300000, guid: 3ef81fb4710d35143b459422de26bc97, type: 3}
+  volume: 1
+  pitchVariance: {x: 0.8, y: 1.2}
 --- !u!1 &2920674906660075314
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,6 +333,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 123156803548016385}
+  - {fileID: 5404417705447601149}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -297,7 +349,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89386efc0db9fa04da3276b74bd800f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickableFaction: 00000000
   pickupVfx: {fileID: 0}
   componentId: 0
   quantity: 1

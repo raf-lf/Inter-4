@@ -1531,4 +1531,18 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0
+    functionName: PlaySfx
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: c175ae3236527d1469601e7957028c92, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.0833334
+    functionName: PlaySfx
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 7dff817f335d1104f8391eeef577f2f9, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

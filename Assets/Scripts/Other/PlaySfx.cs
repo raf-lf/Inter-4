@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlaySfx : MonoBehaviour
 {
+    public AudioSource source;
     public bool playOnStart;
     public AudioClip[] clips = new AudioClip[1];
     public float volume;
@@ -18,7 +19,7 @@ public class PlaySfx : MonoBehaviour
     public void PlayInspectorSfx()
     {
         if (clips != null)
-            GameManager.scriptAudio.PlaySfx(clips[Random.Range(0,clips.Length)], volume, pitchVariance);
+            GameManager.scriptAudio.PlaySfx(clips[Random.Range(0, clips.Length)], volume, pitchVariance, source);
 
     }
 
