@@ -6,6 +6,7 @@ public class EffectManager : MonoBehaviour
 {
     [Header("Combat Feedback")]
     public ParticleSystem[] feedbackVfx = new ParticleSystem[0];
+    public PlaySfx[] feedbackSfx = new PlaySfx[0];
     private Animator anim;
 
     [Header("Buff VFX")]
@@ -20,9 +21,15 @@ public class EffectManager : MonoBehaviour
 
     public void PlayFeedback(int type)
     {
-        if (!feedbackVfx[type].gameObject.activeInHierarchy) feedbackVfx[type].gameObject.SetActive(true);
+        if (!feedbackVfx[type].gameObject.activeInHierarchy) 
+            feedbackVfx[type].gameObject.SetActive(true);
+
+
         feedbackVfx[type].Stop();
         feedbackVfx[type].Play();
+
+        if (feedbackSfx[type] != null)
+            feedbackSfx[type].PlayInspectorSfx();
 
     }
 

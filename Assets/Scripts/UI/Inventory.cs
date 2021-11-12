@@ -20,6 +20,7 @@ public class Inventory : MonoBehaviour
     public BuffBase buffDamage;
     public BuffBase buffDefense;
     public BuffBase buffSpeed;
+    public PlaySfx[] sfxItems = new PlaySfx[0];
 
     public GameObject[] itemIcon = new GameObject[5];
     public TextMeshProUGUI[] itemQtyText = new TextMeshProUGUI[5];
@@ -57,6 +58,8 @@ public class Inventory : MonoBehaviour
         if (GameManager.itemConsumable[id] > 0)
         {
             GameManager.itemConsumable[id]--;
+
+            sfxItems[id].PlayInspectorSfx();
 
             switch (id)
             {

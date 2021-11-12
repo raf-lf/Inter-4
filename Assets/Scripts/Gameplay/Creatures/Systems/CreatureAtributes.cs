@@ -70,6 +70,10 @@ public class CreatureAtributes : MonoBehaviour
     [Header("Factions")]
     public Faction creatureFaction;
 
+    [Header("Sounds")]
+    public PlaySfx sfxDamage;
+    public PlaySfx sfxDeath;
+
     [Header("Components")]
     [HideInInspector]
     public Animator anim;
@@ -146,6 +150,9 @@ public class CreatureAtributes : MonoBehaviour
                 {
                     if (anim != null)
                         anim.SetTrigger("damage");
+
+                    if (sfxDamage != null)
+                        sfxDamage.PlayInspectorSfx();
                 }
 
                 if (feedbackScript != null)
@@ -174,9 +181,12 @@ public class CreatureAtributes : MonoBehaviour
         }
         else
         {
+            dead = true;
+            if (sfxDeath != null)
+                sfxDeath.PlayInspectorSfx();
+
             if (anim != null)
                 anim.SetTrigger("death");
-            dead = true;
 
             Invoke(nameof(DisableSelf), 5);
 

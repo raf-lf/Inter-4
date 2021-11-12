@@ -87,10 +87,10 @@ public class PlayerActions_Player1 : PlayerActions
 
 
         //weaponAxis.transform.rotation = Quaternion.Lerp(Quaternion.Euler(0, 0, weaponAxis.transform.rotation.z), Quaternion.Euler(0, 0, rotationZ), lerpSpeed);
-        if(rotationZ <= 90 && rotationZ >= -90)
-            weaponAxis.transform.rotation = Quaternion.Euler(0, 0, rotationZ);
-        else
-            weaponAxis.transform.rotation = Quaternion.Euler(0, 180, rotationZ - 90);
+            if (rotationZ > 90 || rotationZ < -90)
+                weaponAxis.transform.rotation = Quaternion.Euler(0, 180, -rotationZ + 180);
+            else
+                weaponAxis.transform.rotation = Quaternion.Euler(0, 0, rotationZ);
     }
 
     private void ToggleAttackEffect(bool on)
