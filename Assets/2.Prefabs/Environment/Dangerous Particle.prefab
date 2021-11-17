@@ -14771,7 +14771,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20
+      scalar: 10
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -17235,7 +17235,7 @@ ParticleSystem:
     inWorldSpace: 0
     multiplyDragByParticleSize: 1
     multiplyDragByParticleVelocity: 1
-    dampen: 0.6
+    dampen: 0.4
     drag:
       serializedVersion: 2
       minMaxState: 0
@@ -24238,7 +24238,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7615510569423608865, guid: 2e4c326de5580c34e9024f7a65907f72, type: 3}
       propertyPath: Priority
-      value: 200
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 7615510569423608865, guid: 2e4c326de5580c34e9024f7a65907f72, type: 3}
       propertyPath: m_Volume
@@ -24246,11 +24246,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7615510569423608865, guid: 2e4c326de5580c34e9024f7a65907f72, type: 3}
       propertyPath: MaxDistance
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7615510569423608865, guid: 2e4c326de5580c34e9024f7a65907f72, type: 3}
       propertyPath: MinDistance
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7615510569423608865, guid: 2e4c326de5580c34e9024f7a65907f72, type: 3}
       propertyPath: m_audioClip

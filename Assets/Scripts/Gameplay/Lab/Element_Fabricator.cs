@@ -20,9 +20,9 @@ public class Element_Fabricator : LabElement
     public Image antigenBarFill;
 
     [Header("Resources")]
-    public int currentAntigenTarget;
-    public int antigenAdded;
-    public int antigenReserve;
+    public float currentAntigenTarget;
+    public float antigenAdded;
+    public float antigenReserve;
     public int[] componentTarget = new int[6];
     public int[] componentAdded = new int[6];
     public int[] componentReserve = new int[6];
@@ -37,7 +37,10 @@ public class Element_Fabricator : LabElement
     public Image rocketFill;
     public TextMeshProUGUI rocketFillText;
 
-
+    [Header("Audio")]
+    public AudioClip[] sfxComponentAdd = new AudioClip[0];
+    public AudioClip sfxDillutantAdd;
+    public AudioClip sfxEndBatch;
 
     public override void StartupElement()
     {
@@ -113,13 +116,16 @@ public class Element_Fabricator : LabElement
             finalAmmount = Mathf.Clamp(finalAmmount, 0, LabManager.vaccineTarget[GameManager.currentGameStage] - LabManager.vaccineInRocket);
 
             LabManager.vaccineInRocket += (int)finalAmmount;
-            LabManager.antigenStored -= antigenAdded;
+            LabManager.antigenStored -= (int)antigenAdded;
 
             for (int i = 0; i < LabManager.componentStored.Length; i++)
             {
                 LabManager.componentStored[i] -= componentAdded[i];
 
             }
+
+            GameManager.scriptAudio.PlaySfx(sfxEndBatch, 1, new Vector2(.8f, 1.2f), GameManager.scriptAudio.sfxSource);
+
             UpdateRocket();
 
             BeginBatch();
@@ -136,18 +142,36 @@ public class Element_Fabricator : LabElement
         rocketFill.fillAmount = (float)LabManager.vaccineInRocket / (float)LabManager.vaccineTarget[GameManager.currentGameStage];
 
     }
-    public void AddAntigen(int value)
+    public void AddAntigen(float value)
     {
         antigenReserve -= value;
         antigenAdded += value;
+        /*
+        antigenReserve = Mathf.Clamp(antigenReserve - value, 0, Mathf.Infinity);
+        antigenAdded = Mathf.Clamp(antigenReserve + value, 0, currentAntigenTarget);
+        */
         UpdateValues();
     }
 
     public void UseComponent(int componentId)
     {
-        if (componentId <=3) 
+
+        AudioClip sfxToPlay = null;
+
+        if (componentId <= 3)
+        {
+            sfxToPlay = sfxComponentAdd[Random.Range(0, sfxComponentAdd.Length)];
             componentReserve[componentId]--;
-        
+        }
+        else if (componentId == 4)
+        {
+            sfxToPlay = sfxDillutantAdd;
+            GameManager.scriptAudio.PlaySfxSimple(sfxDillutantAdd);
+        }
+
+
+        GameManager.scriptAudio.PlaySfx(sfxToPlay, 1, new Vector2(.8f, 1.2f), GameManager.scriptAudio.sfxSource);
+
         componentAdded[componentId]++;
 
         if (componentId <= 4 && componentAdded[componentId] >= componentTarget[componentId])
@@ -158,25 +182,25 @@ public class Element_Fabricator : LabElement
 
     public void UpdateValues()
     {
-        int antigenNeeded = Mathf.Clamp(currentAntigenTarget - antigenAdded, 0, currentAntigenTarget);
+        float antigenNeeded = Mathf.Clamp(currentAntigenTarget - antigenAdded, 0, currentAntigenTarget);
 
         if (antigenNeeded == 0)
             antigenNeededQty.text = "OK";
         else
-            antigenNeededQty.text = antigenNeeded.ToString();
+            antigenNeededQty.text = ((int)antigenNeeded).ToString();
 
-        antigenReserveQty.text = antigenReserve.ToString();
+        antigenReserveQty.text = ((int)antigenReserve).ToString();
 
         //Can't add antigen if reserve is out or if enough antigen is added
-        if (antigenAdded == currentAntigenTarget || antigenReserve <= 0)
+        if (antigenAdded >= currentAntigenTarget || antigenReserve <= 0)
             antigenButton.interactable = false;
         else
             antigenButton.interactable = true;
 
         //Batch can be ended only if enough antigen is added
-        if (LabManager.vaccineInRocket == LabManager.vaccineTarget[GameManager.currentGameStage])
+        if (LabManager.vaccineInRocket >= LabManager.vaccineTarget[GameManager.currentGameStage])
             endBatchButton.interactable = false;
-        else if (antigenAdded == currentAntigenTarget)
+        else if (antigenAdded >= currentAntigenTarget)
             endBatchButton.interactable = true;
         else
             endBatchButton.interactable = false;
@@ -227,7 +251,7 @@ public class Element_Fabricator : LabElement
 
         componentAdded[5] = totalComponentSum / 5;
 
-        antigenBarFill.fillAmount = (float)(antigenAdded / (float)currentAntigenTarget);
+        antigenBarFill.fillAmount = antigenAdded / currentAntigenTarget;
 
        // CalculateBarSizes();
 

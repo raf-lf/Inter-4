@@ -12,7 +12,11 @@ public class CutsceneElement : MonoBehaviour
 
     private void Awake()
     {
-        animator = GetComponentInChildren<Animator>();
+        animator = GetComponent<Animator>();
+    }
+    private void OnEnable()
+    {
+        Animate();
     }
 
     public void Animate()

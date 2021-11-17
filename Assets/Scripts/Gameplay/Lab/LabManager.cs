@@ -28,14 +28,21 @@ public class LabManager : MonoBehaviour
     public static int[] componentcurrentTarget = new int[4];
     public static int[] componentTargetBase = { 2, 3, 5, 8, 8 };
     public static int[] componentTargetVariance = { 1, 1, 2, 3, 3 };
-    public static int[] componentdillutant = { 10, 15, 20, 25, 25 };
+    public static int[] componentdillutant = { 6, 8, 10, 12, 12 };
     public static int[] vaccineTarget = { 100, 150, 400, 500, 500 };
     public static int[] dataNeededPerStage = { 0, 1, 2, 3, 0 };
 
 
     [Header("Other")]
     public static int vaccineInRocket;
+    public Animator animOverlay;
     public GameObject clickBlocker;
+
+    [Header("Audio")]
+    public AudioClip sfxClickOk;
+    public AudioClip sfxClickNo;
+    public AudioClip sfxTabOpen;
+    public AudioClip sfxTabClose;
 
     private void Awake()
         =>GameManager.scriptLab = this;

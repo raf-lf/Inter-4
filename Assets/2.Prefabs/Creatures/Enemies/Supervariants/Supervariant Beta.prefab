@@ -724,6 +724,7 @@ GameObject:
   - component: {fileID: 3558705731892210236}
   - component: {fileID: 7204348297831539280}
   - component: {fileID: -5952265399842687837}
+  - component: {fileID: 8488979938513338891}
   m_Layer: 0
   m_Name: Supervariant Beta
   m_TagString: Untagged
@@ -878,6 +879,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da66d0498b566fa4d9451ec1b58a74d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8488979938513338891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7308243028990130087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaefd59ca4ee42b4890da4a6a1a7f92c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 5626854274584360855}
+  playOnStart: 0
+  clips:
+  - {fileID: 8300000, guid: b1df3efabf521b64cbd7f5b3757afaa8, type: 3}
+  volume: 1
+  pitchVariance: {x: 0.5, y: 0.7}
 --- !u!1 &7388909032322169072
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,16 +1319,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
       propertyPath: pitchVariance.x
-      value: 0.3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
       propertyPath: pitchVariance.y
-      value: 0.5
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
+      propertyPath: clips.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
       propertyPath: clips.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 5491cfe61c8f6fb41a44437128c6ca7a, type: 3}
+      objectReference: {fileID: 8300000, guid: 6fa426dfc95736b42b1d01b1e5d6e523, type: 3}
+    - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
+      propertyPath: clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 215cd9a4805da0442858bd7a7f90d2ec, type: 3}
+    - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
+      propertyPath: clips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9cb5e8fd338b4f0438af44335bc5820f, type: 3}
     - target: {fileID: 7853365801446903477, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
       propertyPath: m_Name
       value: SFX Damage
@@ -1319,6 +1350,11 @@ PrefabInstance:
 --- !u!4 &7458052775502519980 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3211094471188175674, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
+  m_PrefabInstance: {fileID: 5408904604657501590}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &5626854274584360855 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 362205737241866753, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
   m_PrefabInstance: {fileID: 5408904604657501590}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &580867429527852681 stripped
@@ -1521,16 +1557,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
       propertyPath: pitchVariance.x
-      value: 0.3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
       propertyPath: pitchVariance.y
-      value: 0.5
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
       propertyPath: clips.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 402a1aceb1825aa469cff2524d9d1238, type: 3}
+      objectReference: {fileID: 8300000, guid: eb8c8a5c9506ace48b1f7cc8487868ee, type: 3}
     - target: {fileID: 7853365801446903477, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
       propertyPath: m_Name
       value: SFX Death

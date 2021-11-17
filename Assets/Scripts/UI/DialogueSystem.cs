@@ -12,6 +12,7 @@ public class DialogueSystem : MonoBehaviour, IPointerClickHandler
     public RectTransform assitantPoint;
     private Animator animDialogue;
     public Animator animAssistant;
+    public AudioClip[] sfxGator = new AudioClip[0];
 
     public bool dialogueActive;
     public Dialogue currentDialogue;
@@ -76,6 +77,8 @@ public class DialogueSystem : MonoBehaviour, IPointerClickHandler
 
         animAssistant.SetTrigger(ReturnExpression(currentDialogue.linesExpression[step]));
 
+        int roll = Random.Range(0, sfxGator.Length);
+        GameManager.scriptAudio.PlaySfx(sfxGator[roll],1,new Vector2(1,1.3f),GameManager.scriptAudio.sfxSource);
     }
     private void WriteText(string text)
     {

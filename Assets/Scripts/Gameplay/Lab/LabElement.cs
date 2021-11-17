@@ -12,17 +12,25 @@ public class LabElement : MonoBehaviour
 
     public virtual void OpenElement()
     {
-        GetComponent<Animator>().SetBool("active", true);
-        StartupElement();
-        elementActive = true;
+        if (!elementActive)
+        {
+            GameManager.scriptAudio.PlaySfxSimple(GameManager.scriptLab.sfxTabOpen);
+            GetComponent<Animator>().SetBool("active", true);
+            StartupElement();
+            elementActive = true;
+        }
 
     }
 
     public virtual void CloseElement()
     {
-        GetComponent<Animator>().SetBool("active", false);
-        elementActive = false;
-        GameManager.scriptDialogue.EndDialogue();
+        if (elementActive)
+        {
+            GameManager.scriptAudio.PlaySfxSimple(GameManager.scriptLab.sfxTabClose);
+            GetComponent<Animator>().SetBool("active", false);
+            elementActive = false;
+            GameManager.scriptDialogue.EndDialogue();
+        }
 
     }
 

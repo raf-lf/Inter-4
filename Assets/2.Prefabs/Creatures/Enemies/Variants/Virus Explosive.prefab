@@ -20825,7 +20825,7 @@ PrefabInstance:
     - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
       propertyPath: clips.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 402a1aceb1825aa469cff2524d9d1238, type: 3}
+      objectReference: {fileID: 8300000, guid: 7e70dc632e7babe48ba6c4b53c0d1032, type: 3}
     - target: {fileID: 7853365801446903477, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
       propertyPath: m_Name
       value: SFX Death
@@ -20942,9 +20942,21 @@ PrefabInstance:
       value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
+      propertyPath: clips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
       propertyPath: clips.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 5491cfe61c8f6fb41a44437128c6ca7a, type: 3}
+      objectReference: {fileID: 8300000, guid: a342ef932f8926a40ab5ee8b02dc09b3, type: 3}
+    - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
+      propertyPath: clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 228705c1017ee22429ebf89d95dbd661, type: 3}
+    - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
+      propertyPath: clips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 60a573c81199c2e41ac2eb01f1ca3b2f, type: 3}
     - target: {fileID: 7853365801446903477, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
       propertyPath: m_Name
       value: SFX Damage

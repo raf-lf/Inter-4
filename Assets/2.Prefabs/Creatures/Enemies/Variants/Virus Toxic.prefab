@@ -1052,6 +1052,7 @@ GameObject:
   - component: {fileID: 3558705731892210236}
   - component: {fileID: 7204348297831539280}
   - component: {fileID: 6665658311063677164}
+  - component: {fileID: 1865380294615985427}
   m_Layer: 0
   m_Name: Virus Toxic
   m_TagString: Untagged
@@ -1206,6 +1207,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da66d0498b566fa4d9451ec1b58a74d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1865380294615985427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7308243028990130087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaefd59ca4ee42b4890da4a6a1a7f92c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 786149790418346194}
+  playOnStart: 0
+  clips:
+  - {fileID: 8300000, guid: ccd135ca8e348f44aa433cadadfb9681, type: 3}
+  volume: 1
+  pitchVariance: {x: 0.8, y: 1.2}
 --- !u!1 &7939336402902137900
 GameObject:
   m_ObjectHideFlags: 0
@@ -1311,7 +1330,7 @@ PrefabInstance:
     - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
       propertyPath: clips.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 402a1aceb1825aa469cff2524d9d1238, type: 3}
+      objectReference: {fileID: 8300000, guid: 1e2e571d1f9d3e8499dd4276eb91fd4f, type: 3}
     - target: {fileID: 7853365801446903477, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
       propertyPath: m_Name
       value: SFX Death
@@ -1366,18 +1385,30 @@ PrefabInstance:
       value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
+      propertyPath: clips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
       propertyPath: clips.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 5491cfe61c8f6fb41a44437128c6ca7a, type: 3}
+      objectReference: {fileID: 8300000, guid: 77e89949402e0824ab6b2db2a80522be, type: 3}
+    - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
+      propertyPath: clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: b5570d819f5091942bb6254149677309, type: 3}
+    - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
+      propertyPath: clips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7bc4142f78979af4b98e345b9e1b8ec9, type: 3}
     - target: {fileID: 7853365801446903477, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
       propertyPath: m_Name
       value: SFX Damage
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
---- !u!4 &2557550133838252521 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3211094471188175674, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
+--- !u!82 &786149790418346194 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 362205737241866753, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
   m_PrefabInstance: {fileID: 1147897987809858259}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &5544435742903960012 stripped
@@ -1391,6 +1422,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaefd59ca4ee42b4890da4a6a1a7f92c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &2557550133838252521 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3211094471188175674, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
+  m_PrefabInstance: {fileID: 1147897987809858259}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5798380301728207522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1559,6 +1595,10 @@ PrefabInstance:
     - target: {fileID: 7060483352172865457, guid: 8c6907229667d5543a414997c7e4b723, type: 3}
       propertyPath: m_Name
       value: Canvas Creature
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794091996722225689, guid: 8c6907229667d5543a414997c7e4b723, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c6907229667d5543a414997c7e4b723, type: 3}

@@ -34,6 +34,11 @@ public class AudioManager : MonoBehaviour
         return volumeCurrentSfx * volumeSfxModifier * volumeSfxFadeModifier;
     }
 
+    public void PlaySfxSimple(AudioClip clip)
+    {
+        PlaySfx(clip, 1, Vector2.one, sfxSource);
+    }
+
     public void PlaySfx(AudioClip clip, float volume, Vector2 pitchVariance, AudioSource source)
     {
         AudioSource usedSource = sfxSource;

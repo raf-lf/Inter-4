@@ -5785,6 +5785,7 @@ GameObject:
   - component: {fileID: 3558705731892210236}
   - component: {fileID: 2850602603947194257}
   - component: {fileID: 3309469713867492703}
+  - component: {fileID: 3629737662414353390}
   m_Layer: 0
   m_Name: Zombie Virus
   m_TagString: Untagged
@@ -5939,6 +5940,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da66d0498b566fa4d9451ec1b58a74d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3629737662414353390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7308243028990130087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaefd59ca4ee42b4890da4a6a1a7f92c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 8897434384350456446}
+  playOnStart: 0
+  clips:
+  - {fileID: 8300000, guid: 7e4edd514491f6845ac54dbe0717a3d4, type: 3}
+  - {fileID: 8300000, guid: 7aec2153fb18ffd45b0d9b238b75786e, type: 3}
+  volume: 1
+  pitchVariance: {x: 1.5, y: 1.7}
 --- !u!1 &7409669226572076651
 GameObject:
   m_ObjectHideFlags: 0
@@ -6187,7 +6207,7 @@ PrefabInstance:
     - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
       propertyPath: clips.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 2f47ba9290cb9434db2344290968a421, type: 3}
+      objectReference: {fileID: 8300000, guid: 14d043a33bc28854d8174a639789a277, type: 3}
     - target: {fileID: 7853365801446903477, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
       propertyPath: m_Name
       value: SFX Death
@@ -6415,16 +6435,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
       propertyPath: clips.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
       propertyPath: clips.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 6d4ae594b17f8fe448df68aa73c1c522, type: 3}
+      objectReference: {fileID: 8300000, guid: 79d318d5f2656a149903485c1ff5c91f, type: 3}
     - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
       propertyPath: clips.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: 6135a3277fd78ef4390375b6259ffcc6, type: 3}
+      objectReference: {fileID: 8300000, guid: f034043294bf90041985dbff364f2a29, type: 3}
+    - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
+      propertyPath: clips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: cb4c87a815479c949a5c4baf009b2a4a, type: 3}
     - target: {fileID: 7853365801446903477, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
       propertyPath: m_Name
       value: SFX Damage
@@ -6434,6 +6458,11 @@ PrefabInstance:
 --- !u!4 &5975362139261666117 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3211094471188175674, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
+  m_PrefabInstance: {fileID: 9114398737138374783}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &8897434384350456446 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 362205737241866753, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
   m_PrefabInstance: {fileID: 9114398737138374783}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &4423437058839219040 stripped

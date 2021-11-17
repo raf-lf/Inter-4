@@ -1961,7 +1961,14 @@ AnimationClip:
   - time: 0
     functionName: PlaySfx
     data: 
-    objectReferenceParameter: {fileID: 8300000, guid: 349309fb9cafcbf4cb8e49e5af539ec1, type: 3}
+    objectReferenceParameter: {fileID: 8300000, guid: cdc0c85e47501494da6446c190796966, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0
+    functionName: PlayInspectorSfx
+    data: 
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

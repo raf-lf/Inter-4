@@ -15307,6 +15307,7 @@ GameObject:
   - component: {fileID: 3558705731892210236}
   - component: {fileID: 7204348297831539280}
   - component: {fileID: 588508070436381781}
+  - component: {fileID: 5265781139267335185}
   m_Layer: 0
   m_Name: Virus Protector
   m_TagString: Untagged
@@ -15461,6 +15462,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da66d0498b566fa4d9451ec1b58a74d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5265781139267335185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7308243028990130087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaefd59ca4ee42b4890da4a6a1a7f92c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 1317471115702762580}
+  playOnStart: 0
+  clips:
+  - {fileID: 8300000, guid: 2e66050568874804a978c5c3dd070f72, type: 3}
+  - {fileID: 8300000, guid: db6a43f5f50f7ee448c06150bac700fd, type: 3}
+  - {fileID: 8300000, guid: c9ed3059639fe7a4ea0bbfd4ae01118d, type: 3}
+  - {fileID: 8300000, guid: 6c11e106d9becee4ca5723beabc839a5, type: 3}
+  volume: 1
+  pitchVariance: {x: 0.8, y: 1.2}
 --- !u!1 &7435941815973338552
 GameObject:
   m_ObjectHideFlags: 0
@@ -20696,13 +20718,18 @@ PrefabInstance:
     - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
       propertyPath: clips.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 402a1aceb1825aa469cff2524d9d1238, type: 3}
+      objectReference: {fileID: 8300000, guid: 3930cd95900247b4cbdf06aaec4a3ad7, type: 3}
     - target: {fileID: 7853365801446903477, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
       propertyPath: m_Name
       value: SFX Death
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
+--- !u!4 &4313975265362466159 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3211094471188175674, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
+  m_PrefabInstance: {fileID: 1679359757210881621}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6075818795420343626 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
@@ -20714,9 +20741,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaefd59ca4ee42b4890da4a6a1a7f92c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &4313975265362466159 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3211094471188175674, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
+--- !u!82 &1317471115702762580 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 362205737241866753, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
   m_PrefabInstance: {fileID: 1679359757210881621}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5798380301728207522
@@ -20813,9 +20840,21 @@ PrefabInstance:
       value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
+      propertyPath: clips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
       propertyPath: clips.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 5491cfe61c8f6fb41a44437128c6ca7a, type: 3}
+      objectReference: {fileID: 8300000, guid: e0d311edb01aa60458051f4da9930e52, type: 3}
+    - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
+      propertyPath: clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 739dc5f8d6bcfb74d8b974450af9cc91, type: 3}
+    - target: {fileID: 4836845993537295135, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
+      propertyPath: clips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: d018cb89b41c6b241835e3b9ce4be404, type: 3}
     - target: {fileID: 7853365801446903477, guid: 58a24f336b88218448e657c2ee7b5ade, type: 3}
       propertyPath: m_Name
       value: SFX Damage
