@@ -9,10 +9,9 @@ public enum expressions { neutral, happy, hype, serious, sad, dismay, angry }
 
 public class DialogueSystem : MonoBehaviour, IPointerClickHandler
 {
-    public RectTransform assitantPoint;
     private Animator animDialogue;
     public Animator animAssistant;
-    public AudioClip[] sfxGator = new AudioClip[0];
+    public AudioClip[] sfxMessage = new AudioClip[0];
 
     public bool dialogueActive;
     public Dialogue currentDialogue;
@@ -64,7 +63,10 @@ public class DialogueSystem : MonoBehaviour, IPointerClickHandler
             dialogueActive = false;
             animDialogue.SetBool("comment", false);
             animDialogue.SetBool("cutscene", false);
-            animAssistant.SetTrigger("hide");
+
+            if(animAssistant != null)
+                animAssistant.SetTrigger("hide");
+
             currentDialogue = null;
         }
 
@@ -75,10 +77,11 @@ public class DialogueSystem : MonoBehaviour, IPointerClickHandler
         Debug.Log("Step " + step + " of dialogue " + currentDialogue.name);
         WriteText(currentDialogue.lines[step]);
 
-        animAssistant.SetTrigger(ReturnExpression(currentDialogue.linesExpression[step]));
+        if (animAssistant != null)
+            animAssistant.SetTrigger(ReturnExpression(currentDialogue.linesExpression[step]));
 
-        int roll = Random.Range(0, sfxGator.Length);
-        GameManager.scriptAudio.PlaySfx(sfxGator[roll],1,new Vector2(1,1.3f),GameManager.scriptAudio.sfxSource);
+        int roll = Random.Range(0, sfxMessage.Length);
+        GameManager.scriptAudio.PlaySfx(sfxMessage[roll],1,new Vector2(1,1.3f),GameManager.scriptAudio.sfxSource);
     }
     private void WriteText(string text)
     {

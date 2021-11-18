@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviorOn: 1
   busyTime: 0
-  detectionRange: 5
+  detectionRange: 6
   factionsDetected: 01000000
   currentTarget: {fileID: 0}
   possibleTargets: []
@@ -66,7 +66,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 4
+  m_Radius: 6
 --- !u!1 &1608651279144460865
 GameObject:
   m_ObjectHideFlags: 0
@@ -34491,7 +34491,7 @@ GameObject:
   - component: {fileID: 4078394582670622632}
   - component: {fileID: 3127186017862449535}
   - component: {fileID: 7349443781901482513}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Attraction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39803,8 +39803,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6e24f40fd1964740950647701c016aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 250
-  hpMax: 250
+  hp: 150
+  hpMax: 150
   baseDmgMod: 1
   boostDmgMod: 0
   baseDmgRvdMod: 1

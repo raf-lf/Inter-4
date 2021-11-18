@@ -34,5 +34,13 @@ public static class GameManager
     public static DialogueSystem scriptDialogue;
     public static SkillManager scriptSkill;
 
+    //"Preferences"
+    public static bool soundsOn = true;
+    public static bool musicOn = true;
 
+    public static void SetFrameRate(int fps)
+    {
+        Application.targetFrameRate = fps;
+
+    }
 }

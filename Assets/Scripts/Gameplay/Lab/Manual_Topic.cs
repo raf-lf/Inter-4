@@ -6,6 +6,7 @@ public class Manual_Topic : MonoBehaviour
 {
     private Element_Manual scriptManual;
     public GameObject contentPrefab;
+    public AudioClip sfxOpen;
 
     private void Awake()
     {
@@ -14,6 +15,7 @@ public class Manual_Topic : MonoBehaviour
 
     public void SelectContent()
     {
+        GameManager.scriptAudio.PlaySfxSimple(sfxOpen);
         scriptManual.SetContent(contentPrefab);
     }
 }

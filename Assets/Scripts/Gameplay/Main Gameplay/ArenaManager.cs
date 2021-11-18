@@ -56,6 +56,8 @@ public class ArenaManager : MonoBehaviour
 
     private void Start()
     {
+        GameManager.SetFrameRate(60);
+
         StartNewExpedition();
 
         extraBoosts = stageBoosts[GameManager.currentGameStage];

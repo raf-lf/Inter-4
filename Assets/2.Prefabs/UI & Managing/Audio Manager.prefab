@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8004791809649275394}
   - component: {fileID: 491720114995168762}
+  - component: {fileID: 7767601756321065009}
   m_Layer: 0
   m_Name: BGM Source
   m_TagString: Untagged
@@ -127,6 +128,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7767601756321065009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2553504878606783931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152471568defe47418959847900a1722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  loopSource: {fileID: 491720114995168762}
 --- !u!1 &3275174459239103574
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,5 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa3fb1df13dc0994390ef12ad051d63d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  volumeSfxFadeModifier: 1
+  volumeBgmFadeModifier: 1
   sfxSource: {fileID: 204457599154761562}
   bgmSource: {fileID: 491720114995168762}

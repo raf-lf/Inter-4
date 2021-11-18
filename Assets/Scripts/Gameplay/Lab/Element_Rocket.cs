@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Element_Rocket : LabElement
 {
@@ -16,8 +17,16 @@ public class Element_Rocket : LabElement
     [Header("Components")]
     public Image rocketFill;
     public Animator animRocket;
-    public GameObject buttonDataMissing;
-    public GameObject buttonDataOk;
+    public GameObject buttonOk;
+    public GameObject buttonNope;
+    public TextMeshProUGUI textDataNeeded;
+
+    [Header("Prerequisites")]
+    public GameObject textVaccineOk;
+    public GameObject textVaccineNope;
+    public GameObject textDataOk;
+    public GameObject textDataNope;
+
 
 
 
@@ -26,19 +35,40 @@ public class Element_Rocket : LabElement
         base.StartupElement();
 
         UpdateRocket();
+        
+        textDataNeeded.text = LabManager.dataStored + " / " + LabManager.dataNeededPerStage[GameManager.currentGameStage];
+
+        bool vaccineOk = false;
+
+        if (LabManager.vaccineInRocket >= LabManager.vaccineTarget[GameManager.currentGameStage])
+            vaccineOk = true;
+        else
+            vaccineOk = false;
+        
+        textVaccineOk.SetActive(vaccineOk);
+        textVaccineNope.SetActive(!vaccineOk);
+
+
+        bool dataOk = false;
 
         if (LabManager.dataStored >= LabManager.dataNeededPerStage[GameManager.currentGameStage])
-        {
-            GameManager.scriptDialogue.SetupDialogue(dialogueDataOk, DialogueType.oneShot);
-            buttonDataMissing.SetActive(false);
-            buttonDataOk.SetActive(true);
-        }
+            dataOk = true;
         else
-        {
-            GameManager.scriptDialogue.SetupDialogue(dialogueNeedData, DialogueType.oneShot);
-            buttonDataMissing.SetActive(true);
-            buttonDataOk.SetActive(false);
-        }
+            dataOk = false;
+
+        textDataOk.SetActive(dataOk);
+        textDataNope.SetActive(!dataOk);
+
+
+        bool canLaunch = false;
+
+        if (vaccineOk && dataOk)
+            canLaunch = true;
+        else 
+            canLaunch = false;
+
+        buttonOk.SetActive(canLaunch);
+        buttonNope.SetActive(!canLaunch);
     }
 
     public void AttemptLaunch()
@@ -74,6 +104,7 @@ public class Element_Rocket : LabElement
     public void PhaseEnd()
     {
         LabManager.vaccineInRocket = 0;
+        LabManager.dataStored -= LabManager.dataNeededPerStage[GameManager.currentGameStage];
 
         if (GameManager.currentGameStage < 5)
             GameManager.currentGameStage++;

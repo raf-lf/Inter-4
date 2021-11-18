@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AudioLoopVolumeChanger : MonoBehaviour
 {
+    public enum AudioType {sfx, bgm }
+
+    public AudioType type;
     public AudioSource loopSource;
 
     private void Awake()
@@ -14,7 +17,15 @@ public class AudioLoopVolumeChanger : MonoBehaviour
 
     private void Update()
     {
-        loopSource.volume = GameManager.scriptAudio.ReturnSfxVolume();
+        switch (type)
+        {
+            case AudioType.sfx:
+                loopSource.volume = GameManager.scriptAudio.ReturnSfxVolume();
+                break;
+            case AudioType.bgm:
+                loopSource.volume = GameManager.scriptAudio.ReturnBgmVolume();
+                break;
+        }
     }
 
 }

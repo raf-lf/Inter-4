@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static float volumeSfxModifier = .5f;
-    public static float volumeBgmModifier = .5f;
+    public static float volumeSfxModifier = 1;
+    public static float volumeBgmModifier = 1;
     public float volumeSfxFadeModifier = 1;
     public float volumeBgmFadeModifier = 1;
     public static float volumeCurrentBgm = 1;
