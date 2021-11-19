@@ -106,6 +106,8 @@ public class Element_Rocket : LabElement
         LabManager.vaccineInRocket = 0;
         LabManager.dataStored -= LabManager.dataNeededPerStage[GameManager.currentGameStage];
 
+        GameManager.briefingPlayed = false;
+
         if (GameManager.currentGameStage < 5)
             GameManager.currentGameStage++;
 

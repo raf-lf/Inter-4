@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dc50c01d21f84c46bb269ba06389173, type: 3}
+  m_Name: "Pr\xE9-Clinical No Tutorial"
+  m_EditorClassIdentifier: 
+  lines:
+  - "Bem-vindo ao laborat\xF3rio chefinho! Temos muito trabalho a fazer!"
+  - "Com a pandemia solta la fora, precisamos correr para produzir uma vacina para
+    imunizar a popula\xE7\xE3o!"
+  - "O primeiro passo \xE9 coletar os materiais! Para isso, voc\xEA vai precisar
+    usar o raio miniaturizador para se encolher!"
+  - "Desse jeito, voc\xEA vai poder ficar pititico e conseguir extrair os materiais
+    necess\xE1rios para a nossa vacina!"
+  - "N\xF3s estamos fazendo uma vacina de v\xEDrus inativado! Isso significa que
+    o ant\xEDgeno que vamos usar s\xE3o v\xEDrus mortos!"
+  - "Esse ant\xEDgeno \xE9 a chave para que a nossa vacina consiga provocar uma resposta
+    imune quando for administrada! Entendido?"
+  - "Tamb\xE9m vamos precisar encontrar outros componentes secund\xE1rios para a
+    vacina, e bem... Digamos que houve um problema."
+  - "O raio miniaturizador teve um probleminha, e acidentalmente encolhemos estes
+    outros componentes! Agora eles est\xE3o la na cultura viral, junto com os v\xEDrus!"
+  - Ou seja, fique de olhos abertos quando estiver explorando, tente encontrar tudo
+    que vamos precisar para fazer a vacina!
+  - "Tome seu tempo para dar uma olhada no equipamento e nas op\xE7\xF5es que temos
+    aqui no laborat\xF3rio, tem muita coisa \xFAtil para te ajudar, chefinho!"
+  - "Qualquer d\xFAvida, voc\xEA pode dar uma olhadinha no MANUAL! Quando estiver
+    pronto, va at\xE9 a escotilha e inicie uma EXPEDI\xC7\xC3O!"
+  - Eu sei que vamo conseguir, chefinho! Vamos preparar a melhor vacina do mundo!
+  linesExpression: 030000000400000003000000000000000100000003000000040000000500000003000000010000000000000002000000

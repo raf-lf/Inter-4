@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dc50c01d21f84c46bb269ba06389173, type: 3}
+  m_Name: Ending
+  m_EditorClassIdentifier: 
+  lines:
+  - "Quem \xE9 o chefinho mais lindo do mundo? Voc\xEA \xE9!!"
+  - "Com a pandemia encerrada, ficamos todos mais aliviados! Parab\xE9ns pelo seu
+    esfor\xE7o, chefinho! Voc\xEA merece toda a honra que o mundo pode te dar!"
+  - "Isso n\xE3o significa que nosso trabalho acabou, claro! Voc\xEA ainda pode continuar
+    indo em expedi\xE7\xF5es para estudar mais os coronavirus!"
+  - "Todo foguete vacinal adicional que lan\xE7armos vai ajudar a imunizar pessoas
+    que ainda n\xE3o foram vacinadas, ent\xE3o nada vai ser disperdi\xE7ado!"
+  - "Hehehe... Se voc\xEA encontrar mais dados perdidos na cultura viral, traga eles
+    para c\xE1, consigo converter eles em uma boa quantidade de pontos de ci\xEAncia
+    para voc\xEA!"
+  - Obrigado, chefinho! Agora vamos ao trabalho!
+  linesExpression: 020000000100000000000000030000000000000002000000

@@ -45,7 +45,6 @@ public class Element_Fabricator : LabElement
     public override void StartupElement()
     {
         base.StartupElement();
-        GameManager.scriptLab.SetComponentTargets();
 
         int totalComponents = 0;
 
@@ -73,6 +72,8 @@ public class Element_Fabricator : LabElement
     
     public void BeginBatch()
     {
+        GameManager.scriptLab.SetComponentTargets();
+
         endBatchButton.interactable = false;
 
         currentAntigenTarget = LabManager.antigenTarget[GameManager.currentGameStage];
@@ -100,6 +101,10 @@ public class Element_Fabricator : LabElement
     {
         if (LabManager.vaccineInRocket < LabManager.vaccineTarget[GameManager.currentGameStage])
         {
+
+            GameManager.scriptLab.componentsAlreadySet = false;
+            GameManager.scriptLab.SetComponentTargets();
+            /*
             float mistakeTotal = 0;
 
             for (int i = 0; i < componentAdded.Length; i++)
@@ -109,8 +114,9 @@ public class Element_Fabricator : LabElement
             }
 
             mistakeTotal *= mistakePennalty;
+            */
 
-            float finalAmmount = LabManager.antigenTarget[GameManager.currentGameStage] * (1 - mistakeTotal);
+            float finalAmmount = LabManager.antigenTarget[GameManager.currentGameStage] /** (1 - mistakeTotal)*/;
 
             
             finalAmmount = Mathf.Clamp(finalAmmount, 0, LabManager.vaccineTarget[GameManager.currentGameStage] - LabManager.vaccineInRocket);
@@ -197,12 +203,14 @@ public class Element_Fabricator : LabElement
         else
             antigenButton.interactable = true;
 
-        //Batch can be ended only if enough antigen is added
-        if (LabManager.vaccineInRocket >= LabManager.vaccineTarget[GameManager.currentGameStage])
-            endBatchButton.interactable = false;
-        else if (antigenAdded >= currentAntigenTarget)
+        
+        if (antigenAdded >= currentAntigenTarget && componentAdded[0] >= componentTarget[0] && componentAdded[1] >= componentTarget[1] && componentAdded[2] >= componentTarget[2] && componentAdded[3] >= componentTarget[3] && componentAdded[4] >= componentTarget[4])
             endBatchButton.interactable = true;
         else
+            endBatchButton.interactable = false;
+
+        //Batch can be ended only if enough antigen is added
+        if (LabManager.vaccineInRocket >= LabManager.vaccineTarget[GameManager.currentGameStage])
             endBatchButton.interactable = false;
 
         //Update component reserve values

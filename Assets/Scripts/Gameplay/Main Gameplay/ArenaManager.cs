@@ -29,7 +29,7 @@ public class ArenaManager : MonoBehaviour
     [SerializeField] private int timeBoosts;
     [SerializeField] private int extraBoosts;
     [SerializeField] private int maxBoosts;
-    [SerializeField] private int[] stageBoosts = new int[4];    
+    [SerializeField] private int[] stageBoosts = new int[5];    
     [SerializeField] private float expeditionTimer;
     [SerializeField] private float gracePeriod;
     [SerializeField] private float maxDifficultyCapTime;
@@ -42,6 +42,9 @@ public class ArenaManager : MonoBehaviour
     public float currentBoostDamage;
     public float currentBoostDamageReceived;
     public float currentBoostSpeed;
+
+    [Header("Other")]
+    public GameObject vfxRecall;
 
     public delegate void DifficultyBoostDelegate();
     public static event DifficultyBoostDelegate BoostDifficulty;
@@ -105,6 +108,24 @@ public class ArenaManager : MonoBehaviour
 
     public void EndExpedition(bool playerDied)
     {
+        if (playerDied)
+            GameManager.scriptAudio.FadeBgm(0, .2f);
+        else
+        {
+            Instantiate(vfxRecall, GameManager.scriptPlayer.transform);
+
+            foreach (var item in GameManager.scriptPlayer.gameObject.GetComponentsInChildren<SpriteRenderer>())
+            {
+                item.enabled = false;
+            }
+
+            GameManager.scriptAudio.FadeBgm(0, .05f);
+        }
+        GameManager.scriptAudio.FadeSfx(0, .2f);
+
+        GameManager.scriptCamera.EndExpeditionCamera();
+        GameManager.PlayerControl = false;
+
         LabManager.returningFromExpedition = true;
         CalculateScience(playerDied);
         PrepareComponents(playerDied);
@@ -114,6 +135,7 @@ public class ArenaManager : MonoBehaviour
     }
     public void LoadScene()
     {
+        GameManager.PlayerControl = true;
         SceneManager.LoadScene("lab", LoadSceneMode.Single);
     }
 
@@ -123,8 +145,10 @@ public class ArenaManager : MonoBehaviour
         {
             int finalComponent = componentsInInventory[i];
 
+            /*
             if (playerDied)
                 finalComponent /= 2;
+            */
 
             LabManager.expeditionComponents[i] = finalComponent;
 
@@ -132,8 +156,9 @@ public class ArenaManager : MonoBehaviour
 
         int finalAntigen = antigenCollected;
 
-        if (playerDied)
+        /*if (playerDied)
             finalAntigen /= 2;
+        */
 
         LabManager.expeditionAntigen = finalAntigen;
 

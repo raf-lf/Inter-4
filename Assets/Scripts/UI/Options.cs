@@ -11,7 +11,7 @@ public class Options : MonoBehaviour
     public GameObject menuObject;
     public AudioClip sfxClickOk;
     public AudioClip sfxClickCancel;
-
+    private bool ignoreClickSfx = true;
 
     [Header("Audio")]
     public GameObject[] soundsObjects = new GameObject[4];
@@ -29,6 +29,7 @@ public class Options : MonoBehaviour
     {
         ToggleSounds(GameManager.soundsOn);
         ToggleMusic(GameManager.musicOn);
+        ignoreClickSfx = false;
     }
 
     public void MenuToggle()
@@ -70,19 +71,26 @@ public class Options : MonoBehaviour
 
     public void Exit()
     {
-        StartCoroutine(ExitGame());
         GameManager.scriptAudio.PlaySfxSimple(sfxClickOk);
+        StopCoroutine(ExitFromGame());
+        StartCoroutine(ExitFromGame());
     }
 
-    IEnumerator ExitGame()
+    IEnumerator ExitFromGame()
     {
+        Time.timeScale = 1;
         if (SceneManager.GetActiveScene().name == "lab")
+        {
             GameManager.scriptLab.animOverlay.SetBool("blackOut", true);
+        }
 
         else if (SceneManager.GetActiveScene().name == "arena")
+        {
             GameManager.scriptCanvas.overlayAnimator.SetBool("blackOut", true);
+        }
 
         GameManager.scriptAudio.FadeBgm(0, .05f);
+
         yield return new WaitForSeconds(2);
 
         SceneManager.LoadScene("logo", LoadSceneMode.Single);
@@ -90,16 +98,22 @@ public class Options : MonoBehaviour
 
     public void ToggleSounds(bool on)
     {
-        if (!on)
-            GameManager.scriptAudio.PlaySfxSimple(sfxClickCancel);
+        if (!ignoreClickSfx)
+        {
+            if (!on)
+                GameManager.scriptAudio.PlaySfxSimple(sfxClickCancel);
+        }
 
         if (on)
             AudioManager.volumeSfxModifier = 1;
         else
             AudioManager.volumeSfxModifier = 0;
 
-        if (on)
-            GameManager.scriptAudio.PlaySfxSimple(sfxClickOk);
+        if (!ignoreClickSfx)
+        {
+            if (on)
+                GameManager.scriptAudio.PlaySfxSimple(sfxClickOk);
+        }
 
         soundsObjects[0].SetActive(on);
         soundsObjects[1].SetActive(on);
@@ -113,10 +127,13 @@ public class Options : MonoBehaviour
 
     public void ToggleMusic(bool on)
     {
-        if (on)
-            GameManager.scriptAudio.PlaySfxSimple(sfxClickOk);
-        else
-            GameManager.scriptAudio.PlaySfxSimple(sfxClickCancel);
+        if (!ignoreClickSfx)
+        {
+            if (on)
+                GameManager.scriptAudio.PlaySfxSimple(sfxClickOk);
+            else
+                GameManager.scriptAudio.PlaySfxSimple(sfxClickCancel);
+        }
 
 
         if (on)

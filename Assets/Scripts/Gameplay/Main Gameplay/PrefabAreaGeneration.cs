@@ -13,11 +13,11 @@ public class PrefabAreaGeneration : MonoBehaviour
 
     [Header("Prefab Tables")]
     //How many areas need to be spawned per game stage?
-    public int[] minPrefabSmallSpawn = { 0, 5, 4, 3, 3 };
-    public int[] minPrefabMediumSpawn = { 0, 1, 2, 3, 3 };
-    public int[] minPrefabLargeSpawn = { 0, 0, 1, 2, 3 };
+    public int[] minPrefabSmallSpawn = { 0, 5, 4, 3, 3, 3 };
+    public int[] minPrefabMediumSpawn = { 0, 1, 2, 2, 3, 3 };
+    public int[] minPrefabLargeSpawn = { 0, 0, 1, 2, 3, 3 };
     //What's the chance of remaining empty slots spawning extra prefab areas past the minimum areas?
-    public float[] extraPrefabSpawnChance = { 0, .1f, .2f, .3f, .5f };
+    public float[] extraPrefabSpawnChance = { 0, .1f, .2f, .3f, .4f, .5f };
     //0 - Fixed prefab slots. Use small areas
     //1 - Small prefab slots. Use small areas
     //2 - Medium prefab slots. Use medium areas and boss areas
@@ -50,7 +50,7 @@ public class PrefabAreaGeneration : MonoBehaviour
 
         //In end-game, boss areas are not determined by the need of collecting data. Instead, they're added to the pool of medium prefab areas.
         //At this stage, multiple boss areas can be generated at the same time.
-        if (GameManager.currentGameStage >= 4)
+        if (GameManager.currentGameStage >= 5)
             placeablePrefabMedium.AddRange(prefabBoss);
 
         //Defines minimum areas for each slot type. Number of minimum areas depend on current stage.

@@ -7,7 +7,7 @@ public class Wormhole : MonoBehaviour
     public Transform destination;
     public List<Faction> factionsAffected = new List<Faction>();
     public GameObject vfxDestination;
-
+    public AudioClip sfxTeleport;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         AreaEffect(collision.gameObject, true);
@@ -25,6 +25,7 @@ public class Wormhole : MonoBehaviour
                 vfxDestination.transform.position = destination.position;
                 vfxDestination.GetComponent<ParticleSystem>().Stop();
                 vfxDestination.GetComponent<ParticleSystem>().Play();
+                GameManager.scriptAudio.PlaySfx(sfxTeleport, 1, new Vector2(.8f, 1.2f), GameManager.scriptAudio.sfxSource);
 
             }
         }

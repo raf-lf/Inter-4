@@ -14561,6 +14561,7 @@ MonoBehaviour:
   destination: {fileID: 3638241137874212718}
   factionsAffected: 00000000
   vfxDestination: {fileID: 8976934074933645757}
+  sfxTeleport: {fileID: 8300000, guid: cdc0c85e47501494da6446c190796966, type: 3}
 --- !u!58 &6230568336532164683
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -14576,7 +14577,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 0.75
 --- !u!1 &5209549051925548989
 GameObject:
   m_ObjectHideFlags: 0
@@ -58129,9 +58130,17 @@ PrefabInstance:
       value: Audio Loop Move
       objectReference: {fileID: 0}
     - target: {fileID: 7615510569423608865, guid: 2e4c326de5580c34e9024f7a65907f72, type: 3}
+      propertyPath: Priority
+      value: 206
+      objectReference: {fileID: 0}
+    - target: {fileID: 7615510569423608865, guid: 2e4c326de5580c34e9024f7a65907f72, type: 3}
+      propertyPath: MaxDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7615510569423608865, guid: 2e4c326de5580c34e9024f7a65907f72, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: d1c23c77ec7e405469dc3f26898f4155, type: 3}
+      objectReference: {fileID: 8300000, guid: 8d373576acf02f24d8540c47bd37aa42, type: 3}
     - target: {fileID: 8895530877786569258, guid: 2e4c326de5580c34e9024f7a65907f72, type: 3}
       propertyPath: m_RootOrder
       value: 3

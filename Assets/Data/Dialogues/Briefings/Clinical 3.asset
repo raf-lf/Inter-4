@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dc50c01d21f84c46bb269ba06389173, type: 3}
+  m_Name: Clinical 3
+  m_EditorClassIdentifier: 
+  lines:
+  - "N\xE3o \xE9 incr\xEDvel? Centenas de pessoas vacinadas no \xFAltimo teste! Agora
+    precisamos nos apressar para criar muito mais vacina para v\xE1rias popula\xE7\xF5es!"
+  - "E er... Os dados necess\xE1rios para progredir para a fase 3 foram perdidos
+    novamente...."
+  - "Dessa vez vamos precisar de dois pacotes de dados perdidos, s\xF3 que voc\xEA
+    precisa se lembrar de uma coisa."
+  - "Apenas um dado cl\xEDnico perdido pode ser encontrado em uma \xFAnica expedi\xE7\xE3o,
+    ent\xE3o para acertamos tudo desta fase, no m\xEDnimo, voc\xEA vai ter que ir
+    em duas expedi\xE7\xF5es."
+  - "Desculpe, chefinho! As coisas est\xE3o meio bagun\xE7adas, j\xE1 que estamos
+    fazendo uma vacina as pressas!"
+  - "Quando a pandemia \xE9 grave, temos de muitas vezes acelerar as fases cl\xEDnicas.
+    Muitas vezes, elas acontecem ao mesmo tempo!"
+  - "Tudo isso para derrotarmos esse v\xEDrus o mais r\xE1pido poss\xEDvel! Precisamos
+    salvar as pessoas!"
+  - "Espero que voc\xEA esteja aproveitando seus pontos de ci\xEAncia para melhorar
+    seus equipamentos! As coisas est\xE3o ficando cada vez mais perigosas!"
+  - Boa sorte chefinho! Logo logo vamos terminar nosso trabalho!
+  linesExpression: 020000000400000005000000040000000500000003000000000000000300000001000000

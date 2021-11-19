@@ -5,6 +5,7 @@ using TMPro;
 
 public class ResultScreen : MonoBehaviour
 {
+    [Header("Text")]
     public TextMeshProUGUI textAntigen;
     public TextMeshProUGUI textData;
     public TextMeshProUGUI[] textComponent = new TextMeshProUGUI[0];
@@ -13,6 +14,7 @@ public class ResultScreen : MonoBehaviour
     public TextMeshProUGUI textDeathPenalty;
     public TextMeshProUGUI textFinalScience;
 
+    [Header("Objects")]
     public GameObject contentCollectedNull;
     public GameObject contentAntigen;
     public GameObject contentData;
@@ -21,7 +23,7 @@ public class ResultScreen : MonoBehaviour
     public GameObject[] contentScience = new GameObject[0];
     public GameObject contentPlayerDeath;
 
-
+    public AudioClip sfxStore;
     public static int scienceEnemiesDefeated;
     public static int scienceComponentsCollected;
     public static int scienceConsumablesCollected;
@@ -153,6 +155,7 @@ public class ResultScreen : MonoBehaviour
 
     public void EndResults()
     {
+        GameManager.scriptAudio.PlaySfxSimple(sfxStore);
         GameManager.scriptLab.StoreEverything();
         GetComponent<LabElement>().CloseElement();
     }

@@ -10,6 +10,7 @@ public static class GameManager
     //Stage
     public static int currentGameStage = 0;
     public static bool endingPlayed;
+    public static bool briefingPlayed;
 
     //Player
     public static List<UpgradeBase> upgradesPurchased = new List<UpgradeBase>();

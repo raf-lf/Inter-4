@@ -105,6 +105,7 @@ public class DialogueSystem : MonoBehaviour, IPointerClickHandler
 
     private string ReturnExpression(expressions expression)
     {
+        animAssistant.ResetTrigger("hide");
         animAssistant.ResetTrigger("neutral");
         animAssistant.ResetTrigger("happy");
         animAssistant.ResetTrigger("hype");

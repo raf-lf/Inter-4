@@ -32,6 +32,9 @@ public class TechtreeUpgrade : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     private Animator anim;
     private Element_Techtree scriptTechtree;
     public bool buttonHeld;
+    public PlaySfx sfxPurchase;
+    public PlaySfx sfxPurchaseCancel;
+    public AudioSource sfxPurchasingLoop;
 
     [Header("Connections")]
     public RectTransform connectionsParent;
@@ -192,11 +195,15 @@ public class TechtreeUpgrade : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
             if (buttonHeld && scriptTechtree.availableScience > 0 && spentScience < scienceCost)
             {
+                sfxPurchasingLoop.mute = false;
+                sfxPurchasingLoop.pitch = 1 + ((float)spentScience / (float)scienceCost) *2;
                 scriptTechtree.availableScience = Mathf.Clamp(scriptTechtree.availableScience - scriptTechtree.spendRate, 0, scriptTechtree.availableScience);
                 spentScience = Mathf.Clamp(spentScience + scriptTechtree.spendRate, 0, scienceCost);
                 spentFill.fillAmount = (float)spentScience / (float)scienceCost;
 
             }
+            else
+                sfxPurchasingLoop.mute = true;
 
         }
     }
@@ -212,12 +219,14 @@ public class TechtreeUpgrade : MonoBehaviour, IPointerDownHandler, IPointerUpHan
             scriptTechtree.availableScience += spentScience;
             spentFill.fillAmount = 0;
             spentScience = 0;
-
+            sfxPurchaseCancel.PlayInspectorSfx();
         }
     }
 
     public void Purchase()
     {
+        sfxPurchase.PlayInspectorSfx();
+
         GameManager.upgradesPurchased.Add(upgradeScriptableObject);
         vfxPurchase.Play();
         purchased = true;

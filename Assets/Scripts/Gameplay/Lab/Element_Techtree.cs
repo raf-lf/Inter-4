@@ -15,6 +15,7 @@ public class Element_Techtree : LabElement
     public GameObject descriptionPanel;
     public List<LineRenderer> upgradeConnections = new List<LineRenderer>();
 
+
     public override void OpenElement()
     {
         base.OpenElement();

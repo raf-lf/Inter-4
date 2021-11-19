@@ -5,6 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class Element_Hatch : LabElement
 {
+    public AudioClip sfxHatchOpen;
+    public AudioClip sfxHatchClose;
+    public AudioClip sfxExpeditionGo;
+
+    public override void OpenElement()
+    {
+        if (!elementActive)
+            GameManager.scriptAudio.PlaySfxSimple(sfxHatchOpen);
+
+        base.OpenElement();
+
+    }
+    public override void CloseElement()
+    {
+        if (elementActive)
+            GameManager.scriptAudio.PlaySfxSimple(sfxHatchClose);
+
+        base.CloseElement();
+    }
+
     public void StartExpedition()
     {
         StartCoroutine(ExpeditionSequence());
@@ -12,6 +32,7 @@ public class Element_Hatch : LabElement
 
     IEnumerator ExpeditionSequence()
     {
+        GameManager.scriptAudio.PlaySfxSimple(sfxExpeditionGo);
         GameManager.scriptLab.animOverlay.SetBool("blackOut", true);
         GameManager.scriptAudio.FadeBgm(0, .05f);
 

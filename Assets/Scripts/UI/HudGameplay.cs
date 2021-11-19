@@ -17,7 +17,7 @@ public class HudGameplay : MonoBehaviour
 
     public void AntigenChange(int value)
     {
-        ArenaManager.antigenCollected += value;
+        ArenaManager.antigenCollected = Mathf.Clamp(ArenaManager.antigenCollected + value, 0, ArenaManager.antigenCapacity);
         UpdateHud();
 
     }

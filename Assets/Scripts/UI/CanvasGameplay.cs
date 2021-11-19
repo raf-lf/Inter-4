@@ -21,6 +21,7 @@ public class CanvasGameplay : MonoBehaviour
     }
     public void RecallReturnLab()
     {
+        recallConfirmation.SetBool("active", false);
         Time.timeScale = 1;
         GameManager.scriptArena.EndExpedition(false);
     }

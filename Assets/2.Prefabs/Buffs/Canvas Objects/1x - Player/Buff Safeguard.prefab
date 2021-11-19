@@ -59,7 +59,7 @@ MonoBehaviour:
   buffVfx: {fileID: 0}
   durationFill: {fileID: 8845833880051718432}
   hpRestoredPercent: 0.5
-  vfxRevival: {fileID: 0}
+  vfxRevival: {fileID: 7117153200349197935, guid: 3ab4ebd77756d2f4a89d7577ac6570e6, type: 3}
 --- !u!222 &2422158018099752402
 CanvasRenderer:
   m_ObjectHideFlags: 0

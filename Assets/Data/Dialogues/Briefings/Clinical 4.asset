@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dc50c01d21f84c46bb269ba06389173, type: 3}
+  m_Name: Clinical 4
+  m_EditorClassIdentifier: 
+  lines:
+  - "Chefe! Esta \xE9 a reta final! Com esta pr\xF3xima leva, vamos conseguir vacinar
+    uma boa parte da popula\xE7\xE3o global!"
+  - "Eu sabia que podiamos contar com voc\xEA! \xC9 uma pena que o governo n\xE3o
+    acredita na ci\xEAncia tanto quanto eu acredito em voc\xEA, chefinho..."
+  - "Essa \xFAltima fase vai dar trabalho! \xC9 muita vacina que precisamos produzir!"
+  - "E tamb\xE9m muitos dados cl\xEDnicos que precisamos recuperar! Perdoe a bagun\xE7a!"
+  - "Logo vamos atingir a imuniade rebanho! Voc\xEA sabia que n\xE3o precisamos vacinar
+    literalmente todos para erradicar a pandemia?"
+  - "Precisamos apenas vacinar uma taxa da popula\xE7\xE3o! Infelizmente, esta taxa
+    \xE9 bem alta, considerando o qu\xE3o r\xE1pido o coronavirus consegue se espalhar."
+  - "Mas tudo bem! Estamos quase l\xE1! M\xE3os a obra, chefinho!"
+  linesExpression: 02000000040000000300000004000000010000000400000002000000

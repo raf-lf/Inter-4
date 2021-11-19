@@ -10,6 +10,14 @@ public class DebugWindow : MonoBehaviour
     public TextMeshProUGUI fpsBox;
     public float fpsInterval;
 
+    private void Start()
+    {
+        if (Debug.isDebugBuild)
+            gameObject.SetActive(true);
+        else
+            gameObject.SetActive(false);
+    }
+
     private void Update()
     {
         if (fpsBox != null && fpsBox.isActiveAndEnabled)
@@ -25,7 +33,7 @@ public class DebugWindow : MonoBehaviour
         {
             LabManager.antigenStored += 1000;
             LabManager.scienceStored += 1000;
-
+            LabManager.dataStored += 5;
             for (int i = 0; i < LabManager.componentStored.Length; i++)
             {
                 LabManager.componentStored[i] += 1000;
