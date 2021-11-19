@@ -7,9 +7,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4833028473805165115, guid: 2dc2c55ffea0e494ca5301efbddfdd36, type: 3}
+      propertyPath: m_text
+      value: "Controles e A\xE7\xF5es"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4833028473805165115, guid: 2dc2c55ffea0e494ca5301efbddfdd36, type: 3}
+      propertyPath: m_fontSize
+      value: 62.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5014527318130265472, guid: 2dc2c55ffea0e494ca5301efbddfdd36, type: 3}
       propertyPath: m_Name
-      value: Fernando's Topic
+      value: Topic Controls and Actions
       objectReference: {fileID: 0}
     - target: {fileID: 6356923591467044069, guid: 2dc2c55ffea0e494ca5301efbddfdd36, type: 3}
       propertyPath: m_Pivot.x
@@ -98,6 +106,6 @@ PrefabInstance:
     - target: {fileID: 8789286674415884704, guid: 2dc2c55ffea0e494ca5301efbddfdd36, type: 3}
       propertyPath: contentPrefab
       value: 
-      objectReference: {fileID: 3123142475124237082, guid: db6be48344246ca45b5adf0e35f070b7, type: 3}
+      objectReference: {fileID: 3123142475124237082, guid: 8f8d813311173ee46a863484824bb7b2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2dc2c55ffea0e494ca5301efbddfdd36, type: 3}

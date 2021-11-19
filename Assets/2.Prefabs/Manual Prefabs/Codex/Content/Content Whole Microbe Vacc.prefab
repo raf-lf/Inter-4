@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1288623986057921281
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 847889826332180807, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_text
+      value: "S\xE3o tr\xEAs tipos de processos de vacinas que usam o micr\xF3bio
+        (no nosso caso, v\xEDrus) inteiro:\n\nVacina de v\xEDrus inativado, usando
+        produtos qu\xEDmicos, calor ou radia\xE7\xE3o. \xC9 o processo da CoronaVac;
+        \n\nVacina de v\xEDrus atenuado, que usa uma vers\xE3o enfraquecida do v\xEDrus.
+        Essas podem n\xE3o ser recomendadas para quem tiver o sistema imune comprometido.
+        Vacinas como do sarampo e caxumba s\xE3o desse tipo;\n\nVacinas com vetor
+        viral, que usam um outro v\xEDrus seguro (o \u201Cvetor\u201D) para entregar
+        o material necess\xE1rio para a cria\xE7\xE3o de ant\xEDgenos que v\xE3o
+        desencadear a resposta imune no corpo. Tanto a Janssen quanto a AstraZeneca
+        utilizam esse processo.\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 750
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 830
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4230495476131110939, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_Name
+      value: Content Whole Microbe Vacc
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}

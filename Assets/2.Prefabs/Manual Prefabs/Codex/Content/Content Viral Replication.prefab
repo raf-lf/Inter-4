@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1288623986057921281
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 847889826332180807, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_text
+      value: "O causador da COVID-19 (a doen\xE7a de fato) \xE9 o SARS-CoV-2, um
+        v\xEDrus da fam\xEDlia dos Coronav\xEDrus, que possuem esse nome gra\xE7as
+        \xE0s prote\xEDnas Spike espalhadas por seu caps\xEDdeo, o envolt\xF3rio
+        que protege o material gen\xE9tico composto por uma dupla camada de lip\xEDdeos.\n\nAl\xE9m
+        das Spike, outras prote\xEDnas fazem parte do v\xEDrus, como a prote\xEDna
+        M e a prote\xEDna E, que possuem fun\xE7\xE3o estrutural, e a prote\xEDna
+        N, que possui papel na replica\xE7\xE3o do RNA viral.\n\nPor serem maiores
+        que a maioria dos outros v\xEDrus de RNA, possuem mais conte\xFAdo gen\xE9tico
+        e consequentemente maior chance de muta\xE7\xF5es ben\xE9ficas na replica\xE7\xE3o
+        (que d\xE1 origem \xE0s diferentes variantes)."
+      objectReference: {fileID: 0}
+    - target: {fileID: 847889826332180807, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_isRightToLeft
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 750
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 830
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340641294488202180, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4230495476131110939, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
+      propertyPath: m_Name
+      value: Content Viral Replication
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
