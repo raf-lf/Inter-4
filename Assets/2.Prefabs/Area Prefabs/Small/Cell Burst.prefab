@@ -220,7 +220,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1829783019
-  m_SortingLayer: -3
+  m_SortingLayer: -4
   m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: f09a49b8d4e214e4a91f6de9098e6b24, type: 3}
   m_Color: {r: 0, g: 1, b: 1, a: 0.5019608}
@@ -274,7 +274,7 @@ GameObject:
   - component: {fileID: 3041126084835310257}
   - component: {fileID: 3455062590341544054}
   - component: {fileID: -1672272751363794661}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cell Burst
   m_TagString: Untagged
   m_Icon: {fileID: 0}

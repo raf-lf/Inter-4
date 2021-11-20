@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Component_Dillutant
   m_EditorClassIdentifier: 
   lines:
-  - "Um Diluente \xE9 necess\xE1rio para ajustar a concentra\xE7\xE3o da vacina.
+  - "Um DILUENTE \xE9 necess\xE1rio para ajustar a concentra\xE7\xE3o da vacina.
     N\xE3o se preocupe, temos bastante dele!"
   linesExpression: 01000000

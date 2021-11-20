@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Can't Launch
   m_EditorClassIdentifier: 
   lines:
-  - "Precisamos de mais vacina para iniciar a pr\xF3xima fase, chefe!"
+  - "Aqui n\xF3s lan\xE7amos o foguete para concluir a fase atual... Mas parece que
+    falta alguma coisa para que possamos fazer isso."
   linesExpression: 04000000

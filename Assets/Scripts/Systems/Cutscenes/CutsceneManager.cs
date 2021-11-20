@@ -10,6 +10,7 @@ public class CutsceneManager : MonoBehaviour
     public List<GameObject> currentFrames = new List<GameObject>();
     public int currentFrameIndex;
     public Animator animOverlay;
+    private GameObject currentCutscene;
 
     private void Start()
     {
@@ -51,6 +52,8 @@ public class CutsceneManager : MonoBehaviour
     }
     public void PlayCutscene(GameObject sceneObject)
     {
+        currentCutscene = sceneObject;
+
         if (currentFrames != null)
         {
             foreach (var item in currentFrames)
@@ -87,6 +90,12 @@ public class CutsceneManager : MonoBehaviour
                 currentFrames[i].SetActive(false);
 
         }
+
+        if (currentCutscene == scenes[6] && currentFrameIndex == 1)
+            GameManager.scriptAudio.bgmSource.mute = true;
+        else
+            GameManager.scriptAudio.bgmSource.mute = false;
+
 
     }
     public void EndCutscene()

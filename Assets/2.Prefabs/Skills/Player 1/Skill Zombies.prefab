@@ -174,7 +174,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -272,10 +272,11 @@ MonoBehaviour:
   cooldownTimerText: {fileID: 2692041897734121652}
   cooldownTimerFill: {fileID: 6165871261067654974}
   zombiePrefab: {fileID: 7308243028990130087, guid: 349061f62ed6c684487ea68baa94b2d4, type: 3}
-  useRange: 5
+  useRange: 8
   zombieNumber: 1
   timedLifeBuff: {fileID: 6096711512899347453, guid: b8ae8956cd486974d9b1659f5ed20d66, type: 3}
   vfxSpawn: {fileID: 7117153200349197935, guid: 10c5485e48725df49836c01267898a49, type: 3}
+  sfxNoCorpses: {fileID: 8300000, guid: 17c022a7ae1f9e1428bf89796a90b548, type: 3}
   upgradeMoreZombies: {fileID: 11400000, guid: 68e3cb91d5e737449b7c6cbd231b0dd1, type: 2}
   upgradeZombieDetonation: {fileID: 11400000, guid: dc4177a2e6003004ea2b6ed40a81afca, type: 2}
   extraZombies: 2
@@ -343,7 +344,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
+    m_DisabledColor: {r: 0, g: 0.27541065, b: 1, a: 0.5254902}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -432,7 +433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.21104321, b: 0.8113208, a: 0.88235295}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0.88235295}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

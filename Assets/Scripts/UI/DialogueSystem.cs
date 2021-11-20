@@ -74,7 +74,7 @@ public class DialogueSystem : MonoBehaviour, IPointerClickHandler
 
     private void Step(int step)
     {
-        Debug.Log("Step " + step + " of dialogue " + currentDialogue.name);
+      //  Debug.Log("Step " + step + " of dialogue " + currentDialogue.name);
         WriteText(currentDialogue.lines[step]);
 
         if (animAssistant != null)
@@ -105,6 +105,7 @@ public class DialogueSystem : MonoBehaviour, IPointerClickHandler
 
     private string ReturnExpression(expressions expression)
     {
+        
         animAssistant.ResetTrigger("hide");
         animAssistant.ResetTrigger("neutral");
         animAssistant.ResetTrigger("happy");
@@ -113,6 +114,7 @@ public class DialogueSystem : MonoBehaviour, IPointerClickHandler
         animAssistant.ResetTrigger("sad");
         animAssistant.ResetTrigger("dismay");
         animAssistant.ResetTrigger("angry");
+        
 
         switch (expression)
         {

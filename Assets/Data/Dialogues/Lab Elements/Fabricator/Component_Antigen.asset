@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Component_Antigen
   m_EditorClassIdentifier: 
   lines:
-  - "Vamos usar os virus inativados como o ANT\xCDGENO para a vacina! Eles s\xE3o
-    os espons\xE1veis por provocar a resposta imune!"
+  - "O ANT\xCDGENO \xE9 a pe\xE7a central da vacina, e \xE9 respons\xE1vel por provocar
+    a resposta imune! No nosso caso, usamos os v\xEDrus inativados!"
   linesExpression: 03000000

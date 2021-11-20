@@ -15729,7 +15729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageTrigger: 0
-  damage: 20
+  damage: 25
   factionsAffected: 00000000
 --- !u!58 &4922007292631544780
 CircleCollider2D:

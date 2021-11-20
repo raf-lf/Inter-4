@@ -14,6 +14,14 @@ public class IA_Secretor : CreatureBehavior
     private ParticleSystem secretionVfx;
     private bool secreting;
 
+    protected override void Update()
+    {
+        base.Update();
+
+        if (scriptCreature.dead) 
+            Secrete(false);
+    }
+
     protected override void Start()
     {
         base.Start();
@@ -22,7 +30,8 @@ public class IA_Secretor : CreatureBehavior
         scriptMovement = GetComponentInParent<CreatureMovement>();
         secretionVfx = secretionEffect.GetComponentInChildren<ParticleSystem>();
 
-        atributes.OnDeath += SecreteOff;
+        Secrete(false);
+
     }
 
     protected override void Act()
@@ -50,41 +59,44 @@ public class IA_Secretor : CreatureBehavior
 
     }
 
-    //This needs to be executed in the OnDeath delegate because the check for turning off the effect can't happen when enemy is dying.
-    private void SecreteOff()
-    {
-        Secrete(false);
-        atributes.OnDeath -= SecreteOff;
-
-    }
-
     private void Secrete(bool on)
     {
-        if (on && !scriptCreature.dead)
+        if (on)
+        {
+            secretionEffect.transform.rotation = Quaternion.Lerp(secretionEffect.transform.rotation, Quaternion.Euler(0, 0, Calculations.GetRotationZToTarget(secretionEffect.transform.position, currentTarget.transform.position)), rotationLerp);
+            SecreteEffect(true);
+        }
+        else
+        {
+            SecreteEffect(false);
+        }
+    }
+
+    private void SecreteEffect(bool on)
+    {
+        if (on)
         {
             if (!secreting)
             {
+                secreting = true;
                 anim.SetBool("attacking", true);
 
                 secretionEffect.GetComponentInChildren<Collider2D>().enabled = true;
 
                 ParticleSystem[] particles = secretionEffect.GetComponentsInChildren<ParticleSystem>();
-                foreach(ParticleSystem particle in particles)
+                foreach (ParticleSystem particle in particles)
                 {
                     var emission = particle.emission;
                     emission.enabled = true;
                 }
-                
-            }
 
-            secreting = true;
-            secretionEffect.transform.rotation = Quaternion.Lerp(secretionEffect.transform.rotation, Quaternion.Euler(0, 0, Calculations.GetRotationZToTarget(secretionEffect.transform.position, currentTarget.transform.position)), rotationLerp);
+            }
         }
         else
         {
-
             if (secreting)
             {
+                secreting = false;
                 anim.SetBool("attacking", false);
 
                 secretionEffect.GetComponentInChildren<Collider2D>().enabled = false;
@@ -96,9 +108,8 @@ public class IA_Secretor : CreatureBehavior
                     emission.enabled = false;
                 }
             }
-
-            secreting = false;
         }
+
     }
 
 }

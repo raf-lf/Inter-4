@@ -8,11 +8,9 @@ using TMPro;
 public class Element_Rocket : LabElement
 {
     [Header("Dialogues")]
-    public Dialogue dialogueNeedData;
-    public Dialogue dialogueDataOk;
+    public Dialogue dialogueCanLaunch;
     public Dialogue dialogueCantLaunch;
     public Dialogue dialogueLaunch;
-
 
     [Header("Components")]
     public Image rocketFill;
@@ -26,8 +24,6 @@ public class Element_Rocket : LabElement
     public GameObject textVaccineNope;
     public GameObject textDataOk;
     public GameObject textDataNope;
-
-
 
 
     public override void StartupElement()
@@ -63,9 +59,15 @@ public class Element_Rocket : LabElement
         bool canLaunch = false;
 
         if (vaccineOk && dataOk)
+        {
             canLaunch = true;
-        else 
+            GameManager.scriptDialogue.SetupDialogue(dialogueCanLaunch, DialogueType.oneShot);
+        }
+        else
+        {
             canLaunch = false;
+            GameManager.scriptDialogue.SetupDialogue(dialogueCantLaunch, DialogueType.oneShot);
+        }
 
         buttonOk.SetActive(canLaunch);
         buttonNope.SetActive(!canLaunch);
@@ -94,11 +96,14 @@ public class Element_Rocket : LabElement
         PhaseEnd();
         GameManager.scriptLab.clickBlocker.SetActive(true);
 
+        GameManager.scriptLab.monitor.LaunchRocket(true);
+
         animRocket.SetTrigger("launch");
         yield return new WaitForSeconds(5);
         GameManager.scriptLab.animOverlay.SetBool("blackOut", true);
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene("cutscenes", LoadSceneMode.Single);
+        GameManager.scriptLab.monitor.ResetFlags();
     }
 
     public void PhaseEnd()
@@ -114,7 +119,7 @@ public class Element_Rocket : LabElement
     }
     public void UpdateRocket()
     {
-        rocketFill.fillAmount = LabManager.vaccineInRocket / LabManager.vaccineTarget[GameManager.currentGameStage];
+        rocketFill.fillAmount = (float)LabManager.vaccineInRocket / (float)LabManager.vaccineTarget[GameManager.currentGameStage];
 
     }
     

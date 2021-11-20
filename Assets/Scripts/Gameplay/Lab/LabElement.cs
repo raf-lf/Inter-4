@@ -5,6 +5,8 @@ using UnityEngine;
 public class LabElement : MonoBehaviour
 {
     public bool elementActive;
+    public Dialogue openDialogue;
+
     public virtual void StartupElement()
     {
 
@@ -14,6 +16,9 @@ public class LabElement : MonoBehaviour
     {
         if (!elementActive)
         {
+            if(openDialogue != null)
+            GameManager.scriptDialogue.SetupDialogue(openDialogue, DialogueType.oneShot);
+
             GameManager.scriptAudio.PlaySfxSimple(GameManager.scriptLab.sfxTabOpen);
             GetComponent<Animator>().SetBool("active", true);
             StartupElement();

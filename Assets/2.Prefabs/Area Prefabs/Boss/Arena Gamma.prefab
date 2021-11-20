@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 3041126084835310257}
   - component: {fileID: 5617309861989045175}
   - component: {fileID: -4859802418073276457}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Arena Gamma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1829783019
-  m_SortingLayer: -3
+  m_SortingLayer: -4
   m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: f09a49b8d4e214e4a91f6de9098e6b24, type: 3}
   m_Color: {r: 1, g: 0.5997325, b: 0, a: 0.5019608}
@@ -296,70 +296,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 8582176822924515126}
+  m_Children: []
   m_Father: {fileID: 4723293156224621556}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2604357045960790268
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 3154314840233469928}
-    m_Modifications:
-    - target: {fileID: 5998386471089129418, guid: f3a95dcb8ee18e8448965271432f06bb, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5998386471089129418, guid: f3a95dcb8ee18e8448965271432f06bb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5998386471089129418, guid: f3a95dcb8ee18e8448965271432f06bb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5998386471089129418, guid: f3a95dcb8ee18e8448965271432f06bb, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5998386471089129418, guid: f3a95dcb8ee18e8448965271432f06bb, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5998386471089129418, guid: f3a95dcb8ee18e8448965271432f06bb, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5998386471089129418, guid: f3a95dcb8ee18e8448965271432f06bb, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5998386471089129418, guid: f3a95dcb8ee18e8448965271432f06bb, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5998386471089129418, guid: f3a95dcb8ee18e8448965271432f06bb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5998386471089129418, guid: f3a95dcb8ee18e8448965271432f06bb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5998386471089129418, guid: f3a95dcb8ee18e8448965271432f06bb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7308243028990130087, guid: f3a95dcb8ee18e8448965271432f06bb, type: 3}
-      propertyPath: m_Name
-      value: Supervariant Gamma
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f3a95dcb8ee18e8448965271432f06bb, type: 3}
---- !u!4 &8582176822924515126 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5998386471089129418, guid: f3a95dcb8ee18e8448965271432f06bb, type: 3}
-  m_PrefabInstance: {fileID: 2604357045960790268}
-  m_PrefabAsset: {fileID: 0}

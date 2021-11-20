@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 3041126084835310257}
   - component: {fileID: 5617309861989045175}
   - component: {fileID: -4859802418073276457}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Toxic Traps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -323,7 +323,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1829783019
-  m_SortingLayer: -3
+  m_SortingLayer: -4
   m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: f09a49b8d4e214e4a91f6de9098e6b24, type: 3}
   m_Color: {r: 1, g: 1, b: 0, a: 0.5019608}

@@ -13,7 +13,12 @@ public class SkillBase : MonoBehaviour
     public float cooldownTimer;
     public TextMeshProUGUI cooldownTimerText;
     public Image cooldownTimerFill;
+    private Button button;
 
+    private void Awake()
+    {
+        button = GetComponentInChildren<Button>();
+    }
     protected virtual void Start()
     {
         energyCostText.text = energyCost.ToString();
@@ -73,5 +78,19 @@ public class SkillBase : MonoBehaviour
     {
         if (cooldownTimer > 0)
             CooldownDecay();
+
+        if (GameManager.scriptPlayer.energy <= energyCost)
+        {
+            energyCostText.color = Color.red;
+            button.interactable = false;
+        }
+        else
+        {
+            energyCostText.color = Color.white;
+
+            if(cooldownTimer==0)
+                button.interactable = true;
+        }
+
     }
 }

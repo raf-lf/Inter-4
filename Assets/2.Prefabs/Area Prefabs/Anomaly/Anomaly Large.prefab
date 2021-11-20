@@ -4907,7 +4907,7 @@ GameObject:
   - component: {fileID: 3041126084835310257}
   - component: {fileID: 7376811848009132665}
   - component: {fileID: 1481405435972671192}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Anomaly Large
   m_TagString: Untagged
   m_Icon: {fileID: 0}

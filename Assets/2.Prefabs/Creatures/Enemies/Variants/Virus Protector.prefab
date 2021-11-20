@@ -15347,8 +15347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 708cf5bbd96b3604aaa35342a81da913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 50
-  hpMax: 50
+  hp: 60
+  hpMax: 60
   baseDmgMod: 1
   boostDmgMod: 0
   baseDmgRvdMod: 1

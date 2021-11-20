@@ -182,8 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupVfx: {fileID: 0}
-  componentId: 0
-  quantity: 0
+  alternateSpawn: {fileID: 7726984216197521384, guid: 60e396e4ac8dbb54c980b2a25e756d2b, type: 3}
 --- !u!114 &-2220134414838090694
 MonoBehaviour:
   m_ObjectHideFlags: 0

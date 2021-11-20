@@ -9666,7 +9666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageTrigger: 0
-  damage: 5
+  damage: 4
   factionsAffected: 00000000
   maxLifetime: 5
 --- !u!58 &6204045638587820810

@@ -30,12 +30,16 @@ public class CreatureBehavior : MonoBehaviour
     protected CreatureMovement movement;
     protected Animator anim;
 
-    protected virtual void Start()
+    private void Awake()
     {
-        GetComponent<CircleCollider2D>().radius = detectionRange;
         atributes = GetComponentInParent<CreatureAtributes>();
         movement = GetComponentInParent<CreatureMovement>();
         anim = GetComponentInParent<Animator>();
+    }
+
+    protected virtual void Start()
+    {
+        GetComponent<CircleCollider2D>().radius = detectionRange;
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -63,6 +67,25 @@ public class CreatureBehavior : MonoBehaviour
 
             }
         }
+        
+    }
+
+    private void OnEnable()
+    {
+        if (!GetComponentInParent<PlayerAtributes>())
+            anim.SetBool("chase", false);
+
+        anim.ResetTrigger("attack");
+        anim.ResetTrigger("damage");
+        anim.ResetTrigger("death");
+
+        if(GetComponent<IA_Secretor>())
+            anim.SetBool("attacking", false);
+
+        if (GetComponentInParent<PlayerAtributes>())
+            anim.SetBool("moving", false);
+
+        anim.Play("idle");  
         
     }
 

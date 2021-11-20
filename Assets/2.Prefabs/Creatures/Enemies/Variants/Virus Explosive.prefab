@@ -15518,8 +15518,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 708cf5bbd96b3604aaa35342a81da913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 35
-  hpMax: 35
+  hp: 40
+  hpMax: 40
   baseDmgMod: 1
   boostDmgMod: 0
   baseDmgRvdMod: 1
@@ -15761,7 +15761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageTrigger: 0
-  damage: 20
+  damage: 25
   factionsAffected: 00000000
 --- !u!58 &4922007292631544780
 CircleCollider2D:

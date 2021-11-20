@@ -22,7 +22,7 @@ public class Skill_Recall : SkillBase
                 {
                     if (item.gameObject.GetComponent<CreatureAtributes>().creatureFaction == Faction.Virus)
                     {
-                        Debug.Log(item.gameObject.name);
+                        //Debug.Log(item.gameObject.name);
 
                         enemiesNearby = true;
                     }

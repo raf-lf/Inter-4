@@ -158,5 +158,8 @@ public class ResultScreen : MonoBehaviour
         GameManager.scriptAudio.PlaySfxSimple(sfxStore);
         GameManager.scriptLab.StoreEverything();
         GetComponent<LabElement>().CloseElement();
+        GameManager.scriptLab.clickBlocker.SetActive(false);
+
+        LabMonitor.dirtyFlag = true;
     }
 }

@@ -11,6 +11,11 @@ public class HudCreature : MonoBehaviour
     public float uiDuration;
     protected CreatureAtributes creature;
 
+    private void Start()
+    {
+        UpdateValues();
+    }
+
     public virtual void UpdateValues()
     {
         creature = GetComponentInParent<CreatureAtributes>();

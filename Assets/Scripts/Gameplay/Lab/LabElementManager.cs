@@ -10,17 +10,18 @@ public class LabElementManager : MonoBehaviour
 
     public void OpenElement(LabElement element)
     {
-        if(element.elementActive)
+
+        foreach (var item in elements)
+        {
+                if(item != element && item.elementActive)
+                    item.CloseElement();
+        }
+
+        if (element.elementActive)
             element.CloseElement();
         else
             element.OpenElement();
 
-        for (int i = 0; i < elements.Length; i++)
-        {
-            if (elements[i] != element)
-                elements[i].CloseElement();
-
-        }
 
     }
 }

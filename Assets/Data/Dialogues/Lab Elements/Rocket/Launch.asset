@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Launch
   m_EditorClassIdentifier: 
   lines:
-  - "Contagem regressiva iniciando! Hora de iniciar uma nova fase de vacina\xE7\xE3o!
-    Oba!"
+  - "Contagem regressiva iniciando!! Foguete Vacinal sendo lan\xE7ado!\nA\xED vai
+    uma vacina quentinha saindo do forno!"
   linesExpression: 02000000

@@ -38,6 +38,7 @@ public class LabManager : MonoBehaviour
     public Animator animOverlay;
     public GameObject clickBlocker;
     public bool componentsAlreadySet;
+    public LabMonitor monitor;
 
     [Header("Audio")]
     public AudioClip sfxClickOk;
@@ -85,6 +86,7 @@ public class LabManager : MonoBehaviour
         else
         {
             GetComponentInChildren<Briefing>().Debrief();
+            clickBlocker.SetActive(false);
         }
     }
 

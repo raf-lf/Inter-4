@@ -11,6 +11,7 @@ public class Skill_P1_Zombie : SkillBase
     public BuffBase timedLifeBuff;
     private List<VirusCorpse> availableCorpses = new List<VirusCorpse>();
     public GameObject vfxSpawn;
+    public AudioClip sfxNoCorpses;
     //private ObjectPool zombiePool;
 
     [Header("Upgrades")]
@@ -32,7 +33,7 @@ public class Skill_P1_Zombie : SkillBase
 
     public override void SkillUse()
     {
-        if (GameManager.scriptPlayer.SpendEnergy(energyCost))
+        if (GameManager.scriptPlayer.energy >= energyCost)
         {
             List<Collider2D> collidersNearby = new List<Collider2D>();
             collidersNearby.AddRange(Physics2D.OverlapCircleAll(GameManager.scriptPlayer.gameObject.transform.position, useRange));
@@ -50,7 +51,12 @@ public class Skill_P1_Zombie : SkillBase
 
             if(availableCorpses.Count >0)
             {
+                GameManager.scriptPlayer.EnergyChange(-energyCost);
                 Activate();
+            }
+            else
+            {
+                GameManager.scriptAudio.PlaySfxSimple(sfxNoCorpses);
             }
         }
     }
