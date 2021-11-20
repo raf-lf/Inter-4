@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9dc50c01d21f84c46bb269ba06389173, type: 3}
-  m_Name: Tutorial Intro
+  m_Name: 1 - Tutorial Intro
   m_EditorClassIdentifier: 
   lines:
   - "Consegue me ouvir, chefe? Parece que o miniaturizador funcionou! Que bom que

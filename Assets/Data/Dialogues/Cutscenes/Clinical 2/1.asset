@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dc50c01d21f84c46bb269ba06389173, type: 3}
+  m_Name: 1
+  m_EditorClassIdentifier: 
+  lines:
+  - "Hah! Vamos dar in\xEDcio a fase 2 dos testes cl\xEDnicos! Algumas observa\xE7\xF5es
+    nesta fase s\xE3o as seguintes:"
+  - "As altera\xE7\xF5es e a resposta imune provocada pela vacina s\xE3o realmente
+    reais ou s\xE3o ao acaso? Precisamos fazer um teste com um grupo vacinado e um
+    grupo de controle para descobrir!"
+  - "Diferentes formula\xE7\xF5es da vacina podem apresentar resultados mais ou menos
+    significativos. Esta \xE9 a hora de descobrir qual \xE9 a melhor!"
+  - "Os candidatos usados neste teste ser\xE3o baseados no grupo demogr\xE1fico da
+    popula\xE7\xE3o alvo da vacina, j\xE1 que sabemos que ela foi segura com jovens
+    adultos saud\xE1veis."
+  linesExpression: 

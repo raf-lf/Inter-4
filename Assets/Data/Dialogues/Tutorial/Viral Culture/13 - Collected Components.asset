@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dc50c01d21f84c46bb269ba06389173, type: 3}
+  m_Name: 13 - Collected Components
+  m_EditorClassIdentifier: 
+  lines:
+  - "Certo! Para produzir a primeira dose, vamos precisar de mais alguns materiais!
+    Eu acredito que voc\xEA consiga encontrar tudo que precise por a\xED por enquanto!
+    Vou te enviar uma listinha do que voc\xEA precisa fazer!"
+  - "Boa sorte, chefinho! Lembre-se que estamos contando com voc\xEA aqui em cima!
+    Temos de salvar estas pessoas! At\xE9 loguinho!"
+  linesExpression: 0000000001000000
