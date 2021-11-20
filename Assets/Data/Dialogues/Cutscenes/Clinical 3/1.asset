@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dc50c01d21f84c46bb269ba06389173, type: 3}
+  m_Name: 1
+  m_EditorClassIdentifier: 
+  lines:
+  - "Estamos a todo vapor! Desta vez, a quantidade de pessoas que vamos vacinar \xE9
+    muito maior!"
+  - "Com uma amostragem maior, seremos capazes de conseguir resultados estat\xEDsticos
+    muito mais precisos e relevantes!"
+  - "Nesta etapa, buscamos tamb\xE9m vacinar m\xFAltiplas regi\xF5es e pa\xEDses,
+    vacinando assim diferentes tipos de popula\xE7\xF5es!"
+  linesExpression: 

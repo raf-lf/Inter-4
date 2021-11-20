@@ -10,7 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9dc50c01d21f84c46bb269ba06389173, type: 3}
-  m_Name: 1
+  m_Name: 4 - Virus Focus
   m_EditorClassIdentifier: 
-  lines: []
-  linesExpression: 
+  lines:
+  - "Aquele demoninho ali por exemplo! Um coronav\xEDrus! Voc\xEA precisa dar um
+    coice nele! Tome cuidado chefe, existem variantes de v\xEDrus com habilidades
+    diferentes por a\xED!"
+  linesExpression: 06000000

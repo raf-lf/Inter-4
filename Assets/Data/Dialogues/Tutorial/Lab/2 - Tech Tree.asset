@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dc50c01d21f84c46bb269ba06389173, type: 3}
+  m_Name: 2 - Tech Tree
+  m_EditorClassIdentifier: 
+  lines:
+  - "Voc\xEA coletou uns uma boa quantidade de informa\xE7\xF5es l\xE1 fora na sua
+    expedi\xE7\xE3o! Aqui, voc\xEA pode usar esse seu conhecimento acumulado de experi\xEAncia
+    para bolar novas t\xE9cnicas e melhorias! Porqu\xEA n\xE3o tenta agora?"
+  - "Parece que voc\xEA possui ci\xEAncia o suficiente para comprar sua primeira
+    habilidade, a Bomba de PBA! Legal! Vai ser de grande ajuda quando voc\xEA voltar
+    l\xE1 para a cultura viral para coletar mais material para as vacinas!"
+  linesExpression: 0100000002000000

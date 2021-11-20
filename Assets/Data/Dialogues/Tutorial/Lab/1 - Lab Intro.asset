@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dc50c01d21f84c46bb269ba06389173, type: 3}
+  m_Name: 1 - Lab Intro
+  m_EditorClassIdentifier: 
+  lines:
+  - "As coisas est\xE3o uma bagun\xE7a, n\xE3o \xE9 mesmo? Infelizmente estamos com
+    pouco apoio do governo, mas vamos fazer o poss\xEDvel para salvar o pessoal!"
+  - "Com o material que voc\xEA coletou, j\xE1 temos o suficiente para fazer uma
+    vacina! Mas antes, vamos dar uma olhada em outras coisas que voc\xEA pode fazer
+    no laborat\xF3rio!"
+  linesExpression: 0400000000000000
