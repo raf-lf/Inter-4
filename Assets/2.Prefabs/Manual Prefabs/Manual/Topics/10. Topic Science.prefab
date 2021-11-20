@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4833028473805165115, guid: 2dc2c55ffea0e494ca5301efbddfdd36, type: 3}
       propertyPath: m_text
-      value: Inimigos 1
+      value: "Pontos de Ci\xEAncia"
       objectReference: {fileID: 0}
     - target: {fileID: 4833028473805165115, guid: 2dc2c55ffea0e494ca5301efbddfdd36, type: 3}
       propertyPath: m_fontSize
@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5014527318130265472, guid: 2dc2c55ffea0e494ca5301efbddfdd36, type: 3}
       propertyPath: m_Name
-      value: Topic Enemies 1
+      value: 10. Topic Science
       objectReference: {fileID: 0}
     - target: {fileID: 6356923591467044069, guid: 2dc2c55ffea0e494ca5301efbddfdd36, type: 3}
       propertyPath: m_Pivot.x
@@ -106,6 +106,6 @@ PrefabInstance:
     - target: {fileID: 8789286674415884704, guid: 2dc2c55ffea0e494ca5301efbddfdd36, type: 3}
       propertyPath: contentPrefab
       value: 
-      objectReference: {fileID: 3123142475124237082, guid: 49449b7a380af2045b4e86453eacea7a, type: 3}
+      objectReference: {fileID: 3123142475124237082, guid: 3ee137d9a29ca8144adeb4ce43b88d14, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2dc2c55ffea0e494ca5301efbddfdd36, type: 3}

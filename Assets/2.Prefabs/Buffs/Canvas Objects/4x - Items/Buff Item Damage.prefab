@@ -55,8 +55,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideDuration: 0
   infiniteDuration: 0
-  duration: 40
-  buffId: 0
+  duration: 45
+  buffId: 40
   buffVfx: {fileID: 9154953324186286477, guid: 4d3c9a11a481f1744b9bb0d010b9ca67, type: 3}
   durationFill: {fileID: 6165871261067654974}
   damage: 0.5

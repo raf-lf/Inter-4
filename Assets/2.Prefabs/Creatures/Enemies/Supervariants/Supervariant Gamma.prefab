@@ -1108,7 +1108,7 @@ MonoBehaviour:
   sfxDamage: {fileID: 7786437527505855687}
   sfxDeath: {fileID: 2761594208447626270}
   anim: {fileID: 0}
-  antigenValue: 10
+  antigenValue: 25
   player1DeadVirus: {fileID: 2705730345146004973, guid: df2a6a1c96f363e49bb7f7dfdc209b9e, type: 3}
 --- !u!114 &5231589750961742183
 MonoBehaviour:
