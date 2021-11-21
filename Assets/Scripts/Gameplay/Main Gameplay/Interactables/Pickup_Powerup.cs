@@ -33,9 +33,7 @@ public class Pickup_Powerup : PickupBase
 
         }
 
-        GameManager.itemConsumable[powerupId] += ammount;
-        ArenaManager.consumablesCollected++;
-        GameManager.scriptInventory.UpdateItems();
+        GameManager.scriptArena.ItemChange(powerupId, ammount);
 
         base.Pickup();
     }

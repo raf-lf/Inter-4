@@ -4925,7 +4925,7 @@ MonoBehaviour:
   buff: {fileID: 3202326024762221768, guid: ce04860369670284c871cbf6f65ae405, type: 3}
   RemoveOnExit: 0
   factionsAffected: 01000000
-  frameApplyIntervals: 5
+  frameApplyIntervals: 1
 --- !u!1 &7117153200349197935
 GameObject:
   m_ObjectHideFlags: 0

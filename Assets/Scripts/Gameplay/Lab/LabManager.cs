@@ -24,8 +24,8 @@ public class LabManager : MonoBehaviour
     public static int dataStored;
 
     [Header("Necessary Stats")]
-    public static int[] antigenTarget = { 50, 100, 150, 200, 250, 250 };
     public static int[] componentcurrentTarget = new int[4];
+    public static int[] antigenTarget = { 50, 100, 150, 200, 250, 250 };
     public static int[] componentTargetBase = { 3, 4, 5, 6, 8, 8 };
     public static int[] componentTargetVariance = { 1, 1, 2, 2, 3, 3 };
     public static int[] componentdillutant = { 4, 6, 8, 10, 12, 12 };
@@ -55,6 +55,12 @@ public class LabManager : MonoBehaviour
         Invoke(nameof(LabEnter), startDelay);   
 
 
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveSystem.SaveGame();
+        
     }
 
     public void ToggleClickBlocker(bool on)

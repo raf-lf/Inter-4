@@ -4971,7 +4971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cedadeb1834a4fc4aaf1f24ef01c9df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disableDistance: 30
+  disableDistance: 40
   disableableObject: {fileID: 2673509786484731157}
 --- !u!58 &-4859802418073276457
 CircleCollider2D:

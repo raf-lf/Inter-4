@@ -13,7 +13,7 @@ public class VirusCorpse : MonoBehaviour
         GetComponent<Rigidbody2D>().isKinematic = true;
         GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 
-        GameManager.scriptHud.AntigenChange(antigen);
+        GameManager.scriptArena.AntigenChange(antigen);
 
         float particleDuration = 0;
 

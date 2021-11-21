@@ -14,6 +14,7 @@ public class LogoMenu : MonoBehaviour
 
     public AudioClip sfxOk;
     public AudioClip sfxNope;
+    public AudioClip sfxLeave;
 
     [Header("Credits")]
     public float startY;
@@ -26,6 +27,12 @@ public class LogoMenu : MonoBehaviour
     public bool fast;
     public bool reverse;
 
+    private void Awake()
+    {
+        SaveSystem.LoadPreferences();
+        
+    }
+
     public void ClickStartGame()
     {
         StartCoroutine(StartGame());
@@ -35,12 +42,37 @@ public class LogoMenu : MonoBehaviour
 
     private IEnumerator StartGame()
     {
+        SaveSystem.LoadGame();
+
         GameManager.scriptAudio.FadeBgm(0, .05f);
         animOverlay.SetBool("blackOut", true);
         yield return new WaitForSeconds(2);
 
         SceneManager.LoadScene("cutscenes", LoadSceneMode.Single);
 
+    }
+
+    public void ClickExitGame()
+    {
+        StartCoroutine(ExitGame());
+
+        GameManager.scriptAudio.PlaySfxSimple(sfxLeave);
+    }
+
+    private IEnumerator ExitGame()
+    {
+        GameManager.scriptAudio.FadeBgm(0, .05f);
+        animOverlay.SetBool("blackOut", true);
+        yield return new WaitForSeconds(2);
+
+        Application.Quit();
+
+    }
+
+    public void ClickEraseData()
+    {
+        SaveSystem.EraseData();
+        GameManager.scriptAudio.PlaySfxSimple(sfxLeave);
     }
 
     public void OpenCloseCredits(bool open)

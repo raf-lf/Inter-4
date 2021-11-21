@@ -33,24 +33,24 @@ public class DebugWindow : MonoBehaviour
         {
             LabManager.antigenStored += 1000;
             LabManager.scienceStored += 1000;
-            LabManager.dataStored += 5;
+            LabManager.dataStored += 1;
             for (int i = 0; i < LabManager.componentStored.Length; i++)
             {
-                LabManager.componentStored[i] += 1000;
+                LabManager.componentStored[i] += 100;
             }
         }
         else
         {
-            GameManager.scriptArena.AntigenChange(1000);
+            GameManager.scriptArena.AntigenChange(100);
 
             for (int i = 0; i < ArenaManager.componentsInInventory.Length; i++)
             {
-                GameManager.scriptArena.ComponentChange(i, 1000);
+                GameManager.scriptArena.ComponentChange(i, 10);
             }
 
-            for (int i = 0; i < GameManager.itemConsumable.Length; i++)
+            for (int i = 0; i < ArenaManager.consumablesInInventory.Length; i++)
             {
-                GameManager.itemConsumable[i] += 1000;
+                ArenaManager.consumablesInInventory[i] += 10;
             }
 
             GameManager.scriptHud.UpdateHud();

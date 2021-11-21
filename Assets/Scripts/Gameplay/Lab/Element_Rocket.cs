@@ -116,6 +116,8 @@ public class Element_Rocket : LabElement
         if (GameManager.currentGameStage < 5)
             GameManager.currentGameStage++;
 
+        SaveSystem.SaveGame();
+
     }
     public void UpdateRocket()
     {

@@ -4,23 +4,15 @@ using UnityEngine;
 
 public static class GameManager
 {
-    //Stage
-    public static int CurrentPlayerClass;
-
-    //Stage
-    public static int currentGameStage = 0;
+    //Flags
     public static bool endingPlayed;
     public static bool briefingPlayed;
-
-    //Player
-    public static List<UpgradeBase> upgradesPurchased = new List<UpgradeBase>();
-
-    //Flags
     public static bool PlayerControl = true;
 
-    public static int[] componentStored = new int[4];
+    //Game Info
+    public static int currentGameStage = 0;
+    public static List<UpgradeBase> upgradesPurchased = new List<UpgradeBase>();
 
-    public static int[] itemConsumable = new int[5];
 
     //"Singletons"
     public static PlayerAtributes scriptPlayer;

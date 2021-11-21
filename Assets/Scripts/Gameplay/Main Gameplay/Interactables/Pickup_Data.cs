@@ -20,9 +20,8 @@ public class Pickup_Data : PickupBase
     public override void Pickup()
     {
         base.Pickup();
-        ArenaManager.dataCollected = true;
 
-        GameManager.scriptHud.UpdateHud();
+        GameManager.scriptArena.DataChange(true);
 
     }
 }

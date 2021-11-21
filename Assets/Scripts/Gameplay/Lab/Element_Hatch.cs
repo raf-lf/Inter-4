@@ -37,6 +37,7 @@ public class Element_Hatch : LabElement
         GameManager.scriptAudio.FadeBgm(0, .05f);
 
         yield return new WaitForSeconds(2);
+        SaveSystem.SaveGame();
         SceneManager.LoadScene("arena", LoadSceneMode.Single);
 
     }

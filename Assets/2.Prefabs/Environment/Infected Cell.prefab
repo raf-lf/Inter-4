@@ -38974,7 +38974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   copies: 1
   timesToRun: 4
-  spawnDistanceVariation: 0
+  spawnDistanceVariation: 1
   objectTable:
   - {fileID: 7308243028990130087, guid: d68360ebaf538e74692d849763a150c0, type: 3}
   - {fileID: 7308243028990130087, guid: a4fbe1feaf040624babf189245d55b97, type: 3}

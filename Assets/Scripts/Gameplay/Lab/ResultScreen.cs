@@ -88,11 +88,11 @@ public class ResultScreen : MonoBehaviour
 
         int scienceScored = 0;
 
-        if (ArenaManager.enemiesDefeated > 0)
+        if (ArenaManager.expeditionKills > 0)
         {
             scienceScored++;
             contentScience[0].SetActive(true);
-            textEventScore[0].text = "x " + ArenaManager.enemiesDefeated + " =";
+            textEventScore[0].text = "x " + ArenaManager.expeditionKills + " =";
             textEventScience[0].text = scienceEnemiesDefeated + " ciência";
         }
         else
@@ -100,11 +100,11 @@ public class ResultScreen : MonoBehaviour
 
 
 
-        if (ArenaManager.componentsCollected > 0)
+        if (ArenaManager.expeditionComponents > 0)
         {
             scienceScored++;
             contentScience[1].SetActive(true);
-            textEventScore[1].text = "x " + ArenaManager.componentsCollected + " =";
+            textEventScore[1].text = "x " + ArenaManager.expeditionComponents + " =";
             textEventScience[1].text = scienceComponentsCollected + " ciência";
         }
         else
@@ -112,11 +112,11 @@ public class ResultScreen : MonoBehaviour
 
 
 
-        if (ArenaManager.consumablesCollected > 0)
+        if (ArenaManager.expeditionConsumables > 0)
         {
             scienceScored++;
             contentScience[2].SetActive(true);
-            textEventScore[2].text = "x " + ArenaManager.consumablesCollected + " =";
+            textEventScore[2].text = "x " + ArenaManager.expeditionConsumables + " =";
             textEventScience[2].text = scienceConsumablesCollected + " ciência";
         }
         else

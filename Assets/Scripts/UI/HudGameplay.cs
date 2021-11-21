@@ -15,12 +15,13 @@ public class HudGameplay : MonoBehaviour
     private void Start()
         => UpdateHud();
 
-    public void AntigenChange(int value)
-    {
-        ArenaManager.antigenCollected = Mathf.Clamp(ArenaManager.antigenCollected + value, 0, ArenaManager.antigenCapacity);
-        UpdateHud();
 
-    }
+    public void IncreaseFeedbackAntigen()
+        => antigenCounter.GetComponentInParent<Animator>().SetTrigger("increase");
+    public void IncreaseFeedbackComponent(int id)
+        => componentSlot[id].GetComponent<Animator>().SetTrigger("increase");
+    public void IncreaseFeedbackData()
+        => dataSlot.GetComponent<Animator>().SetTrigger("increase");
 
 
     public void UpdateHud()

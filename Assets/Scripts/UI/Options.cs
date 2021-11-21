@@ -54,6 +54,8 @@ public class Options : MonoBehaviour
         {
             Time.timeScale = 1;
             GameManager.scriptAudio.PlaySfxSimple(sfxClickCancel);
+
+            SaveSystem.SavePreferences();
         }
 
 
@@ -78,6 +80,8 @@ public class Options : MonoBehaviour
 
     IEnumerator ExitFromGame()
     {
+        SaveSystem.SavePreferences();
+
         Time.timeScale = 1;
         if (SceneManager.GetActiveScene().name == "lab")
         {

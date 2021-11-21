@@ -8,13 +8,16 @@ public class ArenaManager : MonoBehaviour
     public float timeBeforeReload;
 
     [Header("Stats")]
+    public static int[] consumablesInInventory = new int[5];
     public static int[] componentsInInventory = new int[4];
     public static int antigenCollected;
     public static int antigenCapacity = 250;
-    public static int enemiesDefeated;
-    public static int componentsCollected;
-    public static int consumablesCollected;
     public static bool dataCollected;
+
+    [Header("Counters")]
+    public static int expeditionKills;
+    public static int expeditionConsumables;
+    public static int expeditionComponents;
 
     [Header("Science Calculations")]
     [SerializeField] private int sciencePerEnemy;
@@ -77,15 +80,34 @@ public class ArenaManager : MonoBehaviour
     public void AntigenChange(int value)
     {
         antigenCollected = Mathf.Clamp(antigenCollected + value, 0, antigenCapacity);
+        GameManager.scriptHud.IncreaseFeedbackAntigen();
         GameManager.scriptHud.UpdateHud();
     }
 
     public void ComponentChange(int id, int value)
     {
         componentsInInventory[id] = Mathf.Clamp(componentsInInventory[id] + value, 0, 100);
-        ArenaManager.componentsCollected++;
+        expeditionComponents+=value;
+        GameManager.scriptHud.IncreaseFeedbackComponent(id);
         GameManager.scriptHud.UpdateHud();
     }
+
+    public void DataChange(bool yes)
+    {
+        dataCollected = yes;
+        GameManager.scriptHud.IncreaseFeedbackData();
+        GameManager.scriptHud.UpdateHud();
+
+    }
+
+    public void ItemChange(int id, int value)
+    {
+        consumablesInInventory[id] += value;
+        expeditionConsumables+= value;
+        GameManager.scriptInventory.IncreaseFeedbackItem(id);
+        GameManager.scriptInventory.UpdateItems();
+    }
+
 
     private void StartNewExpedition()
     {
@@ -94,9 +116,9 @@ public class ArenaManager : MonoBehaviour
             componentsInInventory[i] = 0;
         }
         antigenCollected = 0;
-        enemiesDefeated = 0;
-        componentsCollected = 0;
-        consumablesCollected = 0;
+        expeditionKills = 0;
+        expeditionComponents = 0;
+        expeditionConsumables = 0;
         dataCollected = false;
 
     }
@@ -166,13 +188,13 @@ public class ArenaManager : MonoBehaviour
 
     public void CalculateScience(bool playerDied)
     {
-        int scienceEnemies = enemiesDefeated * sciencePerEnemy;
+        int scienceEnemies = expeditionKills * sciencePerEnemy;
         ResultScreen.scienceEnemiesDefeated = scienceEnemies;
 
-        int scienceComponents = componentsCollected * sciencePerComponent;
+        int scienceComponents = expeditionComponents * sciencePerComponent;
         ResultScreen.scienceComponentsCollected = scienceComponents;
 
-        int scienceConsumables = consumablesCollected * sciencePerConsumable;
+        int scienceConsumables = expeditionConsumables * sciencePerConsumable;
         ResultScreen.scienceConsumablesCollected = scienceConsumables;
 
         float scienceBonusUnused = unusedConsumableBonus * ConvertConsumables();
@@ -201,10 +223,10 @@ public class ArenaManager : MonoBehaviour
     {
         int consumableQty = 0;
 
-        for (int i = 0; i < GameManager.itemConsumable.Length; i++)
+        for (int i = 0; i < consumablesInInventory.Length; i++)
         {
-            consumableQty += GameManager.itemConsumable[i];
-            GameManager.itemConsumable[i] = 0;
+            consumableQty += consumablesInInventory[i];
+            consumablesInInventory[i] = 0;
 
         }
         ResultScreen.unusedConsumables = consumableQty;

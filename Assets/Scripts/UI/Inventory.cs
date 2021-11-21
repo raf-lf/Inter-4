@@ -39,13 +39,16 @@ public class Inventory : MonoBehaviour
 
     }
 
+    public void IncreaseFeedbackItem(int id)
+        => itemIcon[id].GetComponent<Animator>().SetTrigger("increase");
+
     public void UpdateItems()
     {
-        for (int i = 0; i < GameManager.itemConsumable.Length; i++)
+        for (int i = 0; i < ArenaManager.consumablesInInventory.Length; i++)
         {
-            itemQtyText[i].text = GameManager.itemConsumable[i].ToString();
+            itemQtyText[i].text = ArenaManager.consumablesInInventory[i].ToString();
 
-            if (GameManager.itemConsumable[i] != 0)
+            if (ArenaManager.consumablesInInventory[i] != 0)
                 itemIcon[i].SetActive(true);
             else
                 itemIcon[i].SetActive(false);
@@ -55,9 +58,9 @@ public class Inventory : MonoBehaviour
 
     public void ConsumableUse(int id)
     {
-        if (GameManager.itemConsumable[id] > 0)
+        if (ArenaManager.consumablesInInventory[id] > 0)
         {
-            GameManager.itemConsumable[id]--;
+            ArenaManager.consumablesInInventory[id]--;
 
             sfxItems[id].PlayInspectorSfx();
 

@@ -191,7 +191,7 @@ public class CreatureAtributes : MonoBehaviour
             Invoke(nameof(DisableSelf), 5);
 
             if (creatureFaction == Faction.Virus)
-                ArenaManager.enemiesDefeated++;
+                ArenaManager.expeditionKills++;
             /*
                     if (GetComponentInChildren<SpawnOnDeath>())
                         GetComponentInChildren<SpawnOnDeath>().Activate();
@@ -208,14 +208,11 @@ public class CreatureAtributes : MonoBehaviour
 
     private void SpawnDeadVirus()
     {
-        if (GameManager.CurrentPlayerClass == 0)
+        if (player1DeadVirus != null)
         {
-            if (player1DeadVirus != null)
-            {
-                GameObject deadVirus = Instantiate(player1DeadVirus, transform.position, Quaternion.identity);
-                deadVirus.transform.parent = transform.parent;
-                deadVirus.GetComponentInChildren<VirusCorpse>().antigen = antigenValue;
-            }
+            GameObject deadVirus = Instantiate(player1DeadVirus, transform.position, Quaternion.identity);
+            deadVirus.transform.parent = transform.parent;
+            deadVirus.GetComponentInChildren<VirusCorpse>().antigen = antigenValue;
         }
 
     }
