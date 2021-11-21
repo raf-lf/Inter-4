@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dc50c01d21f84c46bb269ba06389173, type: 3}
+  m_Name: C1_1
+  m_EditorClassIdentifier: 
+  lines:
+  - "Com o in\xEDcio do teste em humanos, algumas hip\xF3teses precisam ser investigadas..."
+  - "Primeiramente, a nossa vacina \xE9 segura? Ela vai apresentar algum risco a
+    humanos que a recebam?"
+  - "Qual \xE9 a dosagem correta da vacina? A concentra\xE7\xE3o utilizada \xE9 adequada?"
+  - "A nossa vacina \xE9 capaz de provocar uma resposta imune? \xC9 importante lembrar
+    que \xE9 o sistema imunol\xF3gico do organismo que \xE9 respons\xE1vel por lutar
+    contra a infec\xE7\xE3o!"
+  linesExpression: 

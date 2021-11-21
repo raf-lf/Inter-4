@@ -96,6 +96,7 @@ public class CutsceneManager : MonoBehaviour
         else
             GameManager.scriptAudio.bgmSource.mute = false;
 
+        GameManager.scriptDialogue.SetupDialogue(currentFrames[currentFrameIndex].GetComponent<CutsceneFrame>().dialogue,DialogueType.cutscene);
 
     }
     public void EndCutscene()

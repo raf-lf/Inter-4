@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dc50c01d21f84c46bb269ba06389173, type: 3}
+  m_Name: C4_3
+  m_EditorClassIdentifier: 
+  lines:
+  - "O trabalho de um cientista nunca acaba! Precisamos continuar monitorando a popula\xE7\xE3o
+    vacinada para identificar poss\xEDveis altera\xE7\xF5es a longo prazo!"
+  - "Tamb\xE9m temos de revisar estudos feitos por diferentes pa\xEDses a respeito
+    da nossa vacina! Neste momento, trabalhamos juntos com os oficiais de todo o
+    mundo!"
+  linesExpression: 

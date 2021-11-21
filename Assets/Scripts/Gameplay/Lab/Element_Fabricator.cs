@@ -44,6 +44,8 @@ public class Element_Fabricator : LabElement
     {
         base.StartupElement();
 
+        GameManager.scriptLab.SetComponentTargets();
+
         int totalComponents = 0;
 
         for (int i = 0; i < componentTarget.Length; i++)
@@ -70,7 +72,6 @@ public class Element_Fabricator : LabElement
     
     public void BeginBatch()
     {
-        GameManager.scriptLab.SetComponentTargets();
 
         endBatchButton.interactable = false;
 

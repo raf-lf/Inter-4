@@ -12,7 +12,7 @@ public class Briefing : MonoBehaviour
         if (!GameManager.briefingPlayed)
         {
             GameManager.briefingPlayed = true;
-            GameManager.scriptDialogue.SetupDialogue(stageBriefings[GameManager.currentGameStage], DialogueType.cutscene);
+            GameManager.scriptDialogue.SetupDialogue(stageBriefings[GameManager.currentGameStage], DialogueType.briefing);
         }
     }
 

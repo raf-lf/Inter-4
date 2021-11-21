@@ -265,12 +265,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 770ff70f9f3ea0147a70d811dee9175f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energyCost: 20
+  energyCost: 25
   energyCostText: {fileID: 3272173247057598329}
   cooldown: 20
   cooldownTimer: 0
   cooldownTimerText: {fileID: 2692041897734121652}
   cooldownTimerFill: {fileID: 6165871261067654974}
+  energyOk: {r: 0.23113209, g: 0.514118, b: 1, a: 1}
+  energyNo: {r: 1, g: 0.2685992, b: 0.23137254, a: 1}
   zombiePrefab: {fileID: 7308243028990130087, guid: 349061f62ed6c684487ea68baa94b2d4, type: 3}
   useRange: 8
   zombieNumber: 1
@@ -344,7 +346,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0, g: 0.27541065, b: 1, a: 0.5254902}
+    m_DisabledColor: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:

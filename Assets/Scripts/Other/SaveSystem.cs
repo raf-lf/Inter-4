@@ -29,14 +29,13 @@ public static class SaveSystem
         {
             dataFile = JsonUtility.FromJson<SaveData>(PlayerPrefs.GetString("savedData"));
             LoadDataFromFile();
+            Debug.Log("Game Loaded");
         }
         else
         {
-            SaveDataToFile();
-            PlayerPrefs.SetString("savedData", JsonUtility.ToJson(dataFile));
+            Debug.Log("No data to Load");
         }
 
-        Debug.Log("Game Loaded");
     }
 
     public static void SavePreferences()
@@ -74,6 +73,14 @@ public static class SaveSystem
             
     }
 
+    public static void EraseData()
+    {
+        if (dataFile == null)
+            dataFile = new SaveData();
+
+        EraseDataFromFile();
+    }
+
     public static void SaveDataToFile()
     {
         dataFile.endingPlayed = GameManager.endingPlayed;
@@ -103,6 +110,15 @@ public static class SaveSystem
         GameManager.upgradesPurchased.Clear();
         GameManager.upgradesPurchased.AddRange(dataFile.upgradesPurchased);
 
+        Debug.Log("Upgrades Loaded:");
+
+        foreach (var item in GameManager.upgradesPurchased)
+        {
+            Debug.Log(item.name);
+
+        }
+        Debug.Log("");
+
         LabManager.vaccineStored = dataFile.vaccineStored;
         LabManager.scienceStored = dataFile.scienceStored;
         LabManager.antigenStored = dataFile.antigenStored;
@@ -118,8 +134,27 @@ public static class SaveSystem
 
     }
 
-    public static void EraseData()
+    public static void EraseDataFromFile()
     {
+        dataFile.endingPlayed = false;
+        dataFile.currentGameStage = 0;
+        dataFile.upgradesPurchased.Clear();
+
+        dataFile.vaccineStored = 0;
+        dataFile.scienceStored = 0;
+        dataFile.antigenStored = 0;
+        dataFile.dataStored = 0;
+        dataFile.vaccineInRocket = 0;
+
+        for (int i = 0; i < LabManager.componentStored.Length; i++)
+        {
+            dataFile.componentStored[i] = 0;
+            dataFile.componentcurrentTarget[i] = 0;
+
+        }
+
+        LoadDataFromFile();
+
         PlayerPrefs.DeleteKey("savedData");
     }
 }

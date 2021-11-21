@@ -52,8 +52,8 @@ public class LabManager : MonoBehaviour
 
     void Start()
     {
-        Invoke(nameof(LabEnter), startDelay);   
-
+        Invoke(nameof(LabEnter), startDelay);
+        StartCoroutine(AutoSave());
 
     }
 
@@ -118,5 +118,13 @@ public class LabManager : MonoBehaviour
         }
     }
 
-      
+    IEnumerator AutoSave()
+    {
+        yield return new WaitForSecondsRealtime(20);
+        SaveSystem.SaveGame();
+        Debug.Log("Game auto-saved");
+        StartCoroutine(AutoSave());
+    }
+
+
 }

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dc50c01d21f84c46bb269ba06389173, type: 3}
+  m_Name: C1_3
+  m_EditorClassIdentifier: 
+  lines:
+  - "Uau! Nossa vacina \xE9 segura e \xE9 capaz de causar uma resposta do sistema
+    imunol\xF3gico de nossos pacientes!"
+  - "Perfeito! Com esta fase conclu\xEDda, precisamos produzir mais vacinas e progredir
+    para a fase 2 dos testes cl\xEDnicos!"
+  linesExpression: 

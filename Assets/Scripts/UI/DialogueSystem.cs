@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
 
-public enum DialogueType { oneShot, comment, cutscene }
+public enum DialogueType { oneShot, comment, briefing, cutscene}
 public enum expressions { neutral, happy, hype, serious, sad, dismay, angry }
 
 public class DialogueSystem : MonoBehaviour, IPointerClickHandler
@@ -41,14 +41,21 @@ public class DialogueSystem : MonoBehaviour, IPointerClickHandler
             currentDialogueType = type;
             dialogueActive = true;
 
-            if (type == DialogueType.oneShot || type == DialogueType.comment)
+            switch(type)
             {
-                animDialogue.SetBool("comment", true);
-            }
+                case DialogueType.oneShot:
+                case DialogueType.comment:
+                    animDialogue.SetBool("comment", true);
+                    break;
 
-            else if (type == DialogueType.cutscene)
-            {
-                animDialogue.SetBool("cutscene", true);
+                case DialogueType.cutscene:
+                    animDialogue.SetBool("cutscene", true);
+                    break;
+
+                case DialogueType.briefing:
+                    animDialogue.SetBool("briefing", true);
+                    break;
+
             }
 
             currentStep = 0;
@@ -63,6 +70,7 @@ public class DialogueSystem : MonoBehaviour, IPointerClickHandler
             dialogueActive = false;
             animDialogue.SetBool("comment", false);
             animDialogue.SetBool("cutscene", false);
+            animDialogue.SetBool("briefing", false);
 
             if(animAssistant != null)
                 animAssistant.SetTrigger("hide");

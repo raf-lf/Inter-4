@@ -15,6 +15,9 @@ public class SkillBase : MonoBehaviour
     public Image cooldownTimerFill;
     private Button button;
 
+    public Color energyOk;
+    public Color energyNo;
+
     private void Awake()
     {
         button = GetComponentInChildren<Button>();
@@ -79,16 +82,16 @@ public class SkillBase : MonoBehaviour
         if (cooldownTimer > 0)
             CooldownDecay();
 
-        if (GameManager.scriptPlayer.energy <= energyCost)
+        if (GameManager.scriptPlayer.energy < energyCost)
         {
-            energyCostText.color = Color.red;
+            energyCostText.rectTransform.parent.GetComponent<Image>().color = energyNo;
             button.interactable = false;
         }
         else
         {
-            energyCostText.color = Color.white;
+            energyCostText.rectTransform.parent.GetComponent<Image>().color = energyOk;
 
-            if(cooldownTimer==0)
+            if (cooldownTimer == 0)
                 button.interactable = true;
         }
 
