@@ -1029,7 +1029,7 @@ MonoBehaviour:
   factionsDetected: 00000000
   currentTarget: {fileID: 0}
   possibleTargets: []
-  actionCooldown: 1
+  actionCooldown: 2
   projectile: {fileID: 8813321549332366066, guid: a483aa70ae74d2842b582008833bd442, type: 3}
   fleeRange: 5
 --- !u!58 &7222148792570900799

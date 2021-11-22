@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 3853640160710286287}
   - component: {fileID: 6199345981251452400}
   m_Layer: 0
-  m_Name: Lab Manager
+  m_Name: Manager Lab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

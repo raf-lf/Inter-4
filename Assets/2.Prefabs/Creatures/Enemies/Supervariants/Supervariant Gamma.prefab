@@ -1094,7 +1094,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 300
   hpMax: 300
-  baseDmgMod: 4
+  baseDmgMod: 6
   boostDmgMod: 0
   baseDmgRvdMod: 1
   boostDmgRvdMod: 0

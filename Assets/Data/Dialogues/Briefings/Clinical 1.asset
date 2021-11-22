@@ -25,11 +25,9 @@ MonoBehaviour:
     MELHORIAS!"
   - "Voc\xEA tamb\xE9m pode aprender um pouco mais sobre o que estamos fazendo aqui
     ali no codex, na aba APRENDA, tem informa\xE7\xF5es muito \xFAteis!"
-  - "Err... Eu estou um pouco gordinho e estou na frente do bot\xE3o, n\xE3o estou?
-    Mas mesmo assim, lembre-se que ele fica aqui atr\xE1s de mim, entendido?"
   - "Quando tiver feito tudo que quiser, inicie uma nova expedi\xE7\xE3o! Lembre-se
     que voc\xEA n\xE3o precisa coletar tudo em uma \xFAnica expedi\xE7\xE3o! Pode
     ir com calma!"
   - "Vamos l\xE1 ent\xE3o! Estas vacinas ser\xE3o para a gente testar em humanos,
     ent\xE3o vamos ser cuidadosos! At\xE9 mais, chefinho!"
-  linesExpression: 0200000003000000010000000100000000000000050000000100000000000000
+  linesExpression: 02000000030000000000000001000000030000000100000000000000

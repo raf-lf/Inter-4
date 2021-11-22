@@ -191,9 +191,15 @@ public class Element_Fabricator : LabElement
         float antigenNeeded = Mathf.Clamp(currentAntigenTarget - antigenAdded, 0, currentAntigenTarget);
 
         if (antigenNeeded == 0)
+        {
             antigenNeededQty.text = "OK";
+            antigenNeededQty.GetComponentInParent<Image>().color = Color.green;
+        }
         else
+        {
             antigenNeededQty.text = ((int)antigenNeeded).ToString();
+            antigenNeededQty.GetComponentInParent<Image>().color = Color.white;
+        }
 
         antigenReserveQty.text = ((int)antigenReserve).ToString();
 
@@ -248,10 +254,15 @@ public class Element_Fabricator : LabElement
         for (int i = 0; i < componentNeededQty.Length; i++)
         {
             if (componentTarget[i] - componentAdded[i] <= 0)
+            {
                 componentNeededQty[i].text = "Ok";
+                componentNeededQty[i].GetComponentInParent<Image>().color = Color.green;
+            }
             else
+            {
                 componentNeededQty[i].text = (componentTarget[i] - componentAdded[i]).ToString();
-
+                componentNeededQty[i].GetComponentInParent<Image>().color = Color.white;
+            }
             totalComponentSum += componentAdded[i];
 
         }

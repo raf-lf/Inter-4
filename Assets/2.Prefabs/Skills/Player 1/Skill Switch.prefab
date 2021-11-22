@@ -267,12 +267,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   energyCost: 0
   energyCostText: {fileID: 3272173247057598329}
-  cooldown: 1
+  cooldown: 0.5
   cooldownTimer: 0
   cooldownTimerText: {fileID: 2692041897734121652}
   cooldownTimerFill: {fileID: 6165871261067654974}
   energyOk: {r: 0.23113209, g: 0.514118, b: 1, a: 1}
   energyNo: {r: 1, g: 0.2685992, b: 0.23137254, a: 1}
+  sfxSwitchInativator: {fileID: 8300000, guid: 7518d7d9327543f40b1cfedb2ab48bef, type: 3}
+  sfxSwitchSweeper: {fileID: 8300000, guid: 79bfb1a490604cb44a2cafd427f21437, type: 3}
 --- !u!222 &2422158018099752402
 CanvasRenderer:
   m_ObjectHideFlags: 0

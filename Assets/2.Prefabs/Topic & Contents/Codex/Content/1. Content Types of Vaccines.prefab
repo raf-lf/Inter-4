@@ -164,7 +164,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -263,9 +263,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Vacinas s\xE3o desenvolvidas em tr\xEAs abordagens principais: uso do
-    micr\xF3bio inteiro; partes do germe que desencadeiam resposta do sistema imune;
-    ou material gen\xE9tico para produ\xE7\xE3o de prote\xEDnas espec\xEDficas. "
+  m_text: "Vacinas s\xE3o desenvolvidas em tr\xEAs abordagens principais:\n\n-Uso
+    do micr\xF3bio inteiro\n\n-Partes do germe que desencadeiam resposta do sistema
+    imune\n\n-Material gen\xE9tico para produ\xE7\xE3o de prote\xEDnas espec\xEDficas"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 96a0460a714c31d45a963b5c018c8eb5, type: 2}
   m_sharedMaterial: {fileID: 1505923601132848283, guid: 96a0460a714c31d45a963b5c018c8eb5, type: 2}
@@ -292,8 +292,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -433,7 +433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4230495476131110939, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
       propertyPath: m_Name
-      value: Content Types of Vaccines
+      value: 1. Content Types of Vaccines
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}

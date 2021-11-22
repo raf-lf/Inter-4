@@ -110,15 +110,6 @@ public static class SaveSystem
         GameManager.upgradesPurchased.Clear();
         GameManager.upgradesPurchased.AddRange(dataFile.upgradesPurchased);
 
-        Debug.Log("Upgrades Loaded:");
-
-        foreach (var item in GameManager.upgradesPurchased)
-        {
-            Debug.Log(item.name);
-
-        }
-        Debug.Log("");
-
         LabManager.vaccineStored = dataFile.vaccineStored;
         LabManager.scienceStored = dataFile.scienceStored;
         LabManager.antigenStored = dataFile.antigenStored;

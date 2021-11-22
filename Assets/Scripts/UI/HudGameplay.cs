@@ -17,7 +17,12 @@ public class HudGameplay : MonoBehaviour
 
 
     public void IncreaseFeedbackAntigen()
-        => antigenCounter.GetComponentInParent<Animator>().SetTrigger("increase");
+    {
+        if(ArenaManager.antigenCollected>= ArenaManager.antigenCapacity)
+            antigenCounter.GetComponentInParent<Animator>().SetTrigger("full");
+        else
+            antigenCounter.GetComponentInParent<Animator>().SetTrigger("increase");
+    }
     public void IncreaseFeedbackComponent(int id)
         => componentSlot[id].GetComponent<Animator>().SetTrigger("increase");
     public void IncreaseFeedbackData()

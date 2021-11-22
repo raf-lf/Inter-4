@@ -10697,7 +10697,7 @@ MonoBehaviour:
   boostDmgRvdMod: 0
   baseSpdMod: 1
   boostSpdMod: 0
-  moveSpeed: 3
+  moveSpeed: 5
   iFrames: 20
   difficultyBoostable: 1
   dead: 0
