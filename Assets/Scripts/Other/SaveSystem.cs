@@ -85,8 +85,11 @@ public static class SaveSystem
     {
         dataFile.endingPlayed = GameManager.endingPlayed;
         dataFile.currentGameStage = GameManager.currentGameStage;
-        dataFile.upgradesPurchased.Clear();
-        dataFile.upgradesPurchased.AddRange(GameManager.upgradesPurchased);
+
+        //dataFile.upgradesPurchased.Clear();
+        //dataFile.upgradesPurchased.AddRange(GameManager.upgradesPurchased);
+        dataFile.upgradesPurchasedId.Clear();
+        dataFile.upgradesPurchasedId.AddRange(GameManager.upgradesPurchasedId);
 
         dataFile.vaccineStored = LabManager.vaccineStored;
         dataFile.scienceStored = LabManager.scienceStored;
@@ -107,8 +110,10 @@ public static class SaveSystem
     {
         GameManager.endingPlayed = dataFile.endingPlayed;
         GameManager.currentGameStage = dataFile.currentGameStage;
-        GameManager.upgradesPurchased.Clear();
-        GameManager.upgradesPurchased.AddRange(dataFile.upgradesPurchased);
+        //GameManager.upgradesPurchased.Clear();
+        //GameManager.upgradesPurchased.AddRange(dataFile.upgradesPurchased);
+        GameManager.upgradesPurchasedId.Clear();
+        GameManager.upgradesPurchasedId.AddRange(dataFile.upgradesPurchasedId);
 
         LabManager.vaccineStored = dataFile.vaccineStored;
         LabManager.scienceStored = dataFile.scienceStored;
@@ -129,7 +134,8 @@ public static class SaveSystem
     {
         dataFile.endingPlayed = false;
         dataFile.currentGameStage = 0;
-        dataFile.upgradesPurchased.Clear();
+        //dataFile.upgradesPurchased.Clear();
+        dataFile.upgradesPurchasedId.Clear();
 
         dataFile.vaccineStored = 0;
         dataFile.scienceStored = 0;

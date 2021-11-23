@@ -10,7 +10,10 @@ public class SaveData
 
     //Game Info
     public int currentGameStage;
-    public List<UpgradeBase> upgradesPurchased = new List<UpgradeBase>();
+
+    public List<int> upgradesPurchasedId = new List<int>();
+
+    //public List<UpgradeBase> upgradesPurchased = new List<UpgradeBase>();
 
     #endregion
 

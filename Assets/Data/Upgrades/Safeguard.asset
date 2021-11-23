@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 195c5dd624874ad4fadaf14f2a88556a, type: 3}
   m_Name: Safeguard
   m_EditorClassIdentifier: 
+  upgradeId: 5
   buff: {fileID: 2928406094061223962, guid: 59e9ec56df77960489c734e0bfad92e1, type: 3}

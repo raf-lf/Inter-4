@@ -75,11 +75,17 @@ public class TechtreeUpgrade : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         {
             purchased = true;
 
+            if(!GameManager.upgradesPurchasedId.Contains(upgradeScriptableObject.upgradeId))
+            GameManager.upgradesPurchasedId.Add(upgradeScriptableObject.upgradeId);
+
+            /*
             if (!GameManager.upgradesPurchased.Contains(upgradeScriptableObject))
                 GameManager.upgradesPurchased.Add(upgradeScriptableObject);
+            */
         }
 
-        if (GameManager.upgradesPurchased.Contains(upgradeScriptableObject))
+        //if (GameManager.upgradesPurchased.Contains(upgradeScriptableObject))
+        if (GameManager.upgradesPurchasedId.Contains(upgradeScriptableObject.upgradeId))
             purchased = true;
         else
             purchased = false;
@@ -227,7 +233,9 @@ public class TechtreeUpgrade : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     {
         sfxPurchase.PlayInspectorSfx();
 
-        GameManager.upgradesPurchased.Add(upgradeScriptableObject);
+        // GameManager.upgradesPurchased.Add(upgradeScriptableObject);
+        GameManager.upgradesPurchasedId.Add(upgradeScriptableObject.upgradeId);
+
         vfxPurchase.Play();
         purchased = true;
         LabManager.scienceStored -= scienceCost;

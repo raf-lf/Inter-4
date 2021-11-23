@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f7a086d147de934c9681adba4c40b0f, type: 3}
   m_Name: Add Skill Bomb
   m_EditorClassIdentifier: 
+  upgradeId: 2
   skillObject: {fileID: 3663345183704350873, guid: 721d2fc681b3d4e41918de4c0759f862, type: 3}

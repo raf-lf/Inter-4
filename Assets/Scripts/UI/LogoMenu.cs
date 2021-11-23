@@ -30,7 +30,8 @@ public class LogoMenu : MonoBehaviour
     private void Awake()
     {
         SaveSystem.LoadPreferences();
-        
+        GameManager.SetFrameRate(60);
+
     }
 
     public void ClickStartGame()

@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26662c4dcbcecae4886e583e887a16bd, type: 3}
   m_Name: Wall Breaker
   m_EditorClassIdentifier: 
+  upgradeId: 4
   objectToInstantiate: {fileID: 7111741418866012167, guid: 5f2511d924be79c46b7c76373a9612b1, type: 3}

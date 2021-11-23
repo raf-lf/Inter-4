@@ -34607,7 +34607,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b97c586c986ccd498ce887c3d14ea2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeList: {fileID: 0}
+  allUpgrades:
+  - {fileID: 11400000, guid: 15f44166d0aaf4847a90e28aeff15ea1, type: 2}
+  - {fileID: 11400000, guid: 53ba825adb0d74b4ca3e783f6be95e0b, type: 2}
+  - {fileID: 11400000, guid: 61e245c655402c649ad1c2488d7d5343, type: 2}
+  - {fileID: 11400000, guid: 97c3df5a38c64ae4c9eed2563c215cd1, type: 2}
+  - {fileID: 11400000, guid: 3da48cd8278676d47b75139c8e3b8df8, type: 2}
+  - {fileID: 11400000, guid: 543291cfaf611e345b5107544af45b5d, type: 2}
+  - {fileID: 11400000, guid: 7e119566c76d0ab4c8b34c7c2d4de6bf, type: 2}
+  - {fileID: 11400000, guid: d816f703354f94242b185270a60caa5e, type: 2}
+  - {fileID: 11400000, guid: 3202837aa32e44940b40f700e69aab50, type: 2}
+  - {fileID: 11400000, guid: 858ba177d950e5144b43d76a6757d344, type: 2}
+  - {fileID: 11400000, guid: b29c9952f5a032442b41745578fbc970, type: 2}
+  - {fileID: 11400000, guid: 5f5225569b609d3448605972d91d13d5, type: 2}
+  - {fileID: 11400000, guid: 68e3cb91d5e737449b7c6cbd231b0dd1, type: 2}
+  - {fileID: 11400000, guid: dc4177a2e6003004ea2b6ed40a81afca, type: 2}
 --- !u!1 &7116787119710937745
 GameObject:
   m_ObjectHideFlags: 0

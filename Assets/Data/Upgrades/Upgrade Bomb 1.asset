@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53cc534c99becae4c9862b09c515cc02, type: 3}
   m_Name: Upgrade Bomb 1
   m_EditorClassIdentifier: 
+  upgradeId: 10

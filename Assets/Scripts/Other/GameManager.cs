@@ -11,6 +11,7 @@ public static class GameManager
 
     //Game Info
     public static int currentGameStage = 0;
+    public static List<int> upgradesPurchasedId = new List<int>();
     public static List<UpgradeBase> upgradesPurchased = new List<UpgradeBase>();
 
 

@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f7a086d147de934c9681adba4c40b0f, type: 3}
   m_Name: Add Skill Zombies
   m_EditorClassIdentifier: 
+  upgradeId: 3
   skillObject: {fileID: 3663345183704350873, guid: 1527ff6d9f04c8a4087ac70f52467212, type: 3}
