@@ -13,6 +13,8 @@ public class DamageCreature : MonoBehaviour
 
     public List<Faction> factionsAffected = new List<Faction>();
 
+    public PlaySfx sfxDamage;
+
     protected virtual void OnTriggerStay2D(Collider2D collision)
     {
         if (damageTrigger == DamageTrigger.OnArea)
@@ -50,8 +52,12 @@ public class DamageCreature : MonoBehaviour
                 //First, modify damage based on attacker's current damage modifier
                 ApplyDamageModifiers();
 
+                if (sfxDamage != null && creature.iFramesCurrent == 0)
+                    sfxDamage.PlayInspectorSfx();
+
                 creature.Damage(modifiedDamage);
                 DamageInflicted();
+
             }
         }
 

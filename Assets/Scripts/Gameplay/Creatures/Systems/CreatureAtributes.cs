@@ -60,7 +60,7 @@ public class CreatureAtributes : MonoBehaviour
 
     public float moveSpeed;
     public int iFrames;
-    private int iFramesCurrent;
+    public int iFramesCurrent;
 
     public bool difficultyBoostable = true;
 
