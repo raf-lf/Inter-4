@@ -1019,7 +1019,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\tNo fim de uma expedi\xE7\xE3o, o jogador perde todos seus \xEDtens consum\xEDveis
     que n\xE3o foram gastos, mas recebe um b\xF4nus de pontos de ci\xEAncia com base
-    na quantidade destes \xEDtens."
+    na quantidade destes itens."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 96a0460a714c31d45a963b5c018c8eb5, type: 2}
   m_sharedMaterial: {fileID: 1505923601132848283, guid: 96a0460a714c31d45a963b5c018c8eb5, type: 2}
@@ -1205,7 +1205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4230495476131110939, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}
       propertyPath: m_Name
-      value: 9. Content Science
+      value: 10. Content Science
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6e3dbc0c657e034ea944a81ac87c251, type: 3}

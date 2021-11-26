@@ -403,7 +403,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Peri\xF3dicamente protege v\xEDrus pr\xF3ximos, os deixando imune a dano.
+  m_text: "Periodicamente protege v\xEDrus pr\xF3ximos, os deixando imune a dano.
     A variante protetora continua vulner\xE1vel."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 96a0460a714c31d45a963b5c018c8eb5, type: 2}
