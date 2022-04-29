@@ -13,11 +13,12 @@ public class TechtreeUpgrade : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
     [Header("Upgrade")]
     public UpgradeBase upgradeScriptableObject;
+    [Tooltip("How much science is needed to unlock the skill.")]
     public int scienceCost;
     [HideInInspector] 
     public int spentScience;
     public string upgradeName;
-    [TextAreaAttribute(10, 15)]
+    [TextArea(10, 15)]
     public string description;
     public TechtreeUpgrade[] prerequisites = new TechtreeUpgrade[0];
     [HideInInspector]

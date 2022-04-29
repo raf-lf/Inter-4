@@ -15528,6 +15528,7 @@ MonoBehaviour:
   boostSpdMod: 0
   moveSpeed: 4
   iFrames: 20
+  iFramesCurrent: 0
   difficultyBoostable: 1
   dead: 0
   creatureFaction: 1
@@ -15763,6 +15764,7 @@ MonoBehaviour:
   damageTrigger: 0
   damage: 25
   factionsAffected: 00000000
+  sfxDamage: {fileID: 0}
 --- !u!58 &4922007292631544780
 CircleCollider2D:
   m_ObjectHideFlags: 0

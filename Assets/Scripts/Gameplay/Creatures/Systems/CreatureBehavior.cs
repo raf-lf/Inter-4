@@ -12,7 +12,9 @@ public class CreatureBehavior : MonoBehaviour
     public bool behaviorOn = true;
     public float busyTime;
 
+
     [Header("Target Detection")]
+    [Range(0,10)]
     public float detectionRange;
     public List<Faction> factionsDetected = new List<Faction>();
     private Collider2D[] colliders = new Collider2D[0];
